@@ -3,23 +3,24 @@ import { StyleSheet, Text, View } from 'react-native';
 import OTPInputs from './src/OTPInputs';
 import AnimatedText from './src/AnimatedText';
 import ProgressAnimation from "./src/ProgressAnimation";
+import DateInput from './src/MaskedText/DateInput';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <OTPInputs numberOfInputs={4}/>
+      <OTPInputs numberOfInputs={4} />
       <AnimatedText />
       <ProgressAnimation
-      activeColor="#04825C"
-      trackColor="#04825C40"
-      progress={100}
-      steps={[
-        { status: "done", label: "Personal Details" },
-        { status: "untouched", label: "Bank Details" },
-        { status: "active", label: "Vehicle Details" }
-      ]}
-
-    />
+        activeColor="#04825C"
+        trackColor="#04825C40"
+        progress={100}
+        steps={[
+          { status: "done", label: "Personal Details" },
+          { status: "untouched", label: "Bank Details" },
+          { status: "active", label: "Vehicle Details" }
+        ]}
+      />
+      <DateInput />
       <StatusBar style="auto" />
     </View>
   );
@@ -30,6 +31,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
   },
 });
