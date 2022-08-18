@@ -11,11 +11,15 @@
   "dependencies": {
     "eslint-plugin-react-hooks": "^4.6.0",
     "expo": "~46.0.7",
+    "expo-clipboard": "^3.1.0",
     "expo-status-bar": "~1.4.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-native": "0.69.4",
-    "react-native-web": "~0.18.7"
+    "react-native-reanimated": "^2.9.1",
+    "react-native-redash": "^18.0.0",
+    "react-native-web": "~0.18.7",
+    "twrnc": "^3.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
