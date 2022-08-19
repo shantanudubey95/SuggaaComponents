@@ -4,7 +4,13 @@ import tw from 'twrnc';
 
 import Input from './Input';
 
-export default function DateInput() {
+type props = {
+    viewStyle: any,
+    textStyle: any,
+    color: string
+}
+
+export default function DateInput({ viewStyle, textStyle, color }: props) {
     const [day, setDay] = useState<string>('');
     const [month, setMonth] = useState<string>('');
     const [year, setYear] = useState<string>('');
@@ -19,7 +25,7 @@ export default function DateInput() {
     }, [month]);
 
     return (
-        <View style={[tw`flex-row py-4 px-8 rounded-2 border-2 border-green-600 `]}>
+        <View style={viewStyle}>
             <Input
                 focus={focus}
                 setFocus={setFocus}
@@ -27,12 +33,13 @@ export default function DateInput() {
                 numberOfCharacters={2}
                 numberOfLines={1}
                 keyboardType="number-pad"
-                placeholderTextColor="darkseagreen"
-                selectionColor="darkseagreen"
-                style={[tw`font-bold text-green-600 text-lg text-center tabular-nums`]}
+                placeholderTextColor={color}
+                selectionColor={color}
+                style={textStyle}
                 placeholder="D"
+                color={color}
             />
-            <Text style={[tw`font-bold  text-green-600 mx-0.5 text-center  text-lg`]}>/</Text>
+            <Text style={[tw`font-bold ${color} mx-0.5 text-center  text-lg`]}>/</Text>
             <Input
                 focus={focus}
                 setFocus={setFocus}
@@ -40,12 +47,11 @@ export default function DateInput() {
                 numberOfCharacters={2}
                 numberOfLines={1}
                 keyboardType="number-pad"
-                placeholderTextColor="darkseagreen"
-                selectionColor="darkseagreen"
-                style={[tw`font-bold text-green-600 text-lg text-center tabular-nums`]}
+                style={textStyle}
                 placeholder="M"
+                color={color}
             />
-            <Text style={[tw`font-bold  text-green-600 mx-0.5 text-center  text-lg`]}>/</Text>
+            <Text style={[tw`font-bold  ${color} mx-0.5 text-center  text-lg`]}>/</Text>
             <Input
                 focus={focus}
                 setFocus={setFocus}
@@ -53,10 +59,9 @@ export default function DateInput() {
                 numberOfCharacters={4}
                 numberOfLines={1}
                 keyboardType="number-pad"
-                placeholderTextColor="darkseagreen"
-                selectionColor="darkseagreen"
-                style={[tw`font-bold text-green-600 text-lg text-center tabular-nums`]}
+                style={textStyle}
                 placeholder="Y"
+                color={color}
             />
         </View>
     );

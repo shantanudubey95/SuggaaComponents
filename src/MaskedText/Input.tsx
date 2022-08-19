@@ -7,9 +7,11 @@ type Props = TextInputProps & {
     handleInput(val: string): any;
     focus: string;
     setFocus(val: string): any;
+    color: string
 };
 
 export default function (props: Props) {
+
     const [val, setVal] = useState<string>('');
     const [keyName, setKey] = useState<string>('');
     const inputRef = createRef<TextInput>();
@@ -41,14 +43,14 @@ export default function (props: Props) {
 
 
     return (
-        <View style={[tailwind`px-3 flex-row`]}>
-            <Text style={[props.style, [tailwind`absolute self-center`]]}>
+        <View style={[tailwind`flex-row`]}>
+            <Text style={[tailwind`self-center font-bold  text-lg text-center tabular-nums ${props.color}`]}>
                 {val.padEnd(props.numberOfCharacters, props.placeholder)}
             </Text>
             <TextInput
                 ref={inputRef}
                 {...props}
-                style={[tailwind`opacity-0`]}
+                style={[tailwind`opacity-0, absolute self-center font-bold text-green-600 text-lg text-center tabular-nums`]}
                 maxLength={props.numberOfCharacters}
                 onKeyPress={(e) => (
                     e.nativeEvent.key === 'Backspace' && val === '' && shiftBackFocus(),
