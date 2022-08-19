@@ -5,6 +5,7 @@ import AnimatedText from './src/AnimatedText';
 import ProgressAnimation from "./src/ProgressAnimation";
 import DateInput from './src/MaskedText/DateInput';
 import tw from 'twrnc'
+import ReferCode from './src/ReferCode';
 
 export default function App() {
   return (
@@ -26,6 +27,8 @@ export default function App() {
         color={"text-green-600"}
         textStyle={[tw`font-bold text-green-600 text-lg text-center tabular-nums`]}
         viewStyle={[tw`flex-row py-4 px-8 rounded-2 items-center border-2 border-green-600`]} />
+
+      <ReferCode code={"SUGGAREF25"} />
 
       <StatusBar style="auto" />
     </View>
