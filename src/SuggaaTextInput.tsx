@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useEffect, useRef, useState } from 'react';
 import {
     TextInput,
@@ -9,7 +8,7 @@ import {
     StyleSheet,
     TouchableWithoutFeedback,
 } from 'react-native';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 import Animated, {
     Easing,
     useSharedValue,
