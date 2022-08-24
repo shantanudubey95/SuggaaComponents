@@ -14,7 +14,7 @@ export default function OTPInputs({ numberOfInputs }: Props) {
   );
   const [pin, setPin] = useState<string[]>(Array.from({ length: numberOfInputs }).map(() => ""));
   const onKeyPress = useCallback(
-    (index) =>
+    (index: number | undefined) =>
       ({ nativeEvent: { key: keyValue } }: NativeSyntheticEvent<TextInputKeyPressEventData>) => {
         if (
           Array.from({ length: 10 })
@@ -52,7 +52,7 @@ export default function OTPInputs({ numberOfInputs }: Props) {
   }, [direction, numberOfInputs, pin, textInputRefs]);
 
   const onChangeText = useCallback(
-    (index) => (text: string) => {
+    (index: number) => (text: string) => {
       getStringAsync().then((textInClipboard) => {
         if (
           textInClipboard.length === numberOfInputs &&

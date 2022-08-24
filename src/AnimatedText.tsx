@@ -19,7 +19,6 @@ const AnimatedText = () => {
 
   useEffect(() => {
     count.value = withTiming(0, { duration: COUNT_DOWN_FROM * 1000, easing: Easing.linear }, () => {
-      console.log("Finished with timer")
     });
   }, [count])
 
