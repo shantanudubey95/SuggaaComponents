@@ -7,11 +7,34 @@ import DateInput from './src/MaskedText/DateInput';
 import SuggaaTextInput from './src/SuggaaTextInput';
 import tw from 'twrnc'
 import ReferCode from './src/ReferCode';
-import { useState } from 'react';
+import AppLoading from 'expo-app-loading';
+import {
+  useFonts,
+  Poppins_300Light,
+  Poppins_400Regular,
+  Poppins_400Regular_Italic,
+  Poppins_500Medium,
+  Poppins_700Bold,
+  Poppins_600SemiBold,
+  Poppins_900Black,
+} from "@expo-google-fonts/poppins";
+import React from 'react';
 
 export default function App() {
-  const [value, setValue] = useState('');
-  const [error, setError] = useState<string | null>(null);
+  let [fontsLoaded] = useFonts({
+    Poppins_300Light,
+    Poppins_400Regular,
+    Poppins_600SemiBold,
+    Poppins_400Regular_Italic,
+    Poppins_500Medium,
+    Poppins_700Bold,
+    Poppins_900Black,
+  });
+  const [value, setValue] = React.useState('');
+  const [error, setError] = React.useState<string | null>(null);
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
   return (
     <View style={styles.container}>
       <OTPInputs numberOfInputs={4} />
@@ -60,6 +83,7 @@ export default function App() {
       <StatusBar style="auto" />
     </View>
   );
+}
 }
 
 const styles = StyleSheet.create({
