@@ -5,6 +5,7 @@ import AnimatedText from './src/AnimatedText';
 import ProgressAnimation from "./src/ProgressAnimation";
 import DateInput from './src/MaskedText/DateInput';
 import SuggaaTextInput from './src/SuggaaTextInput';
+
 import tw from 'twrnc'
 import ReferCode from './src/ReferCode';
 import AppLoading from 'expo-app-loading';
@@ -19,6 +20,7 @@ import {
   Poppins_900Black,
 } from "@expo-google-fonts/poppins";
 import React from 'react';
+import PressableButton from './src/PressableButton';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -30,6 +32,7 @@ export default function App() {
     Poppins_700Bold,
     Poppins_900Black,
   });
+  const SHARE = require('./assets/Share.png');
   const [value, setValue] = React.useState('');
   const [error, setError] = React.useState<string | null>(null);
   if (!fontsLoaded) {
@@ -79,7 +82,7 @@ export default function App() {
             </View>
             <View style={{ height: 16 }} />
             <Button title={error ? "Clear error" : "Set Error"} onPress={() => error ? setError("") : setError('This field is required.')} />
-
+            <PressableButton onPress={() => {}} icon={SHARE} />
       <StatusBar style="auto" />
     </View>
   );
