@@ -21,6 +21,7 @@ import {
 } from "@expo-google-fonts/poppins";
 import React from 'react';
 import PressableButton from './src/PressableButton';
+import OnOffDutySwitch from './src/OnOffDutySwitch';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -83,6 +84,7 @@ export default function App() {
             <View style={{ height: 16 }} />
             <Button title={error ? "Clear error" : "Set Error"} onPress={() => error ? setError("") : setError('This field is required.')} />
             <PressableButton onPress={() => {}} icon={SHARE} />
+            <OnOffDutySwitch />
       <StatusBar style="auto" />
     </View>
   );
