@@ -22,6 +22,7 @@ import {
 import React from 'react';
 import PressableButton from './src/PressableButton';
 import OnOffDutySwitch from './src/OnOffDutySwitch';
+import SuggaaSelectButton from './src/SuggaaSelectButton';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -36,6 +37,8 @@ export default function App() {
   const SHARE = require('./assets/Share.png');
   const [value, setValue] = React.useState('');
   const [error, setError] = React.useState<string | null>(null);
+  const [selectedCheckBox, setSelectedCheckBox] = React.useState('');
+  console.log(selectedCheckBox);
   if (!fontsLoaded) {
     return <AppLoading />;
   } else {
@@ -85,6 +88,19 @@ export default function App() {
             <Button title={error ? "Clear error" : "Set Error"} onPress={() => error ? setError("") : setError('This field is required.')} />
             <PressableButton onPress={() => {}} icon={SHARE} />
             <OnOffDutySwitch />
+            <SuggaaSelectButton  title="Him"
+          onPress={(value) => setSelectedCheckBox(value)}
+          isActive={selectedCheckBox === 'Him'}/>
+          <SuggaaSelectButton
+          title="Her"
+          onPress={(value) => setSelectedCheckBox(value)}
+          isActive={selectedCheckBox === 'Her'}
+        />
+          <SuggaaSelectButton
+          title="I perfer not to say"
+          onPress={(value) => setSelectedCheckBox(value)}
+          isActive={selectedCheckBox === 'I perfer not to say'}
+        />
       <StatusBar style="auto" />
     </View>
   );
