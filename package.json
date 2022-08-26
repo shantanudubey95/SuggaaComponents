@@ -27,7 +27,11 @@
     "@babel/core": "^7.12.9",
     "@types/react": "~18.0.14",
     "@types/react-native": "~0.69.1",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "eslint": "^8.22.0",
     "eslint-config-universe": "^11.1.0",
+    "prettier": "^2.7.1",
     "typescript": "~4.3.5"
   },
   "eslintConfig": {
