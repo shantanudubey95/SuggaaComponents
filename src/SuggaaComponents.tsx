@@ -8,10 +8,10 @@
 //   Poppins_600SemiBold,
 //   Poppins_900Black,
 // } from '@expo-google-fonts/poppins';
-import AppLoading from 'expo-app-loading';
+// import AppLoading from 'expo-app-loading';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, StyleSheet, ScrollView, View } from 'react-native';
+import { Button, ScrollView, View } from 'react-native';
 import tw from 'twrnc';
 
 import AnimatedText from './AnimatedText';
@@ -21,9 +21,9 @@ import OnOffDutySwitch from './OnOffDutySwitch';
 import PressableButton from './PressableButton';
 import ProgressAnimation from './ProgressAnimation';
 import ReferCode from './ReferCode';
+import SelectRide from './SelectRide';
 import SuggaaSelectButton from './SuggaaSelectButton';
 import SuggaaTextInput from './SuggaaTextInput';
-import SelectRide from './SelectRide';
 
 export default function App() {
   //   const [fontsLoaded] = useFonts({
