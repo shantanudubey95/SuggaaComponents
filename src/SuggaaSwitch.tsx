@@ -1,5 +1,5 @@
-import React from "react";
-import { Pressable } from "react-native";
+import React from 'react';
+import { Pressable } from 'react-native';
 import Animated, {
   interpolateColor,
   useSharedValue,
@@ -7,8 +7,8 @@ import Animated, {
   withSpring,
   withTiming,
   useDerivedValue,
-} from "react-native-reanimated";
-import tw from "twrnc";
+} from 'react-native-reanimated';
+import tw from 'twrnc';
 
 const SuggaaSwitch = () => {
   const switchTranslate = useSharedValue(0);
@@ -27,16 +27,8 @@ const SuggaaSwitch = () => {
   }, [active, switchTranslate]);
 
   const backgroundColorStyle = useAnimatedStyle(() => {
-    const backgroundColor = interpolateColor(
-      progress.value,
-      [0, 44],
-      ["#D3D6D5", "#04825C"]
-    );
-    const borderColor = interpolateColor(
-      progress.value,
-      [0, 44],
-      ["#D3D6D5", "#04825C"]
-    );
+    const backgroundColor = interpolateColor(progress.value, [0, 44], ['#D3D6D5', '#04825C']);
+    const borderColor = interpolateColor(progress.value, [0, 44], ['#D3D6D5', '#04825C']);
     return {
       backgroundColor,
       borderColor,
@@ -64,19 +56,14 @@ const SuggaaSwitch = () => {
     <Pressable
       onPress={() => {
         setActive(!active);
-      }}
-    >
+      }}>
       <Animated.View
         style={[
           tw`h-7 w-17.5 bg-[#D3D6D5] justify-center rounded-full border-2 border-[#D3D6D5]`,
           backgroundColorStyle,
-        ]}
-      >
+        ]}>
         <Animated.View
-          style={[
-            tw`h-5.5 w-5.5 bg-white rounded-full shadow-lg shadow-black`,
-            customSpringStyles,
-          ]}
+          style={[tw`h-5.5 w-5.5 bg-white rounded-full shadow-lg shadow-black`, customSpringStyles]}
         />
       </Animated.View>
     </Pressable>

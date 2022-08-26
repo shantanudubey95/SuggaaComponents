@@ -1,8 +1,8 @@
-import React from "react";
-import { View, Text } from "react-native";
-import tw from "twrnc";
+import React from 'react';
+import { View, Text } from 'react-native';
+import tw from 'twrnc';
 
-import SuggaaSwitch from "./SuggaaSwitch";
+import SuggaaSwitch from './SuggaaSwitch';
 
 const OnOffDutySwitch = () => {
   return (

@@ -1,12 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useEffect } from 'react';
-import Animated, {
-  useDerivedValue,
-  useAnimatedStyle,
-  useSharedValue,
-  withTiming,
-  Easing,
-} from 'react-native-reanimated';
+import { useDerivedValue, useSharedValue, withTiming, Easing } from 'react-native-reanimated';
 import { ReText } from 'react-native-redash';
 
 const COUNT_DOWN_FROM = 30;

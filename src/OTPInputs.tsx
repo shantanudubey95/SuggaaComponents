@@ -1,18 +1,18 @@
-import { getStringAsync } from "expo-clipboard";
-import React, { useCallback, useEffect, useState } from "react";
-import { View, TextInput, NativeSyntheticEvent, TextInputKeyPressEventData } from "react-native";
-import tw from "twrnc";
+import { getStringAsync } from 'expo-clipboard';
+import React, { useCallback, useEffect, useState } from 'react';
+import { View, TextInput, NativeSyntheticEvent, TextInputKeyPressEventData } from 'react-native';
+import tw from 'twrnc';
 
 interface Props {
   numberOfInputs: 4 | 6;
 }
 
 export default function OTPInputs({ numberOfInputs }: Props) {
-  const [direction, setDirection] = useState<"forward" | "back">("forward");
+  const [direction, setDirection] = useState<'forward' | 'back'>('forward');
   const textInputRefs = Array.from({ length: numberOfInputs }).map(() =>
     React.createRef<TextInput>()
   );
-  const [pin, setPin] = useState<string[]>(Array.from({ length: numberOfInputs }).map(() => ""));
+  const [pin, setPin] = useState<string[]>(Array.from({ length: numberOfInputs }).map(() => ''));
   const onKeyPress = useCallback(
     (index: number | undefined) =>
       ({ nativeEvent: { key: keyValue } }: NativeSyntheticEvent<TextInputKeyPressEventData>) => {
@@ -22,13 +22,13 @@ export default function OTPInputs({ numberOfInputs }: Props) {
             .includes(keyValue)
         ) {
           setPin((value) => [...value.slice(0, index), keyValue, ...value.slice(index + 1)]);
-          setDirection("forward");
-        } else if (keyValue === "Backspace") {
+          setDirection('forward');
+        } else if (keyValue === 'Backspace') {
           setPin((value) => [
             ...value.slice(0, index),
-            ...Array.from({ length: numberOfInputs - index }).map(() => ""),
+            ...Array.from({ length: numberOfInputs - index }).map(() => ''),
           ]);
-          setDirection("back");
+          setDirection('back');
         }
       },
     [numberOfInputs]
@@ -38,13 +38,13 @@ export default function OTPInputs({ numberOfInputs }: Props) {
     let activeIndex = -1;
     for (let index = 0; index < pin.length; index++) {
       const value = pin[index];
-      if (value !== "") {
+      if (value !== '') {
         activeIndex = index;
       } else {
         break;
       }
     }
-    if (direction === "back" && activeIndex >= 0 && activeIndex <= numberOfInputs - 1) {
+    if (direction === 'back' && activeIndex >= 0 && activeIndex <= numberOfInputs - 1) {
       textInputRefs[activeIndex].current?.focus();
     } else if (activeIndex + 1 >= 0 && activeIndex + 1 <= numberOfInputs - 1) {
       textInputRefs[activeIndex + 1].current?.focus();
@@ -60,7 +60,7 @@ export default function OTPInputs({ numberOfInputs }: Props) {
           text === textInClipboard &&
           index === 0
         ) {
-          setPin(textInClipboard.split(""));
+          setPin(textInClipboard.split(''));
         }
       });
     },
@@ -68,7 +68,6 @@ export default function OTPInputs({ numberOfInputs }: Props) {
   );
 
   return (
-
     <View style={tw`w-full flex-row justify-center items-center `}>
       {textInputRefs.map((value, index) => (
         <TextInput
@@ -81,11 +80,10 @@ export default function OTPInputs({ numberOfInputs }: Props) {
           autoFocus={index === 0}
           onKeyPress={onKeyPress(index)}
           onChangeText={onChangeText(index)}
-          returnKeyType={index === numberOfInputs - 1 ? "done" : "next"}
+          returnKeyType={index === numberOfInputs - 1 ? 'done' : 'next'}
           value={pin[index].toString()}
         />
       ))}
     </View>
-
   );
 }
