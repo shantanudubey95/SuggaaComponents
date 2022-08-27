@@ -8,10 +8,10 @@ type props = {
   text: string;
   onPress: () => void;
   onValue: (stop: string) => void;
-  clearInput: () => void;
+  closeAction: () => void;
 };
 
-export default function AddStopInput({ onPress, clearInput, onValue, text }: props) {
+export default function AddStopInput({ onPress, closeAction, onValue, text }: props) {
   return (
     <View style={tw`flex-row`}>
       <View
@@ -30,7 +30,7 @@ export default function AddStopInput({ onPress, clearInput, onValue, text }: pro
       </View>
 
       <Pressable
-        onPress={clearInput}
+        onPress={closeAction}
         style={tw`h-12 bg-[${COLORS.WHITE}] rounded-1.25 justify-center ml-1.5 shadow-md px-2`}>
         <Image source={IMAGES.DLETE_ICON} />
       </Pressable>

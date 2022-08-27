@@ -81,7 +81,7 @@ export default function HomeScreen() {
 
       <View style={tw`my-2`} />
       <AddStopInput
-        clearInput={() => setStop('')}
+        closeAction={() => alert('add your action here')}
         onPress={() => alert('add action here')}
         text={stop}
         onValue={setStop}
