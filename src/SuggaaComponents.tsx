@@ -56,14 +56,17 @@ export default function App() {
           { status: 'active', label: 'Vehicle Details' },
         ]}
       />
+      <View style={tw`my-4`} />
 
       <DateInput
         color="text-green-600"
         textStyle={[tw`font-bold text-green-600 text-lg text-center tabular-nums`]}
         viewStyle={[tw`flex-row py-4 px-8 rounded-2 items-center border-2 border-green-600`]}
       />
+      <View style={tw`my-4`} />
 
       <ReferCode code="SUGGAREF25" />
+      <View style={tw`my-4`} />
 
       <View style={{ width: '100%', paddingHorizontal: 54 }}>
         <SuggaaTextInput
@@ -90,24 +93,31 @@ export default function App() {
         title={error ? 'Clear error' : 'Set Error'}
         onPress={() => (error ? setError('') : setError('This field is required.'))}
       />
-      <PressableButton onPress={() => {}} icon={SHARE} />
+      <View style={tw`my-4`} />
+      <PressableButton onPress={() => { }} icon={SHARE} />
+      <View style={tw`my-4`} />
       <OnOffDutySwitch />
+      <View style={tw`my-4`} />
       <SuggaaSelectButton
         title="Him"
         onPress={(value) => setSelectedCheckBox(value)}
         isActive={selectedCheckBox === 'Him'}
       />
+      <View style={tw`my-4`} />
       <SuggaaSelectButton
         title="Her"
         onPress={(value) => setSelectedCheckBox(value)}
         isActive={selectedCheckBox === 'Her'}
       />
+      <View style={tw`my-4`} />
       <SuggaaSelectButton
         title="I perfer not to say"
         onPress={(value) => setSelectedCheckBox(value)}
         isActive={selectedCheckBox === 'I perfer not to say'}
       />
+      <View style={tw`my-4`} />
       <SelectRide ride_type="City" />
+      <View style={tw`my-4`} />
       <SelectRide ride_type="Outstation" />
       <StatusBar style="auto" />
     </ScrollView>
