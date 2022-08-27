@@ -7,7 +7,7 @@ import * as COLORS from '../config/colors';
 
 function ActiveScreen() {
   return (
-    <View style={tw`items-center justify-cnter`}>
+    <View style={tw`items-center justify-center`}>
       <Text>Active!</Text>
     </View>
   );
@@ -15,7 +15,7 @@ function ActiveScreen() {
 
 function RejectedeScreen() {
   return (
-    <View style={tw`items-center justify-cnter`}>
+    <View style={tw`items-center justify-center`}>
       <Text>Rejected!</Text>
     </View>
   );
@@ -23,7 +23,7 @@ function RejectedeScreen() {
 
 function PendingScreen() {
   return (
-    <View style={tw`items-center justify-cnter`}>
+    <View style={tw`items-center justify-center`}>
       <Text>Pending!</Text>
     </View>
   );
@@ -31,7 +31,7 @@ function PendingScreen() {
 
 function DeactivatedScreen() {
   return (
-    <View style={tw`items-center justify-cnter`}>
+    <View style={tw`items-center justify-center`}>
       <Text>Pending!</Text>
     </View>
   );
@@ -46,8 +46,8 @@ function MyTabBar({ state, descriptors, navigation, position }) {
           options.tabBarLabel !== undefined
             ? options.tabBarLabel
             : options.title !== undefined
-            ? options.title
-            : route.name;
+              ? options.title
+              : route.name;
 
         const isFocused = state.index === index;
 
@@ -81,11 +81,10 @@ function MyTabBar({ state, descriptors, navigation, position }) {
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={tw`mx-3.75 py-3.25 ${isFocused ? 'border-b-2' : ''} h-14`}>
+            style={tw`mx-3.75 py-3.25 ${isFocused ? `border-b-2 border-[${COLORS.SPANIS_VIRIDIAN}]` : ''} h-14`}>
             <Text
-              style={tw`text-5 text-[${
-                isFocused ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER
-              }]`}>
+              style={tw`text-5 text-[${isFocused ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER
+                }]`}>
               {label}
             </Text>
           </Pressable>
