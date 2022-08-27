@@ -27,3 +27,5 @@ export const I_HAVE_A_DRIVER_INACTIVE = require('../../assets/iHaveADriverInActi
 export const FLEET_ACTIVE = require('../../assets/fleetActive.png');
 export const FLEET_INACTIVE = require('../../assets/fleetInActive.png');
 export const TICK_SMALL = require('../../assets/tickSmall.png');
+export const REFER_EARN_BANNER = require('../../assets/referEarnBanner.png');
+export const ARROW_RIGHT_GREEN = require('../../assets/arrowRightGreen.png');

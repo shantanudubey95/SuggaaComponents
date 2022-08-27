@@ -30,8 +30,8 @@ export default function DriverCateogoryCard({
           category === 'NoVehicle'
             ? IMAGES.I_DRIVE_ACTIVE
             : category === 'SingleDriver'
-            ? IMAGES.I_HAVE_A_DRIVER_ACTIVE
-            : IMAGES.FLEET_ACTIVE
+              ? IMAGES.I_HAVE_A_DRIVER_ACTIVE
+              : IMAGES.FLEET_ACTIVE
         }
       />
       <View style={tw`self-center mt-4 flex-1 ml-5.5`}>
@@ -44,15 +44,15 @@ export default function DriverCateogoryCard({
   ) : (
     <Pressable
       onPress={onPress}
-      style={tw`flex-row shadow-md pr-2.25 pl-3.41 pb-3.25 pt-4.7 border-2 rounded-1.25 bg-[${COLORS.WHITE}] my-5`}>
+      style={tw`flex-row shadow-md pr-2.25 pl-3.41 pb-3.25 pt-4.7 border-2 border-[${COLORS.LIGHT_GRAY_BORDER}] rounded-1.25 bg-[${COLORS.WHITE}] my-5`}>
       <Image
         style={tw`self-center`}
         source={
           category === 'NoVehicle'
             ? IMAGES.I_DRIVE_INACTIVE
             : category === 'SingleDriver'
-            ? IMAGES.I_HAVE_A_DRIVER_INACTIVE
-            : IMAGES.FLEET_INACTIVE
+              ? IMAGES.I_HAVE_A_DRIVER_INACTIVE
+              : IMAGES.FLEET_INACTIVE
         }
       />
       <View style={tw`self-center mt-4 flex-1 ml-5.5`}>

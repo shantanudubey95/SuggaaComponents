@@ -1,4 +1,4 @@
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createMaterialTopTabNavigator, MaterialTopTabBarProps } from '@react-navigation/material-top-tabs';
 import * as React from 'react';
 import { Text, View, Pressable, ScrollView } from 'react-native';
 import tw from 'twrnc';
@@ -37,9 +37,9 @@ function DeactivatedScreen() {
   );
 }
 
-function MyTabBar({ state, descriptors, navigation, position }) {
+function MyTabBar({ state, descriptors, navigation, position }: MaterialTopTabBarProps) {
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={tw`h-16`}>
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={tw`h-16 bg-[${COLORS.ANTI_FLASH_WHITE}]`}>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const label =
@@ -60,7 +60,7 @@ function MyTabBar({ state, descriptors, navigation, position }) {
 
           if (!isFocused && !event.defaultPrevented) {
             // The `merge: true` option makes sure that the params inside the tab screen are preserved
-            navigation.navigate({ name: route.name, merge: true });
+            navigation.navigate(route.name);
           }
         };
 
@@ -71,22 +71,18 @@ function MyTabBar({ state, descriptors, navigation, position }) {
           });
         };
 
-        const inputRange = state.routes.map((_, i) => i);
 
         return (
           <Pressable
+            key={label.toString()}
             accessibilityRole="button"
             accessibilityState={isFocused ? { selected: true } : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={tw`mx-3.75 py-3.25 ${isFocused ? `border-b-2 border-[${COLORS.SPANIS_VIRIDIAN}]` : ''} h-14`}>
-            <Text
-              style={tw`text-5 text-[${isFocused ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER
-                }]`}>
-              {label}
-            </Text>
+            style={tw`mx-3.75 py-3 ${isFocused ? `border-b-2 border-[${COLORS.SPANIS_VIRIDIAN}]` : ''} h-14`}>
+            <Text style={tw`text-5 text-[${isFocused ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER}]`}>{label.toString()}</Text>
           </Pressable>
         );
       })}

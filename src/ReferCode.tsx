@@ -19,7 +19,7 @@ export default function ReferCode({ code }: props) {
       <Pressable style={[tw`absolute right-1 top-1`]} onPress={() => copyToClipboard()}>
         <Image resizeMode="contain" source={require('../assets/copy.png')} />
       </Pressable>
-      <Text numberOfLines={1} style={[tw`text-2xl font-bold text-emerald-700 uppercase`]}>
+      <Text numberOfLines={1} style={[tw`text-6.25 font-bold text-emerald-700 uppercase`]}>
         {code}
       </Text>
     </View>
