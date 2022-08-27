@@ -1,4 +1,4 @@
-import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
+import { DrawerContentScrollView, DrawerItemList, DrawerContentComponentProps } from '@react-navigation/drawer';
 import React from 'react';
 import { View, Image, Text } from 'react-native';
 import tw from 'twrnc';
@@ -6,7 +6,7 @@ import tw from 'twrnc';
 import * as COLORS from '../config/colors';
 import * as IMAGES from '../config/images';
 
-export default function DrawerComponent(props) {
+export default function DrawerComponent(props: DrawerContentComponentProps) {
   return (
     <View style={tw`flex-1`}>
       <DrawerContentScrollView {...props} contentContainerStyle={tw`bg-[${COLORS.WHITE}]`}>

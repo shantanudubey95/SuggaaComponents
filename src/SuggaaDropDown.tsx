@@ -87,18 +87,18 @@ export default function SuggaaDropDown(props: Props) {
       />
       <TouchableWithoutFeedback onPress={() => inputRef.current?.focus()}>
         <Animated.View
-          style={[tw`flex-row items-center px-1 absolute bg-[${COLORS.WHITE}]`, inputStyle]}>
-          <Text style={tw`text-[${text_Color}]`}>{props.label} </Text>
+          style={[tw`flex-row items-center px-1.5  absolute bg-[${COLORS.WHITE}]`, inputStyle]}>
+          <Text style={tw`text-[${text_Color}] text-5`}>{props.label} </Text>
         </Animated.View>
       </TouchableWithoutFeedback>
-      <Pressable onPress={() => setShowModal(true)} style={tw` mx-2 right-10 top-4`}>
+      <Pressable onPress={() => setShowModal(true)} style={tw` mx-2 right-10 top-6`}>
         <Image source={IMAGES.DROPDOWN_ARROW} />
       </Pressable>
       {showModal && (
         <View style={tw`absolute bg-black w-full rounded-1.25`}>
           <View style={tw`bg-[${COLORS.WHITE}] rounded-1.25`}>
             <Pressable style={tw` px-4 py-2 bg-[${COLORS.SPANIS_VIRIDIAN}] rounded-1.25`}>
-              <Text style={tw`text-[${COLORS.WHITE}]`}>GENDER</Text>
+              <Text style={tw`text-[${COLORS.WHITE}] text-5`}>GENDER</Text>
             </Pressable>
             {list.map((item, index) => {
               return (
@@ -107,7 +107,7 @@ export default function SuggaaDropDown(props: Props) {
                   key={index}
                   onPress={() => {
                     setShowModal(false);
-                    props?.onChangeText(item);
+                    props.onChangeText?.(item);
                   }}>
                   <Text style={tw`text-[${COLORS.BLACK}]`}>{item}</Text>
                 </Pressable>
