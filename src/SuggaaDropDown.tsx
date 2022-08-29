@@ -35,14 +35,13 @@ type Props = TextInputProps & {
 
 export default function SuggaaDropDown(props: Props) {
   const { label, value, style, onBlur, onFocus, list, ...restOfProps } = props;
-  const inputRef = useRef<TextInput>(null);
   const [, setdimension] = useState<Dimension>({ x: 0, y: 0, width: 0, height: 0 });
   const [showModal, setShowModal] = useState(false);
 
   const sharedVal = useSharedValue(0);
   useEffect(() => {
-    sharedVal.value = value ? 1 : 0;
-  }, [sharedVal, value]);
+    sharedVal.value = showModal ? 0 : value ? 1 : 0;
+  }, [sharedVal, value, showModal]);
 
   const inputStyle = useAnimatedStyle(() => {
     return {
@@ -76,16 +75,15 @@ export default function SuggaaDropDown(props: Props) {
   const text_Color = value ? '#04825C' : '#D3D6D5';
 
   return (
-    <View onLayout={onLayout} style={tw`flex-row`}>
+    <Pressable onPress={() => setShowModal(true)} onLayout={onLayout} style={tw`flex-row`}>
       <TextInput
         {...props}
         editable={false}
-        ref={inputRef}
         value={value}
         style={[style, { borderColor: color }]}
         {...restOfProps}
       />
-      <TouchableWithoutFeedback onPress={() => inputRef.current?.focus()}>
+      <TouchableWithoutFeedback onPress={() => setShowModal(true)}>
         <Animated.View
           style={[tw`flex-row items-center px-1.5  absolute bg-[${COLORS.WHITE}]`, inputStyle]}>
           <Text style={tw`text-[${text_Color}] text-5`}>{props.label} </Text>
@@ -116,6 +114,6 @@ export default function SuggaaDropDown(props: Props) {
           </View>
         </View>
       )}
-    </View>
+    </Pressable>
   );
 }

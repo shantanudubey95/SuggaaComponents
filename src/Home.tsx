@@ -126,18 +126,7 @@ export default function HomeScreen() {
 
       <View style={tw`my-2`} />
       <SuggaaDropDown
-        style={{
-          backgroundColor: COLORS.WHITE,
-          alignContent: 'center',
-          width: '100%',
-          borderWidth: 2,
-          borderColor: COLORS.SPANIS_VIRIDIAN,
-          borderRadius: 5,
-          fontSize: 20,
-          fontWeight: '400',
-          paddingHorizontal: 13,
-          paddingVertical: 10,
-        }}
+        style={tw`text-[${COLORS.BLACK}] bg-[${COLORS.WHITE}] self-center items-center w-full border-2 border-[${COLORS.SPANIS_VIRIDIAN}] rounded-1.5 text-5 py-2.5 px-3.25`}
         value={selectedDropDownValue}
         label="Gender"
         list={['Male', 'Female']}

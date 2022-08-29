@@ -21,7 +21,7 @@ export default function PickAndDropInput({
 }: props) {
   return (
     <View
-      style={tw`h-12 pl-3.5 pr-1.5 pt-0.75 pb-1 shadow-md bg-[${COLORS.WHITE}] rounded-1.25 flex-1 justify-center`}>
+      style={tw`h-12 pl-3.5 pr-1.5 pt-0.75 pb-1 shadow-md bg-[${COLORS.WHITE}] rounded-1.25 w-full justify-center`}>
       <View style={tw`pl-3.25`}>
         <Text
           style={tw`text-[${

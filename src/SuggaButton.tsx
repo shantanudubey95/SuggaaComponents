@@ -21,7 +21,7 @@ export default function SuggaButton({ onPress, text, buttonType }: props) {
           : buttonType === 'DISABLED'
           ? `bg-[${COLORS.LIGHT_GRAY_BORDER}]`
           : ''
-      }  rounded-1.25 p-2.25 items-center self-stretch`}
+      }  rounded-1.25 p-2.25 items-center flex-1`}
       onPress={onPress}>
       <Text
         style={tw`text-5  ${

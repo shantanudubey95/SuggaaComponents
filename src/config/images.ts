@@ -29,3 +29,4 @@ export const FLEET_INACTIVE = require('../../assets/fleetInActive.png');
 export const TICK_SMALL = require('../../assets/tickSmall.png');
 export const REFER_EARN_BANNER = require('../../assets/referEarnBanner.png');
 export const ARROW_RIGHT_GREEN = require('../../assets/arrowRightGreen.png');
+export const COPY_ICON = require('../../assets/copy.png');
