@@ -38,7 +38,7 @@ export default function DateInput({ viewStyle, textStyle, color }: props) {
     <View style={viewStyle}>
       {['day', 'month', 'year'].map((item, index) => {
         return (
-          <>
+          <View key={index} style={tw`flex-row`}>
             <Input
               focus={state.focus}
               setFocus={dispatch}
@@ -50,10 +50,8 @@ export default function DateInput({ viewStyle, textStyle, color }: props) {
               placeholder={item.charAt(0).toUpperCase()}
               color={color}
             />
-            {index !== 2 && (
-              <Text style={[tw`font-bold ${color} mx-0.5 text-center  text-lg`]}>/</Text>
-            )}
-          </>
+            {index !== 2 && <Text style={[tw`font-bold ${color} text-center  text-lg`]}>/</Text>}
+          </View>
         );
       })}
     </View>

@@ -41,7 +41,12 @@ export default function (props: Props) {
   }, [inputText]);
 
   return (
-    <View style={[tailwind`flex-row`]}>
+    <View
+      style={[
+        tailwind`flex-row w-[${
+          props.numberOfCharacters === 2 ? 7.5 : 11
+        }] self-center items-center mx-0.25 justify-center`,
+      ]}>
       <Text
         style={[tailwind`self-center font-bold  text-lg text-center tabular-nums ${props.color}`]}>
         {inputText.padEnd(props.numberOfCharacters, props.placeholder)}
