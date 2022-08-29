@@ -44,7 +44,7 @@ export default function (props: Props) {
     <View
       style={[
         tailwind`flex-row w-[${
-          props.numberOfCharacters === 2 ? 7.5 : 11
+          props.numberOfCharacters === 2 ? 8.5 : 11
         }] self-center items-center mx-0.25 justify-center`,
       ]}>
       <Text

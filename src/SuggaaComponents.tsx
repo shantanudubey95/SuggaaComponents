@@ -88,7 +88,7 @@ export default function App() {
           label="Full name"
           errorText={error}
           onChangeText={(text) => setValue(text)}
-          selectionColor= {COLORS.SPANIS_VIRIDIAN}
+          selectionColor={COLORS.SPANIS_VIRIDIAN}
         />
       </View>
       <View style={{ height: 16 }} />
