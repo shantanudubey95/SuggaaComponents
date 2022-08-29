@@ -16,6 +16,7 @@ import { Image } from 'react-native';
 import tw from 'twrnc';
 
 import AboutScreen from './src/About';
+import BottomSheet from './src/BottomSheet';
 import HomeScreen from './src/Home';
 import InsuranceScreen from './src/Insurance';
 import PaymentsScreen from './src/Payments';
@@ -28,7 +29,6 @@ import * as COLORS from './src/config/colors';
 import * as IMAGES from './src/config/images';
 import DrawerComponent from './src/navigation/DrawerComponent';
 import TopTabNavigationScreen from './src/navigation/TopTabNavigation';
-import BottomSheet from './src/BottomSheet';
 
 const Drawer = createDrawerNavigator();
 type iconProps = {

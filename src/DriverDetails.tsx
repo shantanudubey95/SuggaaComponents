@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
-
+import tw from 'twrnc';
 type Props = {
   driver_name: string;
   car_number: string;
@@ -12,47 +12,22 @@ type Props = {
 const DriverDetails = (props: Props) => {
   return (
     <>
-      <View style={{ justifyContent: 'center', alignItems: 'flex-end' }}>
-        <View
-          style={{
-            width: '90%',
-            height: 37,
-            backgroundColor: '#04825C',
-            flexDirection: 'row-reverse',
-            borderRadius: 5,
-            alignItems: 'center',
-          }}>
-          <Text style={{ color: 'white', fontSize: 22, fontWeight: '600', marginRight: 7 }}>
-            {props.driver_name}
-          </Text>
+      <View style={tw`justify-center items-end`}>
+        <View style={tw`w-9/10 h-9.25 bg-[#04825C] flex-row-reverse rounded-md items-center`}>
+          <Text style={tw`text-white text-xl font-semibold mr-1.75`}>{props.driver_name}</Text>
         </View>
-        <View
-          style={{
-            width: '70%',
-            alignItems: 'flex-end',
-            justifyContent: 'space-between',
-            flexDirection: 'row',
-          }}>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Text style={{ fontSize: 15, lineHeight: 22.5, fontWeight: '400' }}>
-              {props.rating}
-            </Text>
-            <Image source={require('../assets/Star.png')} style={{ height: 32, width: 32 }} />
+        <View style={tw`w-7/10 items-end justify-between flex-row`}>
+          <View style={tw`flex-row items-center`}>
+            <Text style={tw`font-normal text-base`}>{props.rating}</Text>
+            <Image source={require('../assets/Star.png')} style={tw`h-8 w-8`} />
           </View>
-          <View style={{ alignItems: 'flex-end' }}>
-            <Text style={{ fontSize: 18, lineHeight: 27, fontWeight: '600', marginRight: 7 }}>
-              {props.car_number}
-            </Text>
-            <Text style={{ fontSize: 15, lineHeight: 22.5, fontWeight: '600', marginRight: 7 }}>
-              {props.car_name}
-            </Text>
+          <View style={tw`items-end`}>
+            <Text style={tw`text-xl font-semibold mr-1.75`}>{props.car_number}</Text>
+            <Text style={tw`text-base font-semibold mr-1.75`}>{props.car_name}</Text>
           </View>
         </View>
       </View>
-      <Image
-        source={require('../assets/Pic26.png')}
-        style={{ height: 91, width: 91, position: 'absolute' }}
-      />
+      <Image source={require('../assets/Pic26.png')} style={tw`absolute h-22.75 w-22.75`} />
     </>
   );
 };
