@@ -1,6 +1,6 @@
 import React, { createRef, useEffect, useState } from 'react';
 import { TextInput, TextInputProps, View, Text } from 'react-native';
-import tailwind from 'twrnc';
+import tw from 'twrnc';
 
 type Props = TextInputProps & {
   numberOfCharacters: number;
@@ -43,19 +43,18 @@ export default function (props: Props) {
   return (
     <View
       style={[
-        tailwind`flex-row w-[${
+        tw`flex-row w-[${
           props.numberOfCharacters === 2 ? 8.5 : 11
         }] self-center items-center mx-0.25 justify-center`,
       ]}>
-      <Text
-        style={[tailwind`self-center font-bold  text-lg text-center tabular-nums ${props.color}`]}>
+      <Text style={[tw`self-center font-bold  text-lg text-center tabular-nums ${props.color}`]}>
         {inputText.padEnd(props.numberOfCharacters, props.placeholder)}
       </Text>
       <TextInput
         ref={inputRef}
         {...props}
         style={[
-          tailwind`opacity-0, absolute self-center font-bold text-green-600 text-lg text-center tabular-nums`,
+          tw`opacity-0, absolute self-center font-bold text-green-600 text-lg text-center tabular-nums`,
         ]}
         maxLength={props.numberOfCharacters}
         onKeyPress={(e) => (
