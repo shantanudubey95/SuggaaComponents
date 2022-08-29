@@ -9,9 +9,10 @@ type props = {
   viewStyle: ViewStyle;
   textStyle: TextStyle;
   color: string;
+  onValue: (date: string) => void;
 };
 
-export default function DateInput({ viewStyle, textStyle, color }: props) {
+export default function DateInput({ viewStyle, textStyle, color, onValue }: props) {
   const initialState = {
     day: '',
     month: '',
@@ -33,6 +34,12 @@ export default function DateInput({ viewStyle, textStyle, color }: props) {
   useEffect(() => {
     if (state.month.length === 2) dispatch({ type: 'focus', payload: 'Y' });
   }, [state.month]);
+
+  useEffect(() => {
+    if (state.day.length === 2 && state.month.length === 2 && state.year.length === 4) {
+      onValue(state.day + '-' + state.month + '-' + state.year);
+    }
+  }, [state.day, state.month, state.year]);
 
   return (
     <View style={viewStyle}>

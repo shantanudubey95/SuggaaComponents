@@ -40,6 +40,7 @@ export default function App() {
   const [value, setValue] = React.useState('');
   const [error, setError] = React.useState<string | null>(null);
   const [selectedCheckBox, setSelectedCheckBox] = React.useState('');
+  const [, setDOB] = React.useState('');
   //   if (!fontsLoaded) {
   //     return <AppLoading />;
   //   } else {
@@ -60,6 +61,7 @@ export default function App() {
       <View style={tw`my-4`} />
 
       <DateInput
+        onValue={alert}
         color="text-green-600"
         textStyle={[tw`font-bold text-green-600 text-lg text-center tabular-nums`]}
         viewStyle={[
