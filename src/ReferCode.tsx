@@ -1,17 +1,19 @@
 import * as Clipboard from 'expo-clipboard';
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View, Text, Image, Pressable, ToastAndroid } from 'react-native';
 import tw from 'twrnc';
+
 import * as IMAGES from './config/images';
+
 type props = {
   code: string;
 };
 
 export default function ReferCode({ code }: props) {
-  const copyToClipboard = async () => {
+  const copyToClipboard = useCallback(async () => {
     await Clipboard.setStringAsync(code);
     ToastAndroid.show('Code Copied.', ToastAndroid.LONG);
-  };
+  }, [code]);
 
   return (
     <View

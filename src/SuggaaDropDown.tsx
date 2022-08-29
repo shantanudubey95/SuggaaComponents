@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   TextInput,
   LayoutChangeEvent,
@@ -71,8 +71,8 @@ export default function SuggaaDropDown(props: Props) {
   const onLayout = (event: LayoutChangeEvent) => {
     setdimension(event.nativeEvent.layout);
   };
-  const color = value ? '#04825C' : '#D3D6D5';
-  const text_Color = value ? '#04825C' : '#D3D6D5';
+  const color = value ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER;
+  const text_Color = value ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER;
 
   return (
     <Pressable onPress={() => setShowModal(true)} onLayout={onLayout} style={tw`flex-row`}>
@@ -80,7 +80,7 @@ export default function SuggaaDropDown(props: Props) {
         {...props}
         editable={false}
         value={value}
-        style={[style, { borderColor: color }]}
+        style={[style, tw`border-[${color}]`]}
         {...restOfProps}
       />
       <TouchableWithoutFeedback onPress={() => setShowModal(true)}>

@@ -1,68 +1,61 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { View, Text } from 'react-native';
+import type { ViewStyle, TextStyle } from 'react-native';
 import tw from 'twrnc';
 
 import Input from './Input';
 
 type props = {
-    viewStyle: any,
-    textStyle: any,
-    color: string
-}
+  viewStyle: ViewStyle;
+  textStyle: TextStyle;
+  color: string;
+};
 
 export default function DateInput({ viewStyle, textStyle, color }: props) {
-    const [day, setDay] = useState<string>('');
-    const [month, setMonth] = useState<string>('');
-    const [year, setYear] = useState<string>('');
-    const [focus, setFocus] = useState('D');
+  const initialState = {
+    day: '',
+    month: '',
+    year: '',
+    focus: 'D',
+  };
 
-    useEffect(() => {
-        if (day.length === 2) setFocus('M');
-    }, [day]);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-    useEffect(() => {
-        if (month.length === 2) setFocus('Y');
-    }, [month]);
+  function reducer(state: typeof initialState, action: { type: string; payload: string }) {
+    const { type, payload } = action;
+    return { ...state, [type]: payload };
+  }
 
-    return (
-        <View style={viewStyle}>
+  useEffect(() => {
+    if (state.day.length === 2) dispatch({ type: 'focus', payload: 'M' });
+  }, [state.day]);
+
+  useEffect(() => {
+    if (state.month.length === 2) dispatch({ type: 'focus', payload: 'Y' });
+  }, [state.month]);
+
+  return (
+    <View style={viewStyle}>
+      {['day', 'month', 'year'].map((item, index) => {
+        return (
+          <>
             <Input
-                focus={focus}
-                setFocus={setFocus}
-                handleInput={(val: string) => setDay(val)}
-                numberOfCharacters={2}
-                numberOfLines={1}
-                keyboardType="number-pad"
-                placeholderTextColor={color}
-                selectionColor={color}
-                style={textStyle}
-                placeholder="D"
-                color={color}
+              focus={state.focus}
+              setFocus={dispatch}
+              handleInput={(inputText: string) => dispatch({ type: item, payload: inputText })}
+              numberOfCharacters={item === 'year' ? 4 : 2}
+              numberOfLines={1}
+              keyboardType="number-pad"
+              style={textStyle}
+              placeholder={item.charAt(0).toUpperCase()}
+              color={color}
             />
-            <Text style={[tw`font-bold ${color} mx-0.5 text-center  text-lg`]}>/</Text>
-            <Input
-                focus={focus}
-                setFocus={setFocus}
-                handleInput={(val: string) => setMonth(val)}
-                numberOfCharacters={2}
-                numberOfLines={1}
-                keyboardType="number-pad"
-                style={textStyle}
-                placeholder="M"
-                color={color}
-            />
-            <Text style={[tw`font-bold  ${color} mx-0.5 text-center  text-lg`]}>/</Text>
-            <Input
-                focus={focus}
-                setFocus={setFocus}
-                handleInput={(val: string) => setYear(val)}
-                numberOfCharacters={4}
-                numberOfLines={1}
-                keyboardType="number-pad"
-                style={textStyle}
-                placeholder="Y"
-                color={color}
-            />
-        </View>
-    );
+            {index !== 2 && (
+              <Text style={[tw`font-bold ${color} mx-0.5 text-center  text-lg`]}>/</Text>
+            )}
+          </>
+        );
+      })}
+    </View>
+  );
 }
