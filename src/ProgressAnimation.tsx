@@ -4,6 +4,8 @@ import { View, Text, LayoutChangeEvent } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import tw from 'twrnc';
 
+import * as COLORS from './config/colors';
+
 type StepStatus = 'active' | 'done' | 'untouched';
 
 interface Props {
@@ -17,9 +19,9 @@ type StepStatusColor = {
 };
 
 const stepStatusColor: StepStatusColor = {
-  active: '#04825C',
-  done: '#04825C',
-  untouched: '#FFFFFF',
+  active: COLORS.SPANIS_VIRIDIAN,
+  done: COLORS.SPANIS_VIRIDIAN,
+  untouched: COLORS.WHITE,
 };
 
 // const TRACK_HEIGHT = 4;
@@ -89,7 +91,9 @@ export default function ProgressAnimation({
               ) : null}
             </View>
             {'label' in step ? (
-              <Text style={tw`text-[#04825C] font-bold mt-3.5 text-xs`}>{step.label}</Text>
+              <Text style={tw`text-[${COLORS.SPANIS_VIRIDIAN}] font-bold mt-3.5 text-xs`}>
+                {step.label}
+              </Text>
             ) : null}
           </View>
         ))}

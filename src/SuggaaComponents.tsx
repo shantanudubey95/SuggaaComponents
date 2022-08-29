@@ -24,6 +24,7 @@ import ReferCode from './ReferCode';
 import SelectRide from './SelectRide';
 import SuggaaSelectButton from './SuggaaSelectButton';
 import SuggaaTextInput from './SuggaaTextInput';
+import * as COLORS from './config/colors';
 
 export default function App() {
   //   const [fontsLoaded] = useFonts({
@@ -47,7 +48,7 @@ export default function App() {
       <OTPInputs numberOfInputs={4} />
       <AnimatedText />
       <ProgressAnimation
-        activeColor="#04825C"
+        activeColor={COLORS.SPANIS_VIRIDIAN}
         trackColor="#04825C40"
         progress={100}
         steps={[
@@ -74,7 +75,7 @@ export default function App() {
             alignContent: 'center',
             width: '100%',
             borderWidth: 2,
-            borderColor: '#04825C',
+            borderColor: COLORS.SPANIS_VIRIDIAN,
             borderRadius: 5,
             fontSize: 20,
             fontWeight: '400',
@@ -85,7 +86,7 @@ export default function App() {
           label="Full name"
           errorText={error}
           onChangeText={(text) => setValue(text)}
-          selectionColor="#04825C"
+          selectionColor= {COLORS.SPANIS_VIRIDIAN}
         />
       </View>
       <View style={{ height: 16 }} />

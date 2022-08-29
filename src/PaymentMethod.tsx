@@ -2,6 +2,8 @@ import React from 'react';
 import { GestureResponderEvent, Image, Pressable, Text, View } from 'react-native';
 import tw from 'twrnc';
 
+import * as COLORS from './config/colors';
+
 const VISA = require('../assets/Visa.png');
 const GPAY = require('../assets/gpay.png');
 const MASTERCARD = require('../assets/mastercard.png');
@@ -24,7 +26,9 @@ const Payment = (props: Props) => {
         <Image source={VISA} />
         <Image source={MASTERCARD} />
       </View>
-      <Pressable style={tw`px-11.25 py-1.25 bg-[#04825C] rounded-md`} onPress={props.onPress}>
+      <Pressable
+        style={tw`px-11.25 py-1.25 bg-[${COLORS.SPANIS_VIRIDIAN}] rounded-md`}
+        onPress={props.onPress}>
         <Text style={tw`text-2xl font-medium text-white`}>Pay ₹{props.price} now</Text>
       </Pressable>
     </View>

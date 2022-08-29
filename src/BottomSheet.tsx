@@ -8,6 +8,7 @@ import DriverDetails from './DriverDetails';
 import Payment from './PaymentMethod';
 import PressableButton from './PressableButton';
 import RideDetails from './RideDetails';
+import * as COLORS from './config/colors';
 
 const CALL = require('../assets/Call.png');
 const SHARE = require('../assets/Share.png');
@@ -57,12 +58,14 @@ const BottomSheet = () => {
           { top: SCREEN_HEIGHT },
           BottomSheetStyle,
         ]}>
-        <View style={tw`w-15 h-1.25 bg-[#D3D6D5] self-center my-2.25 rounded-md`} />
+        <View
+          style={tw`w-15 h-1.25 bg-[${COLORS.LIGHT_GRAY_BORDER}] self-center my-2.25 rounded-md`}
+        />
         <View style={tw`flex-1 mx-4.75`}>
           <Text style={tw`text-2xl font-semibold`}>Meet at the pickup point</Text>
           <View style={tw`flex-row justify-between items-center my-2`}>
             <Text style={tw`font-medium text-sm`}>7 min to pickup</Text>
-            <Pressable style={tw`py-1.75 px-8.75 bg-[#04825C] rounded-md`}>
+            <Pressable style={tw`py-1.75 px-8.75 bg-[${COLORS.SPANIS_VIRIDIAN}] rounded-md`}>
               <Text style={[tw`font-medium text-sm`, { color: 'white' }]}>OTP:6520</Text>
             </Pressable>
           </View>

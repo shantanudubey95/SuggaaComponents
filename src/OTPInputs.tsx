@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { View, TextInput, NativeSyntheticEvent, TextInputKeyPressEventData } from 'react-native';
 import tw from 'twrnc';
 
+import * as COLORS from './config/colors';
 interface Props {
   numberOfInputs: 4 | 6;
 }
@@ -72,10 +73,10 @@ export default function OTPInputs({ numberOfInputs }: Props) {
       {textInputRefs.map((value, index) => (
         <TextInput
           key={`textinput-${index}`}
-          style={tw`mx-2.5 h-12 w-12 border-2 rounded-md border-[#04825C] font-bold text-xl`}
+          style={tw`mx-2.5 h-12 w-12 border-2 rounded-md border-[${COLORS.SPANIS_VIRIDIAN}] font-bold text-xl`}
           keyboardType="numeric"
           textAlign="center"
-          selectionColor="#04825C"
+          selectionColor={COLORS.SPANIS_VIRIDIAN}
           ref={value}
           autoFocus={index === 0}
           onKeyPress={onKeyPress(index)}

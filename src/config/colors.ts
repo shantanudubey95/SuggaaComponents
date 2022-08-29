@@ -8,9 +8,9 @@ export const BRIGHT_GRAY = '#E3EEEB';
 export const ANTI_FLASH_WHITE = '#F1F5F4';
 export const WHITE = '#FFFFFF';
 export const BLACK = '#000000';
-
+export const BLUE = '#0057FF';
 export const LIGHT_GRAY_BORDER = '#D3D6D5';
-
+export const SILVER_FOIL = '#AAB4B1';
 export const LUST_RED = '#EA1D1D';
 export const YELLOW_ORANGE = '#FF8F07';
 export const CARIBBEAN_GREEN = '#00B998';

@@ -16,6 +16,8 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
+import * as COLORS from './config/colors';
+
 type Dimension = {
   width: number;
   height: number;
@@ -66,9 +68,13 @@ export default function SuggaaTextInput(props: Props) {
   const onLayout = (event: LayoutChangeEvent) => {
     setdimension(event.nativeEvent.layout);
   };
-  const color = errorText ? '#EA1D1D' : isFocused || value ? '#04825C' : '#D3D6D5';
-  const text_Color = isFocused || value ? '#04825C' : '#D3D6D5';
-  const error_Text_Color = '#EA1D1D';
+  const color = errorText
+    ? COLORS.LUST_RED
+    : isFocused || value
+    ? COLORS.SPANIS_VIRIDIAN
+    : COLORS.LIGHT_GRAY_BORDER;
+  const text_Color = isFocused || value ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER;
+  const error_Text_Color = COLORS.LUST_RED;
 
   return (
     <View onLayout={onLayout}>
@@ -129,7 +135,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     paddingHorizontal: 4,
     borderRadius: 4,
-    backgroundColor: 'white',
+    backgroundColor: COLORS.WHITE,
   },
   label: {
     fontWeight: '600',
@@ -139,6 +145,6 @@ const styles = StyleSheet.create({
     marginTop: 4,
     marginLeft: 12,
     fontSize: 12,
-    color: '#EA1D1D',
+    color: COLORS.LUST_RED,
   },
 });
