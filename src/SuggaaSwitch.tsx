@@ -10,6 +10,8 @@ import Animated, {
 } from 'react-native-reanimated';
 import tw from 'twrnc';
 
+import * as COLORS from './config/colors';
+
 const SuggaaSwitch = () => {
   const switchTranslate = useSharedValue(0);
   const [active, setActive] = React.useState(false);
@@ -27,8 +29,16 @@ const SuggaaSwitch = () => {
   }, [active, switchTranslate]);
 
   const backgroundColorStyle = useAnimatedStyle(() => {
-    const backgroundColor = interpolateColor(progress.value, [0, 44], ['#D3D6D5', '#04825C']);
-    const borderColor = interpolateColor(progress.value, [0, 44], ['#D3D6D5', '#04825C']);
+    const backgroundColor = interpolateColor(
+      progress.value,
+      [0, 44],
+      [COLORS.LIGHT_GRAY_BORDER, COLORS.SPANIS_VIRIDIAN]
+    );
+    const borderColor = interpolateColor(
+      progress.value,
+      [0, 44],
+      [COLORS.LIGHT_GRAY_BORDER, COLORS.SPANIS_VIRIDIAN]
+    );
     return {
       backgroundColor,
       borderColor,
@@ -59,7 +69,7 @@ const SuggaaSwitch = () => {
       }}>
       <Animated.View
         style={[
-          tw`h-7 w-17.5 bg-[#D3D6D5] justify-center rounded-full border-2 border-[#D3D6D5]`,
+          tw`h-7 w-17.5 bg-[${COLORS.LIGHT_GRAY_BORDER}] justify-center rounded-full border-2 border-[${COLORS.LIGHT_GRAY_BORDER}]`,
           backgroundColorStyle,
         ]}>
         <Animated.View

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
 import tw from 'twrnc';
+
+import * as COLORS from './config/colors';
 type Props = {
   driver_name: string;
   car_number: string;
@@ -13,7 +15,8 @@ const DriverDetails = (props: Props) => {
   return (
     <>
       <View style={tw`justify-center items-end`}>
-        <View style={tw`w-9/10 h-9.25 bg-[#04825C] flex-row-reverse rounded-md items-center`}>
+        <View
+          style={tw`w-9/10 h-9.25 bg-[${COLORS.SPANIS_VIRIDIAN}] flex-row-reverse rounded-md items-center`}>
           <Text style={tw`text-white text-xl font-semibold mr-1.75`}>{props.driver_name}</Text>
         </View>
         <View style={tw`w-7/10 items-end justify-between flex-row`}>
