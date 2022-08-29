@@ -19,6 +19,7 @@ import DateInput from './MaskedText/DateInput';
 import OTPInputs from './OTPInputs';
 import OnOffDutySwitch from './OnOffDutySwitch';
 import PressableButton from './PressableButton';
+import ProfilePicture from './ProfilePicture';
 import ProgressAnimation from './ProgressAnimation';
 import ReferCode from './ReferCode';
 import SelectRide from './SelectRide';
@@ -124,6 +125,10 @@ export default function App() {
       <SelectRide ride_type="City" />
       <View style={tw`my-4`} />
       <SelectRide ride_type="Outstation" />
+      <ProfilePicture
+        defaultImage={require('../assets/picture.jpg')}
+        setPickedImage={(img: string) => {}}
+      />
       <StatusBar style="auto" />
     </ScrollView>
   );
