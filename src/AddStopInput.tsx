@@ -4,14 +4,14 @@ import tw from 'twrnc';
 
 import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
+
 type props = {
-  text: string;
-  onPress: () => void;
-  onValue: (stop: string) => void;
+  inputText: string;
+  onValueChange: (stop: string) => void;
   closeAction: () => void;
 };
 
-export default function AddStopInput({ onPress, closeAction, onValue, text }: props) {
+export default function AddStopInput({ closeAction, onValueChange, inputText }: props) {
   return (
     <View style={tw`flex-row`}>
       <View
@@ -22,8 +22,8 @@ export default function AddStopInput({ onPress, closeAction, onValue, text }: pr
         <View style={tw`flex-row items-center`}>
           <View style={tw`h-1.5 w-1.5 rounded-full mr-2 bg-[${COLORS.LUST_RED}]`} />
           <TextInput
-            value={text}
-            onChangeText={onValue}
+            value={inputText}
+            onChangeText={onValueChange}
             style={tw`text-[${COLORS.BLACK}] text-3.75 flex-1`}
           />
         </View>

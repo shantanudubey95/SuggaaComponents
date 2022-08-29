@@ -1,4 +1,3 @@
-import { useFonts } from 'expo-font';
 import * as React from 'react';
 import { View, ScrollView } from 'react-native';
 import tw from 'twrnc';
@@ -20,13 +19,10 @@ import * as IMAGES from './config/images';
 
 export default function HomeScreen() {
   const [, setLocationName] = React.useState('');
-  const [stop, setStop] = React.useState('');
+  const [stopAddress, setStopAddress] = React.useState('');
   const [selectedCheckBox, setSelectedCheckBox] = React.useState('');
   const [selectedDropDownValue, setSelectedDropDownValue] = React.useState('');
   const [driverType, setDriverType] = React.useState('NoVehicle');
-  const [fontsLoaded] = useFonts({
-    'Poppins-Regular': require('../assets/Poppins-Regular.ttf'),
-  });
 
   return (
     <ScrollView style={tw`w-full`} contentContainerStyle={tw`p-4`}>
@@ -82,25 +78,22 @@ export default function HomeScreen() {
       <View style={tw`my-2`} />
       <AddStopInput
         closeAction={() => alert('add your action here')}
-        onPress={() => alert('add action here')}
-        text={stop}
-        onValue={setStop}
+        inputText={stopAddress}
+        onValueChange={setStopAddress}
       />
       <View style={tw`my-2`} />
       <PickAndDropInput
         inputTitle="Pickup"
-        clearInput={() => setStop('')}
-        onPress={() => alert('add action here')}
-        text={stop}
-        onValue={setStop}
+        clearInput={() => setStopAddress('')}
+        inputText={stopAddress}
+        onValueChange={setStopAddress}
       />
       <View style={tw`my-2`} />
       <PickAndDropInput
         inputTitle="Drop"
-        clearInput={() => setStop('')}
-        onPress={() => alert('add action here')}
-        text={stop}
-        onValue={setStop}
+        clearInput={() => setStopAddress('')}
+        inputText={stopAddress}
+        onValueChange={setStopAddress}
       />
 
       <View style={tw`my-4`} />
@@ -134,7 +127,7 @@ export default function HomeScreen() {
         selectionColor={COLORS.SPANIS_VIRIDIAN}
       />
 
-      <View style={tw`my-4`} />
+      <View style={tw`my-10`} />
       <DocumentsRequired
         title="Personal Details"
         description="Personal details, address proof, driving license, PAN card"

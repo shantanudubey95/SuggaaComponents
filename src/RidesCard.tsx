@@ -1,4 +1,3 @@
-import { useFonts } from 'expo-font';
 import moment from 'moment';
 import React from 'react';
 import { Pressable, View, Image, Text } from 'react-native';
@@ -21,10 +20,6 @@ type props = PressableProps & {
 };
 
 export default function RidesCard({ style, imageUrl, imageStyle, viewStyle, values }: props) {
-  const [fontsLoaded] = useFonts({
-    'Poppins-Regular': require('../assets/Poppins-Regular.ttf'),
-  });
-
   const getColor = (color: typeof values.status): string => {
     let textColor = COLORS.BLACK;
     switch (color) {

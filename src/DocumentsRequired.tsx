@@ -4,10 +4,12 @@ import tw from 'twrnc';
 
 import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
+
 type props = {
   title: string;
   description: string;
 };
+
 export default function DocumentsRequired({ title, description }: props) {
   return (
     <View style={tw`flex-row items-center self-stretch`}>

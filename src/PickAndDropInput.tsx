@@ -4,19 +4,18 @@ import tw from 'twrnc';
 
 import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
+
 type props = {
   inputTitle: 'Pickup' | 'Drop';
-  text: string;
-  onPress: () => void;
-  onValue: (stop: string) => void;
+  inputText: string;
+  onValueChange: (address: string) => void;
   clearInput: () => void;
 };
 
 export default function PickAndDropInput({
-  onPress,
   clearInput,
-  onValue,
-  text,
+  onValueChange,
+  inputText,
   inputTitle,
 }: props) {
   return (
@@ -37,12 +36,12 @@ export default function PickAndDropInput({
           }]`}
         />
         <TextInput
-          value={text}
-          onChangeText={onValue}
+          value={inputText}
+          onChangeText={onValueChange}
           style={tw`text-[${COLORS.BLACK}] text-3.75 flex-1`}
         />
       </View>
-      {text && (
+      {inputText && (
         <Pressable onPress={clearInput} style={tw`absolute right-1.5`}>
           <Image source={IMAGES.CLEAR_INPUT} />
         </Pressable>

@@ -35,7 +35,7 @@ type Props = TextInputProps & {
 
 export default function SuggaaDropDown(props: Props) {
   const { label, value, style, onBlur, onFocus, list, ...restOfProps } = props;
-  const [, setdimension] = useState<Dimension>({ x: 0, y: 0, width: 0, height: 0 });
+  const [dimension, setdimension] = useState<Dimension>({ x: 0, y: 0, width: 0, height: 0 });
   const [showModal, setShowModal] = useState(false);
 
   const sharedVal = useSharedValue(0);
@@ -69,7 +69,7 @@ export default function SuggaaDropDown(props: Props) {
   }, [sharedVal.value]);
 
   const onLayout = (event: LayoutChangeEvent) => {
-    setdimension(event.nativeEvent.layout);
+    setdimension({ ...event.nativeEvent.layout });
   };
   const color = value ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER;
   const text_Color = value ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER;
@@ -89,7 +89,9 @@ export default function SuggaaDropDown(props: Props) {
           <Text style={tw`text-[${text_Color}] text-5`}>{props.label} </Text>
         </Animated.View>
       </TouchableWithoutFeedback>
-      <Pressable onPress={() => setShowModal(true)} style={tw` mx-2 right-10 top-6`}>
+      <Pressable
+        onPress={() => setShowModal(true)}
+        style={tw` mx-2 right-10 top-[${dimension.height / 8}]`}>
         <Image source={IMAGES.DROPDOWN_ARROW} />
       </Pressable>
       {showModal && (
@@ -101,13 +103,13 @@ export default function SuggaaDropDown(props: Props) {
             {list.map((item, index) => {
               return (
                 <Pressable
-                  style={tw`px-4 py-1`}
+                  style={tw`px-4 py-1.25`}
                   key={index}
                   onPress={() => {
                     setShowModal(false);
                     props.onChangeText?.(item);
                   }}>
-                  <Text style={tw`text-[${COLORS.BLACK}]`}>{item}</Text>
+                  <Text style={tw`text-[${COLORS.BLACK}] text-3.75`}>{item}</Text>
                 </Pressable>
               );
             })}
