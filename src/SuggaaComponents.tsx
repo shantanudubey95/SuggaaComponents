@@ -94,7 +94,7 @@ export default function App() {
         onPress={() => (error ? setError('') : setError('This field is required.'))}
       />
       <View style={tw`my-4`} />
-      <PressableButton onPress={() => { }} icon={SHARE} />
+      <PressableButton onPress={() => {}} icon={SHARE} />
       <View style={tw`my-4`} />
       <OnOffDutySwitch />
       <View style={tw`my-4`} />

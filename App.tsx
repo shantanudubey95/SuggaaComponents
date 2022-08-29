@@ -1,13 +1,13 @@
-import {
-  useFonts,
-  Poppins_300Light,
-  Poppins_400Regular,
-  Poppins_400Regular_Italic,
-  Poppins_500Medium,
-  Poppins_700Bold,
-  Poppins_600SemiBold,
-  Poppins_900Black,
-} from '@expo-google-fonts/poppins';
+// import {
+//   useFonts,
+//   Poppins_300Light,
+//   Poppins_400Regular,
+//   Poppins_400Regular_Italic,
+//   Poppins_500Medium,
+//   Poppins_700Bold,
+//   Poppins_600SemiBold,
+//   Poppins_900Black,
+// } from '@expo-google-fonts/poppins';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 // import AppLoading from 'expo-app-loading';
@@ -28,6 +28,7 @@ import * as COLORS from './src/config/colors';
 import * as IMAGES from './src/config/images';
 import DrawerComponent from './src/navigation/DrawerComponent';
 import TopTabNavigationScreen from './src/navigation/TopTabNavigation';
+import BottomSheet from './src/BottomSheet';
 
 const Drawer = createDrawerNavigator();
 type iconProps = {
@@ -35,19 +36,19 @@ type iconProps = {
 };
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
-    Poppins_300Light,
-    Poppins_400Regular,
-    Poppins_600SemiBold,
-    Poppins_400Regular_Italic,
-    Poppins_500Medium,
-    Poppins_700Bold,
-    Poppins_900Black,
-  });
+  // const [fontsLoaded] = useFonts({
+  //   Poppins_300Light,
+  //   Poppins_400Regular,
+  //   Poppins_600SemiBold,
+  //   Poppins_400Regular_Italic,
+  //   Poppins_500Medium,
+  //   Poppins_700Bold,
+  //   Poppins_900Black,
+  // });
   const LABEL_STYLE = tw`ml--6 text-4 text-[${COLORS.BLACK}]`;
-  const [value, setValue] = React.useState('');
-  const [error, setError] = React.useState<string | null>(null);
-  const [selectedCheckBox] = React.useState('');
+  // const [value, setValue] = React.useState('');
+  // const [error, setError] = React.useState<string | null>(null);
+  // const [selectedCheckBox] = React.useState('');
   // if (!fontsLoaded) {
   //   return <AppLoading />;
   // } else {
@@ -118,10 +119,9 @@ export default function App() {
         <Drawer.Screen name="My Components" component={HomeScreen} />
         <Drawer.Screen name="Top Tab" component={TopTabNavigationScreen} />
         <Drawer.Screen name="SuggaaComponents" component={SuggaaComponents} />
+        <Drawer.Screen name="BottomSheet" component={BottomSheet} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
 }
 // }
-
-
