@@ -9,9 +9,7 @@ import Payment from './PaymentMethod';
 import PressableButton from './PressableButton';
 import RideDetails from './RideDetails';
 import * as COLORS from './config/colors';
-
-const CALL = require('../assets/Call.png');
-const SHARE = require('../assets/Share.png');
+import * as IMAGES from './config/images';
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 const MAX_TRANSLATE_Y = -SCREEN_HEIGHT + 45;
@@ -84,8 +82,8 @@ const BottomSheet = () => {
               placeholder="Any pickup notes?"
               style={tw`h-12 w-56 bg-white rounded-md shadow-lg px-2.25`}
             />
-            <PressableButton onPress={() => {}} icon={CALL} />
-            <PressableButton onPress={() => {}} icon={SHARE} />
+            <PressableButton onPress={() => {}} icon={IMAGES.CALL} />
+            <PressableButton onPress={() => {}} icon={IMAGES.SHARE} />
           </View>
           <View
             style={{
@@ -96,8 +94,8 @@ const BottomSheet = () => {
             }}
           />
           <Pressable
-            style={tw`w-full h-12 justify-center items-center border-2 border-[#EA1D1D] rounded-md my-5`}>
-            <Text style={tw`font-medium text-2xl text-[#EA1D1D]`}>Cancel</Text>
+            style={tw`w-full h-12 justify-center items-center border-2 border-[${COLORS.LUST_RED}] rounded-md my-5`}>
+            <Text style={tw`font-medium text-2xl text-[${COLORS.LUST_RED}]`}>Cancel</Text>
           </Pressable>
           <Text style={tw`font-semibold text-2xl`}>Trip</Text>
           <RideDetails

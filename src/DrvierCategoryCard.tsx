@@ -30,8 +30,8 @@ export default function DriverCateogoryCard({
           category === 'NoVehicle'
             ? IMAGES.I_DRIVE_ACTIVE
             : category === 'SingleDriver'
-              ? IMAGES.I_HAVE_A_DRIVER_ACTIVE
-              : IMAGES.FLEET_ACTIVE
+            ? IMAGES.I_HAVE_A_DRIVER_ACTIVE
+            : IMAGES.FLEET_ACTIVE
         }
       />
       <View style={tw`self-center mt-4 flex-1 ml-5.5`}>
@@ -51,8 +51,8 @@ export default function DriverCateogoryCard({
           category === 'NoVehicle'
             ? IMAGES.I_DRIVE_INACTIVE
             : category === 'SingleDriver'
-              ? IMAGES.I_HAVE_A_DRIVER_INACTIVE
-              : IMAGES.FLEET_INACTIVE
+            ? IMAGES.I_HAVE_A_DRIVER_INACTIVE
+            : IMAGES.FLEET_INACTIVE
         }
       />
       <View style={tw`self-center mt-4 flex-1 ml-5.5`}>
