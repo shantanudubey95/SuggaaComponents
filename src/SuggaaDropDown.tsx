@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   TextInput,
   LayoutChangeEvent,
@@ -80,7 +80,7 @@ export default function SuggaaDropDown(props: Props) {
         {...props}
         editable={false}
         value={value}
-        style={[style, { borderColor: color }]}
+        style={[style, tw`border-[${color}]`]}
         {...restOfProps}
       />
       <TouchableWithoutFeedback onPress={() => setShowModal(true)}>

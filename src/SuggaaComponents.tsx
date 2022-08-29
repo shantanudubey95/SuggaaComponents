@@ -62,7 +62,9 @@ export default function App() {
       <DateInput
         color="text-green-600"
         textStyle={[tw`font-bold text-green-600 text-lg text-center tabular-nums`]}
-        viewStyle={[tw`flex-row py-4 px-8 rounded-2 items-center border-2 border-green-600`]}
+        viewStyle={[
+          tw`flex-row py-4 px-8 rounded-2 items-center border-2 border-green-600 self-start`,
+        ]}
       />
       <View style={tw`my-4`} />
 
