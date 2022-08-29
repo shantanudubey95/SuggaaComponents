@@ -3,6 +3,7 @@ import { Text, View, Image } from 'react-native';
 import tw from 'twrnc';
 
 import * as COLORS from './config/colors';
+import * as IMAGES from './config/images';
 type Props = {
   driver_name: string;
   car_number: string;
@@ -30,7 +31,7 @@ const DriverDetails = (props: Props) => {
           </View>
         </View>
       </View>
-      <Image source={require('../assets/Pic26.png')} style={tw`absolute h-22.75 w-22.75`} />
+      <Image source={IMAGES.PIC26} style={tw`absolute h-22.75 w-22.75`} />
     </>
   );
 };

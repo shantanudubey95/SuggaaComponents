@@ -3,6 +3,7 @@ import { Text, Pressable, Image } from 'react-native';
 import tw from 'twrnc';
 
 import * as COLORS from './config/colors';
+import * as IMAGES from './config/images';
 type props = {
   title: string;
   isActive: boolean;
@@ -25,7 +26,7 @@ export default function SuggaCheckBox({ title, isActive, onPress }: props) {
           }] font-normal`}>
           {title}
         </Text>
-        <Image style={tw`absolute top-1.5 right-1.5`} source={require('../assets/Tick.png')} />
+        <Image style={tw`absolute top-1.5 right-1.5`} source={IMAGES.TICK} />
       </Pressable>
     </>
   );

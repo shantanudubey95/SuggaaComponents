@@ -30,3 +30,15 @@ export const TICK_SMALL = require('../../assets/tickSmall.png');
 export const REFER_EARN_BANNER = require('../../assets/referEarnBanner.png');
 export const ARROW_RIGHT_GREEN = require('../../assets/arrowRightGreen.png');
 export const COPY_ICON = require('../../assets/copy.png');
+
+export const CALL = require('../../assets/Call.png');
+export const SHARE = require('../../assets/Share.png');
+export const PIC26 = require('../../assets/Pic26.png');
+export const UPI = require('../../assets/upi.png');
+export const GPAY = require('../../assets/gpay.png');
+export const PHONEPAY = require('../../assets/phonepay.png');
+export const VISA = require('../../assets/Visa.png');
+export const MASTERCARD = require('../../assets/mastercard.png');
+export const ASSEST2 = require('../../assets/Asset2.png');
+export const ASSEST3 = require('../../assets/Asset3.png');
+export const TICK = require('../../assets/Tick.png');
