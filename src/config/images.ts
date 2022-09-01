@@ -42,3 +42,5 @@ export const MASTERCARD = require('../../assets/mastercard.png');
 export const ASSEST2 = require('../../assets/Asset2.png');
 export const ASSEST3 = require('../../assets/Asset3.png');
 export const TICK = require('../../assets/Tick.png');
+export const STAR_FILLED = require('../../assets/star-filled.png');
+export const STAR_UNFILLED = require('../../assets/star-unfilled.png');

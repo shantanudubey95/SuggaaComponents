@@ -24,6 +24,7 @@ import ProgressAnimation from './ProgressAnimation';
 import ReferCode from './ReferCode';
 import SelectRide from './SelectRide';
 import SuggaaSelectButton from './SuggaaSelectButton';
+import SuggaaStarRating from './SuggaaStarRating';
 import SuggaaTextInput from './SuggaaTextInput';
 import * as COLORS from './config/colors';
 
@@ -129,6 +130,7 @@ export default function App() {
         defaultImage={require('../assets/picture.jpg')}
         setPickedImage={(img: string) => {}}
       />
+      <SuggaaStarRating rating={3} />
       <StatusBar style="auto" />
     </ScrollView>
   );
