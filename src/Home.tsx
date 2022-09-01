@@ -16,6 +16,7 @@ import SuggaCheckBox from './SuggaCheckBox';
 import SuggaaDropDown from './SuggaaDropDown';
 import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
+import RippleAnimation from './RippleAnimation';
 
 export default function HomeScreen() {
   const [, setLocationName] = React.useState('');
@@ -165,6 +166,8 @@ export default function HomeScreen() {
         category="FleetOwner"
         isActive={driverType === 'FleetOwner'}
       />
+      <View style={tw`my-4`} />
+      <RippleAnimation size={20} />
       <View style={tw`my-10`} />
     </ScrollView>
   );
