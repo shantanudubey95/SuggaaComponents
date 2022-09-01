@@ -17,6 +17,7 @@ import SuggaaDropDown from './SuggaaDropDown';
 import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
 import RippleAnimation from './RippleAnimation';
+import MapRoute from './MapRoute';
 
 export default function HomeScreen() {
   const [, setLocationName] = React.useState('');
@@ -167,7 +168,11 @@ export default function HomeScreen() {
         isActive={driverType === 'FleetOwner'}
       />
       <View style={tw`my-4`} />
-      <RippleAnimation size={20} />
+      <RippleAnimation size={20} color={COLORS.BLUE} />
+
+      <View style={tw`my-4`} />
+      <MapRoute style={`w-full h-50 items-center justify-center shadow-md w-full bg-[${COLORS.WHITE}] rounded-1.25`} pickUp={{ latitude: 12.9162028, longitude: 77.5210518 }} drop={{ latitude: 12.91688410763785, longitude: 77.52073296875786 }} />
+
       <View style={tw`my-10`} />
     </ScrollView>
   );

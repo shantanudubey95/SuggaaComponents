@@ -7,9 +7,8 @@ import Animated, {
     interpolate,
 } from 'react-native-reanimated';
 import tw from 'twrnc'
-import * as COLORS from './config/colors'
 
-const Ring = ({ size }: { size: number }) => {
+const Ring = ({ size, color }: { size: number, color: string }) => {
     const ring = useSharedValue(0);
 
     const ringStyle = useAnimatedStyle(() => {
@@ -33,13 +32,13 @@ const Ring = ({ size }: { size: number }) => {
     }, []);
     return (
         <Animated.View
-            style={[tw`self-center w-[${size / 4}] h-[${size / 4}] border-[${size / 8}] rounded-[${size / 8}] border-[${COLORS.BLACK}]`,
+            style={[tw`self-center w-[${size / 4}] h-[${size / 4}] border-[${size / 8}] rounded-[${size / 8}] border-[${color}]`,
                 ringStyle,
             ]}
         />
     );
 };
 
-export default function RippleAnimation({ size }: { size: number }) {
-    return <Ring size={size} />;
+export default function RippleAnimation({ size, color }: { size: number, color: string }) {
+    return <Ring size={size} color={color} />;
 }

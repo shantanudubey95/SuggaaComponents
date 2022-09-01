@@ -42,3 +42,12 @@ export const MASTERCARD = require('../../assets/mastercard.png');
 export const ASSEST2 = require('../../assets/Asset2.png');
 export const ASSEST3 = require('../../assets/Asset3.png');
 export const TICK = require('../../assets/Tick.png');
+
+export const BIKE_MARKER = require('../../assets/bikeMarker.png');
+export const AUTO_MARKER = require('../../assets/autoMarker.png');
+export const HATCH_MARKER = require('../../assets/hatchMarker.png');
+export const SEDAN_MARKER = require('../../assets/sedanMarker.png');
+export const MY_LOCATION_MARKER = require('../../assets/myLocationMarker.png');
+
+export const PICKUP_MARKER = require('../../assets/pickUpMarker.png');
+export const DROP_MARKER = require('../../assets/dropMarker.png');
