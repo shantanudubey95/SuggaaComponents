@@ -23,6 +23,7 @@ import ProfilePicture from './ProfilePicture';
 import ProgressAnimation from './ProgressAnimation';
 import ReferCode from './ReferCode';
 import SelectRide from './SelectRide';
+import Star from './Star';
 import SuggaaSelectButton from './SuggaaSelectButton';
 import SuggaaStarRating from './SuggaaStarRating';
 import SuggaaTextInput from './SuggaaTextInput';
@@ -43,6 +44,7 @@ export default function App() {
   const [error, setError] = React.useState<string | null>(null);
   const [selectedCheckBox, setSelectedCheckBox] = React.useState('');
   const [, setDOB] = React.useState('');
+  const [rating, setRating] = React.useState(0);
   //   if (!fontsLoaded) {
   //     return <AppLoading />;
   //   } else {
@@ -131,6 +133,7 @@ export default function App() {
         setPickedImage={(img: string) => {}}
       />
       <SuggaaStarRating rating={3} />
+      <Star rating={rating} setRating={setRating} />
       <StatusBar style="auto" />
     </ScrollView>
   );
