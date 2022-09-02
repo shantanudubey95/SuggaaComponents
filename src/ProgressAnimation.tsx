@@ -43,7 +43,6 @@ export default function ProgressAnimation({
   useEffect(() => {
     progress.value = _progress;
   }, [_progress, progress]);
-  // console.log("trackLayout", trackLayout.width)
 
   const onStepCircleLayout = useCallback(
     (index: number, tag: 'circle' | 'circleBox' | 'mainView') => (event: LayoutChangeEvent) => {
@@ -79,11 +78,9 @@ export default function ProgressAnimation({
             style={tw`items-center`}
             onLayout={onStepCircleLayout(index, 'circleBox')}>
             <View
-              style={tw`h-7 w-7 border-${
-                step.status === 'untouched' ? '2' : '0'
-              } rounded-full  bg-[${
-                stepStatusColor[step.status]
-              }] border-[${activeColor}] justify-center items-center `}
+              style={tw`h-7 w-7 border-${step.status === 'untouched' ? '2' : '0'
+                } rounded-full  bg-[${stepStatusColor[step.status]
+                }] border-[${activeColor}] justify-center items-center `}
               onLayout={onStepCircleLayout(index, 'circle')}>
               {step.status === 'done' ? <Feather name="check" size={20} color="white" /> : null}
               {step.status === 'active' ? (

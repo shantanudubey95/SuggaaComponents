@@ -30,6 +30,7 @@ import * as IMAGES from './src/config/images';
 import DrawerComponent from './src/navigation/DrawerComponent';
 import TopTabNavigationScreen from './src/navigation/TopTabNavigation';
 import MapsScreen from './src/MapsScreen';
+import MapRideTestScreen from './src/MapRideTest';
 
 const Drawer = createDrawerNavigator();
 type iconProps = {
@@ -122,6 +123,7 @@ export default function App() {
         <Drawer.Screen name="SuggaaComponents" component={SuggaaComponents} />
         <Drawer.Screen name="BottomSheet" component={BottomSheet} />
         <Drawer.Screen name="MapsScreen" component={MapsScreen} />
+        <Drawer.Screen name="RideScreen Test" component={MapRideTestScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

@@ -1,19 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { View, TextInput, Dimensions, SafeAreaView, TextStyle } from 'react-native';
+import React, { useEffect, useReducer } from 'react';
+import { View } from 'react-native';
 import tw from 'twrnc'
 import LocationNamesCard from './LocationNamesCard';
 import MapMain from './MapMain';
 import PickAndDropInput from './PickAndDropInput';
 import * as IMAGES from './config/images'
-
-// const SEARCH: TextStyle = {
-//   borderColor: 'white',
-//   margin: 20,
-//   top: 20,
-// }
-
+import * as COLORS from './config/colors'
 const SEARCH = [tw`absolute w-full p-2`]
-// const SEARCH = [tw`bg-stone-900  text-white h-10 absolute m-5 border-white self-center px-5 w-11/12`]
 
 
 type FocusLocation = {
@@ -23,36 +16,56 @@ type FocusLocation = {
 
 export default () => {
 
-    const [address, setAddress] = useState("")
-    const [focusLocation, setFoucsLocation] = useState<FocusLocation>({ lat: 12.91104, lng: 77.5116113 })
-    const [suggestedAddresses, setSuggestedAddresses] = useState([])
+    const initialState = {
+        address: "",
+        pickUp: {} as FocusLocation,
+        drop: {} as FocusLocation,
+        suggestedAddresses: []
+    }
+
+    function reducer(state: typeof initialState, action: { type: string; payload: any }) {
+        const { type, payload } = action;
+        return { ...state, [type]: payload };
+    }
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+
 
 
     useEffect(() => {
-        if (address) {
-            fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${address}&key=AIzaSyBYkVZ398sQrKfkKccdpRPe_dA57lD3y3w`)
+        if (state.address) {
+            fetch(`https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${state.address}&key=AIzaSyBYkVZ398sQrKfkKccdpRPe_dA57lD3y3w`)
                 .then((response) => response.json())
                 .then((data) => {
-                    // setFoucsLocation({ ...data?.results[0]?.geometry?.location })
-                    console.log(data)
-                    setSuggestedAddresses([...data?.predictions])
+                    dispatch({ type: 'suggestedAddresses', payload: [...data?.predictions] })
                 })
-                .catch((error) => console.log(error))
-        }
+                .catch((error) => { })
+        } else dispatch({ type: 'suggestedAddresses', payload: [] })
 
-    }, [address])
+    }, [state.address])
+
+
+    function getCoordinate(placeId: string) {
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?place_id=${placeId}&key=AIzaSyBYkVZ398sQrKfkKccdpRPe_dA57lD3y3w`)
+            .then((response) => response.json())
+            .then((data) => {
+                dispatch({ type: 'pickUp', payload: { ...data?.results[0]?.geometry?.location } })
+                dispatch({ type: 'suggestedAddresses', payload: [] })
+            })
+            .catch((error) => { })
+    }
 
     return (
         <View style={{ flex: 1 }}>
 
-            <MapMain location={focusLocation && { latitude: focusLocation.lat, longitude: focusLocation.lng }} />
-            {/* < TextInput selectionColor={'white'} placeholderTextColor={"white"} style={SEARCH} placeholder='Search any place' onEndEditing={(event) => setAddress(event.nativeEvent.text)} /> */}
+            <MapMain pickUp={state.pickUp && { latitude: state.pickUp?.lat, longitude: state.pickUp?.lng }} />
             <View style={SEARCH}>
-                <PickAndDropInput inputText={address} inputTitle='Pickup' clearInput={() => (setSuggestedAddresses([]), setAddress(''))} onValueChange={setAddress} />
-                {suggestedAddresses.map((address) => {
+                <PickAndDropInput inputText={state.address} inputTitle='Pickup' clearInput={() => (dispatch({ type: 'suggestedAddresses', payload: [] }), dispatch({ type: 'address', payload: '' }))} onValueChange={(inputText) => dispatch({ type: 'address', payload: inputText })} />
+                <View style={tw`h-1`} />
+                {state.suggestedAddresses.map((address) => {
                     return (
-                        <View style={tw`my-1`} >
-                            <LocationNamesCard imageId={IMAGES.MARKER_ICON} AddressTitle={address?.structured_formatting?.main_text} AddressFull={address?.description} distance={10} />
+                        <View style={tw`bg-[${COLORS.WHITE}]`} >
+                            <LocationNamesCard onPress={() => (dispatch({ type: 'address', payload: address?.structured_formatting?.main_text }), getCoordinate(address?.place_id))} imageId={IMAGES.MARKER_ICON} AddressTitle={address?.structured_formatting?.main_text} AddressFull={address?.description} distance={10} />
                         </View>
                     )
                 })}

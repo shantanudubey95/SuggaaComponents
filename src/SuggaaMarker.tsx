@@ -4,6 +4,7 @@ import { Image, ImageStyle, View } from 'react-native'
 import tw from 'twrnc'
 import RippleAnimation from './RippleAnimation'
 import * as COLORS from './config/colors'
+import CurrentLocation from './CurrentLocation'
 
 type MarkerProps = {
     image: number,
@@ -12,7 +13,7 @@ type MarkerProps = {
         longitude: number,
     },
     noTransForm?: boolean,
-    transformObj: any,
+    transformObj?: any,
     zoom?: number,
     currentLocation?: boolean
 }
@@ -53,12 +54,13 @@ export default function SuggaaMarker({ image, coordinate, transformObj, noTransF
 
     return (
         <Marker tracksInfoWindowChanges={true} anchor={ANCHOR} centerOffset={CENTEROFFSET} coordinate={coordinate} >
-            {currentLocation &&
-                <View style={tw`absolute bottom-2 self-center`}>
-                    <RippleAnimation size={5} color={COLORS.BLUE} />
-                </View>}
-            <Image /*onLayout={(event) => (setImgWidth(event.nativeEvent.layout.width), setImgHeight(event.nativeEvent.layout.height))}*/ style={{ ...(imWidth && { width: imWidth, height: imgHeight }), ...(!noTransForm && transformObj), resizeMode: 'contain' }} source={image} />
-
+            {currentLocation ?
+                <View style={tw`py-5`}>
+                    <CurrentLocation />
+                </View>
+                :
+                <Image /*onLayout={(event) => (setImgWidth(event.nativeEvent.layout.width), setImgHeight(event.nativeEvent.layout.height))}*/ style={{ ...(imWidth && { width: imWidth, height: imgHeight }), ...(!noTransForm && transformObj), resizeMode: 'contain' }} source={image} />
+            }
         </Marker>
     )
 

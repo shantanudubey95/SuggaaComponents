@@ -9,11 +9,12 @@ type props = {
   AddressTitle: string;
   AddressFull: string;
   distance: number;
+  onPress?: () => void
 };
 
-export default function LocationNamesCard({ imageId, AddressTitle, AddressFull, distance }: props) {
+export default function LocationNamesCard({ imageId, AddressTitle, AddressFull, distance, onPress }: props) {
   return (
-    <Pressable style={tw`flex-row bg-[${COLORS.WHITE}]`}>
+    <Pressable style={tw`flex-row bg-[${COLORS.WHITE}]`} onPress={onPress}>
       <View style={tw`mr-2 items-center`}>
         <Image source={imageId} />
         <Text style={tw`text-2 text-[${COLORS.SPANISH_GREY}]`}>{distance} km</Text>

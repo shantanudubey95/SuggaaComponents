@@ -10,14 +10,14 @@ type location = {
     latitude: number,
     longitude: number,
 }
-export default function MapRoute({ pickUp, drop, style }: { pickUp: location, drop: location, style: string }) {
+export default function MapRoute({ pickUp, drop, style, mapStyle }: { pickUp: location, drop: location, style: string, mapStyle: string }) {
 
     const map = useRef(null)
 
     return (
 
         <View style={tw`${style}`}>
-            <MapView ref={map} region={{ latitude: 12.9169211, longitude: 77.5206152, longitudeDelta: 0, latitudeDelta: 0 }} style={tw`${style}`} >
+            <MapView ref={map} region={{ latitude: 12.9169211, longitude: 77.5206152, longitudeDelta: 0, latitudeDelta: 0 }} style={tw`${mapStyle}`} >
                 <SuggaaMarker noTransForm transformObj={null} image={IMAGES.PICKUP_MARKER} coordinate={pickUp} />
                 <SuggaaMarker noTransForm transformObj={null} image={IMAGES.DROP_MARKER} coordinate={drop} />
             </MapView>
