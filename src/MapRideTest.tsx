@@ -6,6 +6,7 @@ import tw from 'twrnc'
 import SuggaaMarker from './SuggaaMarker'
 import * as IMAGES from './config/images'
 import * as COLORS from './config/colors'
+import { decode } from "@googlemaps/polyline-codec";
 
 
 type location = {
@@ -14,7 +15,7 @@ type location = {
 
 export default function MapRideTest() {
 
-    const [myLocationn, setLocation] = useState<location>()
+    const [myLocationn, setLocation] = useState<location>({ latitude: 12.918510, longitude: 77.520564 })
     const map = useRef(null)
     const [polyLines, setPolyLines] = useState<location[]>([])
 
@@ -37,20 +38,20 @@ export default function MapRideTest() {
 
 
     function getDirection() {
-        fetch(`https://maps.googleapis.com/maps/api/directions/json?origin=12.918510,77.520564&destination=12.930482,77.510855&key=AIzaSyBYkVZ398sQrKfkKccdpRPe_dA57lD3y3w`)
+        fetch(`https://maps.googleapis.com/maps/api/directions/json?origin=12.918510,77.520564&destination=12.929481,77.544475&key=AIzaSyBYkVZ398sQrKfkKccdpRPe_dA57lD3y3w`)
             .then(response => response.json())
             .then(data => {
-                let steps = data?.routes[0]?.legs[0]?.steps
-                let arrayOfCoordinates: location[] = []
-                if (steps && steps.length) {
-                    steps.forEach((step) => {
-                        arrayOfCoordinates.push({ latitude: step.start_location.lat, longitude: step.start_location.lng })
-                        arrayOfCoordinates.push({ latitude: step.end_location.lat, longitude: step.end_location.lng })
-                    })
-                    setPolyLines(arrayOfCoordinates)
-                }
+                let points = data?.routes[0]?.overview_polyline?.points
+                let decodedPoints = decode(points, 5)
+                let coords = decodedPoints.map((point) => {
+                    return {
+                        latitude: point[0],
+                        longitude: point[1]
+                    }
+                })
+                setPolyLines(coords)
             })
-            .catch(error => { })
+            .catch(error => { console.log(error) })
     }
 
     return (
@@ -58,17 +59,19 @@ export default function MapRideTest() {
             <MapView
                 followsUserLocation={true}
                 zoomEnabled={true}
-                initialRegion={myLocationn && { ...myLocationn, latitudeDelta: 5, longitudeDelta: 5 }}
+                initialRegion={{ ...myLocationn, latitudeDelta: 1, longitudeDelta: 1 }}
                 showsMyLocationButton
                 ref={map}
                 style={tw`w-[${Dimensions.get('window').width}] h-[${Dimensions.get('window').width}]`
                 }>
                 <SuggaaMarker noTransForm image={IMAGES.PICKUP_MARKER} coordinate={{ latitude: 12.918510, longitude: 77.520564 }} />
-                <SuggaaMarker noTransForm image={IMAGES.DROP_MARKER} coordinate={{ latitude: 12.930482, longitude: 77.510855 }} />
+                {polyLines && polyLines.length ?
+                    <SuggaaMarker noTransForm image={IMAGES.HATCH_MARKER} coordinate={polyLines[polyLines.length - 1]} />
+                    : null}
                 <Polyline
-                    coordinates={[...polyLines]}
-                    strokeColor="#000"
-                    strokeWidth={6}
+                    coordinates={polyLines}
+                    strokeColor={COLORS.BLACK}
+                    strokeWidth={2}
                 />
             </MapView>
 

@@ -54,3 +54,4 @@ export const MY_LOCATION_MARKER = require('../../assets/myLocationMarker.png');
 export const PICKUP_MARKER = require('../../assets/pickUpMarker.png');
 export const DROP_MARKER = require('../../assets/dropMarker.png');
 export const LOCATION_CIRCLE = require('../../assets/locationCircle.png');
+export const LOCATION_CIRCLE_RED = require('../../assets/locationCircleRed.png');
