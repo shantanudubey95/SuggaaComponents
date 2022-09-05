@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 import tw from 'twrnc';
 
 import AddStopInput from './AddStopInput';
@@ -195,7 +195,9 @@ export default function HomeScreen() {
       <SuggaButton buttonType='FILLED' text='Show Bottom Modal' onPress={() => setShowBottoModal(true)} />
       {showBottoModal &&
         <BottomModal onClose={() => setShowBottoModal(false)} height={300}>
-          <View style={tw`h-full bg-[${COLORS.SPANIS_VIRIDIAN}] w-full`} />
+          <View style={tw`justify-center items-center h-full`}>
+            <Text>Place your view here</Text>
+          </View>
         </BottomModal>}
 
       <View style={tw`my-10`} />

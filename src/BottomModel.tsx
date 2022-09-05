@@ -4,6 +4,7 @@ import * as IMAGES from './config/images'
 import * as COLORS from './config/colors'
 import tw from 'twrnc'
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated'
+import { StatusBar } from 'expo-status-bar'
 
 type props = ViewProps & {
     onClose: () => void,
@@ -25,9 +26,9 @@ export default function BottomModal({ onClose, children, height }: props) {
     })
 
     return (
-        <Modal visible={true} transparent style={tw`h-full`}>
+        <Modal visible={true} transparent style={tw`h-full`} statusBarTranslucent>
             <Pressable style={tw`flex-1 bg-[${COLORS.BLACK}] opacity-50`} onPress={onClose} />
-            <Animated.View onLayout={onLayout} style={[viewStyle, tw`rounded-tl-1.25 rounded-tr-1.25`]}>
+            <Animated.View onLayout={onLayout} style={[viewStyle, tw`bg-[${COLORS.WHITE}] rounded-tl-1.25 rounded-tr-1.25`]}>
                 {children}
             </Animated.View>
         </Modal>
