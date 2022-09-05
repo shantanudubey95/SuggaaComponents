@@ -55,3 +55,15 @@ export const PICKUP_MARKER = require('../../assets/pickUpMarker.png');
 export const DROP_MARKER = require('../../assets/dropMarker.png');
 export const LOCATION_CIRCLE = require('../../assets/locationCircle.png');
 export const LOCATION_CIRCLE_RED = require('../../assets/locationCircleRed.png');
+export const ARROW_RIGHT_BLACK = require('../../assets/rightArrowToolTip.png');
+export const INFO_GREY = require('../../assets/infoGrey.png');
+
+export const BIKE = require('../../assets/bike.png');
+export const SCOOTER = require('../../assets/scooter.png');
+export const RICKSHAW = require('../../assets/rickshaw.png');
+export const SEDAN = require('../../assets/sedan.png');
+export const HATCH_BACK = require('../../assets/hatchback.png');
+
+export const EYE = require('../../assets/eye.png');
+export const DELETED = require('../../assets/delete.png');
+export const UPLOADED_TICK = require('../../assets/uploadedTick.png');

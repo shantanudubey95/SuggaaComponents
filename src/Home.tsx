@@ -19,6 +19,10 @@ import * as IMAGES from './config/images';
 import RippleAnimation from './RippleAnimation';
 import MapRoute from './MapRoute';
 import CurrentLocation from './CurrentLocation';
+import ToolTip from './ToolTip';
+import VehicleWithFareCard from './VehicleWithFareCard';
+import UploadCard from './UploadCard';
+import BottomModal from './BottomModel';
 
 export default function HomeScreen() {
   const [, setLocationName] = React.useState('');
@@ -26,6 +30,7 @@ export default function HomeScreen() {
   const [selectedCheckBox, setSelectedCheckBox] = React.useState('');
   const [selectedDropDownValue, setSelectedDropDownValue] = React.useState('');
   const [driverType, setDriverType] = React.useState('NoVehicle');
+  const [showBottoModal, setShowBottoModal] = React.useState(false)
 
   return (
     <ScrollView style={tw`w-full`} contentContainerStyle={tw`p-4`}>
@@ -177,7 +182,24 @@ export default function HomeScreen() {
       <View style={tw`my-4`} />
       <CurrentLocation />
 
+      <View style={tw`my-4`} />
+      <ToolTip address='Some Address goes here' onPress={() => alert('your action here')} />
+
+      <View style={tw`my-4`} />
+      <VehicleWithFareCard duration='10' fare={120} vehicleType='SEDAN' onPress={() => alert('Add here')} />
+
+      <View style={tw`my-4`} />
+      <UploadCard message='First page' />
+
+      <View style={tw`my-4`} />
+      <SuggaButton buttonType='FILLED' text='Show Bottom Modal' onPress={() => setShowBottoModal(true)} />
+      {showBottoModal &&
+        <BottomModal onClose={() => setShowBottoModal(false)} height={300}>
+          <View style={tw`h-full bg-[${COLORS.SPANIS_VIRIDIAN}] w-full`} />
+        </BottomModal>}
+
       <View style={tw`my-10`} />
+
     </ScrollView>
   );
 }
