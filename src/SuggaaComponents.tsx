@@ -28,6 +28,7 @@ import SuggaaSelectButton from './SuggaaSelectButton';
 import SuggaaStarRating from './SuggaaStarRating';
 import SuggaaTextInput from './SuggaaTextInput';
 import * as COLORS from './config/colors';
+import SuggaaSlidingButton from './SuggaaSlidingButton';
 
 export default function App() {
   //   const [fontsLoaded] = useFonts({
@@ -45,6 +46,9 @@ export default function App() {
   const [selectedCheckBox, setSelectedCheckBox] = React.useState('');
   const [, setDOB] = React.useState('');
   const [rating, setRating] = React.useState(0);
+  const [toggleState, setToggleState] = React.useState(false);
+  const handleToggle = (value: boolean | ((prevState: boolean) => boolean)) =>
+    setToggleState(value);
   //   if (!fontsLoaded) {
   //     return <AppLoading />;
   //   } else {
@@ -134,6 +138,18 @@ export default function App() {
       />
       <SuggaaStarRating rating={3} />
       <Star rating={rating} setRating={setRating} />
+      <SuggaaSlidingButton
+        text="Cancle Ride"
+        lightColor="#F58E8E"
+        darkColor="#EA1D1D"
+        onToggle={handleToggle}
+      />
+      <SuggaaSlidingButton
+        text="Rider Located"
+        lightColor="#81C0AE"
+        darkColor="#04825C"
+        onToggle={handleToggle}
+      />
       <StatusBar style="auto" />
     </ScrollView>
   );

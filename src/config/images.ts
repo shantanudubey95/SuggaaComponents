@@ -67,3 +67,4 @@ export const HATCH_BACK = require('../../assets/hatchback.png');
 export const EYE = require('../../assets/eye.png');
 export const DELETED = require('../../assets/delete.png');
 export const UPLOADED_TICK = require('../../assets/uploadedTick.png');
+export const ARROW = require('../../assets/arrow.png');
