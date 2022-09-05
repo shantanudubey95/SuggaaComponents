@@ -30,6 +30,7 @@ import SuggaaTextInput from './SuggaaTextInput';
 import * as COLORS from './config/colors';
 import SuggaaSlidingButton from './SuggaaSlidingButton';
 import ExpoSvg from './ExpoSvg';
+import SuggaaDriverRating from './SuggaaDriverRating';
 
 export default function App() {
   //   const [fontsLoaded] = useFonts({
@@ -160,6 +161,15 @@ export default function App() {
           { label: 'Fri', earning: 90 },
           { label: 'Sat', earning: 120 },
           { label: 'Sun', earning: 160 },
+        ]}
+      />
+      <SuggaaDriverRating
+        steps={[
+          { star: 1, rating: 170 },
+          { star: 2, rating: 37 },
+          { star: 3, rating: 76 },
+          { star: 4, rating: 10 },
+          { star: 5, rating: 14 },
         ]}
       />
       <StatusBar style="auto" />
