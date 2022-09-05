@@ -29,6 +29,7 @@ import SuggaaStarRating from './SuggaaStarRating';
 import SuggaaTextInput from './SuggaaTextInput';
 import * as COLORS from './config/colors';
 import SuggaaSlidingButton from './SuggaaSlidingButton';
+import ExpoSvg from './ExpoSvg';
 
 export default function App() {
   //   const [fontsLoaded] = useFonts({
@@ -149,6 +150,17 @@ export default function App() {
         lightColor="#81C0AE"
         darkColor="#04825C"
         onToggle={handleToggle}
+      />
+      <ExpoSvg
+        steps={[
+          { label: 'Mon', earning: 200 },
+          { label: 'Tue', earning: 70 },
+          { label: 'Wed', earning: 100 },
+          { label: 'Thu', earning: 50 },
+          { label: 'Fri', earning: 90 },
+          { label: 'Sat', earning: 120 },
+          { label: 'Sun', earning: 160 },
+        ]}
       />
       <StatusBar style="auto" />
     </ScrollView>
