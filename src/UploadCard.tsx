@@ -5,10 +5,12 @@ import * as COLORS from './config/colors'
 import tw from 'twrnc'
 
 type props = {
-    message: string
+    message: string,
+    action1: () => void,
+    action2: () => void,
 }
 
-export default function UploadCard({ message }: props) {
+export default function UploadCard({ message, action1, action2 }: props) {
 
 
     return (
@@ -18,10 +20,10 @@ export default function UploadCard({ message }: props) {
                 <Text numberOfLines={1} style={tw`text-[${COLORS.BLACK}] text-3.75 text-left`}>{message}</Text>
             </View>
             <View style={tw`flex-row`}>
-                <Pressable onPress={() => { }} style={tw`ml-2.5`}>
+                <Pressable onPress={action1} style={tw`ml-2.5`}>
                     <Image resizeMode='contain' source={IMAGES.EYE} />
                 </Pressable>
-                <Pressable onPress={() => { }} style={tw`ml-2.5`}>
+                <Pressable onPress={action2} style={tw`ml-2.5`}>
                     <Image resizeMode='contain' source={IMAGES.DELETED} />
                 </Pressable>
             </View>

@@ -23,6 +23,8 @@ import ToolTip from './ToolTip';
 import VehicleWithFareCard from './VehicleWithFareCard';
 import UploadCard from './UploadCard';
 import BottomModal from './BottomModel';
+import PickupPointer from './PickupPointer';
+import DropPointer from './DropPointer';
 
 export default function HomeScreen() {
   const [, setLocationName] = React.useState('');
@@ -173,8 +175,6 @@ export default function HomeScreen() {
         category="FleetOwner"
         isActive={driverType === 'FleetOwner'}
       />
-      <View style={tw`my-4`} />
-      <RippleAnimation size={20} color={COLORS.BLUE} />
 
       <View style={tw`my-4`} />
       <MapRoute mapStyle={`self-stretch h-50  rounded-1.25`} style={`w-full h-50 items-center justify-center shadow-md w-full bg-[${COLORS.WHITE}] rounded-1.25`} pickUp={{ latitude: 12.9162028, longitude: 77.5210518 }} drop={{ latitude: 12.929481, longitude: 77.544475 }} />
@@ -183,13 +183,21 @@ export default function HomeScreen() {
       <CurrentLocation />
 
       <View style={tw`my-4`} />
+      <PickupPointer />
+
+      <View style={tw`my-4`} />
+      <DropPointer />
+
+      <View style={tw`my-4`} />
       <ToolTip address='Some Address goes here' onPress={() => alert('your action here')} />
 
       <View style={tw`my-4`} />
       <VehicleWithFareCard duration='10' fare={120} vehicleType='SEDAN' onPress={() => alert('Add here')} />
+      <View style={tw`my-4`} />
+      <VehicleWithFareCard duration='7' fare={80} vehicleType='BIKE' onPress={() => alert('Add here')} />
 
       <View style={tw`my-4`} />
-      <UploadCard message='First page' />
+      <UploadCard message='First page' action1={() => alert('action1')} action2={() => alert('action2')} />
 
       <View style={tw`my-4`} />
       <SuggaButton buttonType='FILLED' text='Show Bottom Modal' onPress={() => setShowBottoModal(true)} />

@@ -28,9 +28,10 @@ export default function VehicleWithFareCard({ vehicleType, duration, fare, onPre
         <Pressable style={tw`bg-[${COLORS.WHITE}] rounded-1.25 flex-row items-center px-5 py-0`}>
             <Image resizeMode='contain' source={getVehicleType()} />
             <View style={tw`flex-row items-end flex-1 justify-start my-5.25 self-stretch`}>
-                <View style={tw`w-7.5`} />
-                <Text numberOfLines={1} style={tw`text-[${COLORS.BLACK}] text-3.75 text-[${COLORS.BLACK}]`}>{vehicleType}</Text>
-                <View style={tw`w-1.5`} />
+                <View style={tw`w-12 ml-5`}>
+                    <Text numberOfLines={1} style={tw`text-[${COLORS.BLACK}] text-3.75 text-[${COLORS.BLACK}]`}>{vehicleType}</Text>
+                </View>
+                <View style={tw`w-3`} />
                 <Text numberOfLines={1} style={tw`text-[${COLORS.BLACK}] text-3.37 text-[${COLORS.LIGHT_GRAY_BORDER}]`}>{duration} min</Text>
                 <View style={tw`flex-1`} />
                 <Text numberOfLines={1} style={tw`text-[${COLORS.BLACK}] text-3.75 text-[${COLORS.BLACK}]`}>₹{fare}</Text>

@@ -18,3 +18,5 @@ export const NEON_BLUE = '#0F0BAB';
 export const SPANISH_GREY = '#979797';
 export const CULTERED = '#F5F5F5';
 export const GRANITE_GRAY = '#66666';
+export const LUST_RED_LIGHT = '#EA1D1D33'
+
