@@ -34,6 +34,7 @@ import SuggaaTextInput from './SuggaaTextInput';
 import UploadButton from './UploadButton';
 import VehicleCategory from './VehicleCategory';
 import * as COLORS from './config/colors';
+import Payment from './PaymentMethod';
 
 export default function App() {
   //   const [fontsLoaded] = useFonts({
@@ -185,6 +186,7 @@ export default function App() {
       />
       <UploadButton title="Fitness Certicate" />
       <VehicleCategory vehicleType="Bike" />
+      <Payment price={121} onPress={() => {}} />
       <StatusBar style="auto" />
     </ScrollView>
   );

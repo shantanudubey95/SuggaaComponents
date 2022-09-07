@@ -12,7 +12,7 @@ type Props = {
 
 const Payment = (props: Props) => {
   return (
-    <View style={tw`w-full h-38 rounded-md shadow-lg bg-white mt-8 justify-evenly items-center`}>
+    <View style={tw`py-3.5 px-9 rounded-md shadow-lg bg-white mt-8 justify-evenly items-center`}>
       <Text style={tw`font-semibold text-2xl`}>Total Fare ₹{props.price}</Text>
       <View style={tw`flex-row items-center`}>
         <Image source={IMAGES.UPI} />
@@ -24,7 +24,7 @@ const Payment = (props: Props) => {
       <Pressable
         style={tw`px-11.25 py-1.25 bg-[${COLORS.SPANIS_VIRIDIAN}] rounded-md`}
         onPress={props.onPress}>
-        <Text style={tw`text-2xl font-medium text-white`}>Pay ₹{props.price} now</Text>
+        <Text style={tw`text-[25px] font-medium text-white`}>Pay ₹{props.price} now</Text>
       </Pressable>
     </View>
   );
