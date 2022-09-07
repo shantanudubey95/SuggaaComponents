@@ -15,6 +15,7 @@ import { Button, ScrollView, View } from 'react-native';
 import tw from 'twrnc';
 
 import AnimatedText from './AnimatedText';
+import ExpoSvg from './ExpoSvg';
 import DateInput from './MaskedText/DateInput';
 import OTPInputs from './OTPInputs';
 import OnOffDutySwitch from './OnOffDutySwitch';
@@ -22,15 +23,15 @@ import PressableButton from './PressableButton';
 import ProfilePicture from './ProfilePicture';
 import ProgressAnimation from './ProgressAnimation';
 import ReferCode from './ReferCode';
+import RideDetailBox from './RideDetailBox';
 import SelectRide from './SelectRide';
 import Star from './Star';
+import SuggaaDriverRating from './SuggaaDriverRating';
 import SuggaaSelectButton from './SuggaaSelectButton';
+import SuggaaSlidingButton from './SuggaaSlidingButton';
 import SuggaaStarRating from './SuggaaStarRating';
 import SuggaaTextInput from './SuggaaTextInput';
 import * as COLORS from './config/colors';
-import SuggaaSlidingButton from './SuggaaSlidingButton';
-import ExpoSvg from './ExpoSvg';
-import SuggaaDriverRating from './SuggaaDriverRating';
 
 export default function App() {
   //   const [fontsLoaded] = useFonts({
@@ -170,6 +171,14 @@ export default function App() {
           { star: 3, rating: 76 },
           { star: 4, rating: 10 },
           { star: 5, rating: 14 },
+        ]}
+      />
+      <RideDetailBox
+        isActive={false}
+        details={[
+          { title: 'Earning', value: 472 },
+          { title: 'Online', value: 32 },
+          { title: 'Trip', value: 8 },
         ]}
       />
       <StatusBar style="auto" />
