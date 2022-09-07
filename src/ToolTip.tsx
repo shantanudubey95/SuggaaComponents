@@ -11,7 +11,7 @@ type props = {
 
 export default function ToolTip({ address, onPress }: props) {
     return (
-        <Pressable onPress={onPress} style={tw`bg-[${COLORS.WHITE}] shadow-md rounded-1.25 max-w-27.25`}>
+        <Pressable onPress={onPress} style={tw`bg-[${COLORS.WHITE}] shadow-md rounded-1.25 w-27.25`}>
             <View style={tw`flex-row`}>
                 <View style={tw`p-1.25 pr-4 flex-1`}>
                     <Text numberOfLines={1} style={tw`text-[${COLORS.BLACK}] text-3`}>{address}</Text>
