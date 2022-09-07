@@ -68,3 +68,4 @@ export const EYE = require('../../assets/eye.png');
 export const DELETED = require('../../assets/delete.png');
 export const UPLOADED_TICK = require('../../assets/uploadedTick.png');
 export const ARROW = require('../../assets/arrow.png');
+export const UPLOAD = require('../../assets/upload.png');

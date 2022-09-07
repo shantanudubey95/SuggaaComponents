@@ -31,6 +31,7 @@ import SuggaaSelectButton from './SuggaaSelectButton';
 import SuggaaSlidingButton from './SuggaaSlidingButton';
 import SuggaaStarRating from './SuggaaStarRating';
 import SuggaaTextInput from './SuggaaTextInput';
+import UploadButton from './UploadButton';
 import * as COLORS from './config/colors';
 
 export default function App() {
@@ -181,6 +182,7 @@ export default function App() {
           { title: 'Trip', value: 8 },
         ]}
       />
+      <UploadButton title="Fitness Certicate" />
       <StatusBar style="auto" />
     </ScrollView>
   );
