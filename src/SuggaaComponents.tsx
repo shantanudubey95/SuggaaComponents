@@ -15,15 +15,18 @@ import { Button, ScrollView, View } from 'react-native';
 import tw from 'twrnc';
 
 import AnimatedText from './AnimatedText';
+import DriverDetails from './DriverDetails';
 import ExpoSvg from './ExpoSvg';
 import DateInput from './MaskedText/DateInput';
 import OTPInputs from './OTPInputs';
 import OnOffDutySwitch from './OnOffDutySwitch';
+import Payment from './PaymentMethod';
 import PressableButton from './PressableButton';
 import ProfilePicture from './ProfilePicture';
 import ProgressAnimation from './ProgressAnimation';
 import ReferCode from './ReferCode';
 import RideDetailBox from './RideDetailBox';
+import RideDetails from './RideDetails';
 import SelectRide from './SelectRide';
 import Star from './Star';
 import SuggaaDriverRating from './SuggaaDriverRating';
@@ -34,8 +37,7 @@ import SuggaaTextInput from './SuggaaTextInput';
 import UploadButton from './UploadButton';
 import VehicleCategory from './VehicleCategory';
 import * as COLORS from './config/colors';
-import Payment from './PaymentMethod';
-
+import * as IMAGES from './config/images';
 export default function App() {
   //   const [fontsLoaded] = useFonts({
   //     Poppins_300Light,
@@ -187,6 +189,21 @@ export default function App() {
       <UploadButton title="Fitness Certicate" />
       <VehicleCategory vehicleType="Bike" />
       <Payment price={121} onPress={() => {}} />
+      <View style={tw`w-full`}>
+        <DriverDetails
+          car_name="Swift Dezire"
+          car_number="UP32LA8926"
+          driver_image=""
+          driver_name="Allahuakbar"
+          rating={4.9}
+        />
+      </View>
+      <PressableButton onPress={() => {}} icon={IMAGES.CALL} />
+      <PressableButton onPress={() => {}} icon={IMAGES.SHARE} />
+      <RideDetails
+        drop_location="Manas Enclave Phase 2 Indra Nagar Lucknow"
+        pickup_location="Manas Enclave Phase 2 Indra Nagar Lucknow"
+      />
       <StatusBar style="auto" />
     </ScrollView>
   );
