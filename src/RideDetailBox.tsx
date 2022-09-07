@@ -28,7 +28,7 @@ const RideDetailBox = ({ details, isActive }: props) => {
           <View
             style={tw`justify-center items-center flex-1 rounded-b border-[${
               COLORS.SPANIS_VIRIDIAN
-            }] bg-[${isActive === false ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER}]`}>
+            }] bg-[${isActive === true ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER}]`}>
             <Text style={tw`text-lg text-[${COLORS.WHITE}] font-semibold`}>{detail.title}</Text>
           </View>
         </View>

@@ -32,6 +32,7 @@ import SuggaaSlidingButton from './SuggaaSlidingButton';
 import SuggaaStarRating from './SuggaaStarRating';
 import SuggaaTextInput from './SuggaaTextInput';
 import UploadButton from './UploadButton';
+import VehicleCategory from './VehicleCategory';
 import * as COLORS from './config/colors';
 
 export default function App() {
@@ -175,7 +176,7 @@ export default function App() {
         ]}
       />
       <RideDetailBox
-        isActive={false}
+        isActive
         details={[
           { title: 'Earning', value: 472 },
           { title: 'Online', value: 32 },
@@ -183,6 +184,7 @@ export default function App() {
         ]}
       />
       <UploadButton title="Fitness Certicate" />
+      <VehicleCategory vehicleType="Bike" />
       <StatusBar style="auto" />
     </ScrollView>
   );
