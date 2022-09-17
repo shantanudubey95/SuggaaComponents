@@ -1,13 +1,15 @@
-// import {
-//   useFonts,
-//   Poppins_300Light,
-//   Poppins_400Regular,
-//   Poppins_400Regular_Italic,
-//   Poppins_500Medium,
-//   Poppins_700Bold,
-//   Poppins_600SemiBold,
-//   Poppins_900Black,
-// } from '@expo-google-fonts/poppins';
+import {
+  useFonts,
+  Poppins_100Thin,
+  Poppins_200ExtraLight,
+  Poppins_300Light,
+  Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_600SemiBold,
+  Poppins_700Bold,
+  Poppins_800ExtraBold,
+  Poppins_900Black,
+} from '@expo-google-fonts/poppins';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 // import AppLoading from 'expo-app-loading';
@@ -64,15 +66,17 @@ function RideBookedNavigator() {
 }
 
 export default function App() {
-  // const [fontsLoaded] = useFonts({
-  //   Poppins_300Light,
-  //   Poppins_400Regular,
-  //   Poppins_600SemiBold,
-  //   Poppins_400Regular_Italic,
-  //   Poppins_500Medium,
-  //   Poppins_700Bold,
-  //   Poppins_900Black,
-  // });
+  const [fontsLoaded] = useFonts({
+    Poppins_100Thin,
+    Poppins_200ExtraLight,
+    Poppins_300Light,
+    Poppins_400Regular,
+    Poppins_500Medium,
+    Poppins_600SemiBold,
+    Poppins_700Bold,
+    Poppins_800ExtraBold,
+    Poppins_900Black,
+  });
   const LABEL_STYLE = tw`ml--6 text-4 text-[${COLORS.BLACK}]`;
   // const [value, setValue] = React.useState('');
   // const [error, setError] = React.useState<string | null>(null);

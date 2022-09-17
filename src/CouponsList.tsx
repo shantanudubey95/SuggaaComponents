@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import tw from 'twrnc';
 
@@ -7,6 +7,7 @@ import CouponCard from './CouponCard';
 import SuggaButton from './SuggaButton';
 import SuggaaTextInput from './SuggaaTextInput';
 import * as COLORS from './config/colors';
+import SuggaaText from './SuggaaText';
 
 export default function CouponList() {
   const initialState = {
@@ -18,7 +19,6 @@ export default function CouponList() {
     return { ...state, [type]: payload };
   }
   const [state, dispatch] = useReducer(reducer, initialState);
-
   return (
     <View style={tw`p-5 pb-0 flex-1 bg-[${COLORS.WHITE}]`}>
       <SuggaaTextInput
@@ -40,7 +40,7 @@ export default function CouponList() {
         selectionColor={COLORS.SPANIS_VIRIDIAN}
       />
       <View style={tw`my-3.75`}>
-        <Text style={tw`text-5.5 font-bold`}>Available Coupons</Text>
+        <SuggaaText type='semibold' text='Available Coupons' style={tw`text-5.5`} />
       </View>
       <FlatList
         ItemSeparatorComponent={() => <View style={tw`h-5.5`} />}
