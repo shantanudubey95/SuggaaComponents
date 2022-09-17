@@ -12,8 +12,8 @@ import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
-const MAX_TRANSLATE_Y = -SCREEN_HEIGHT + 45;
-const BottomSheet = () => {
+const MAX_TRANSLATE_Y = -SCREEN_HEIGHT + 50;
+const BottomSheet = ({ navigation }: { navigation: any }) => {
   const translateY = useSharedValue(0);
   const scrollTo = React.useCallback((destination: number) => {
     'worklet';
@@ -70,9 +70,9 @@ const BottomSheet = () => {
           <View style={[tw`my-2.5`, { borderWidth: 0.5, borderColor: '#00000040' }]} />
           <View style={tw`w-full h-22.75 mt-6.25`}>
             <DriverDetails
-              driver_name="Raju Mokhtan"
+              driver_name="Lillie Thomas"
               car_number="JH05BM544"
-              car_name="Swift Dezire"
+              car_name="Swift Desire"
               rating={4.8}
               driver_image=""
             />
@@ -102,7 +102,12 @@ const BottomSheet = () => {
             pickup_location="Birsa Munda Airport, Ranchi, Hurlung, ..."
             drop_location="Birsa Munda Airport, Ranchi, Hurlung, ..."
           />
-          <Payment onPress={() => {}} price={121} />
+          <Payment
+            onPress={() => {
+              navigation.navigate('PaymentSheet');
+            }}
+            price={121}
+          />
         </View>
       </Animated.View>
     </GestureDetector>

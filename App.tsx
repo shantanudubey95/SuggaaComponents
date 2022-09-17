@@ -11,6 +11,7 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 // import AppLoading from 'expo-app-loading';
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { Image } from 'react-native';
 import tw from 'twrnc';
@@ -19,6 +20,9 @@ import AboutScreen from './src/About';
 import BottomSheet from './src/BottomSheet';
 import HomeScreen from './src/Home';
 import InsuranceScreen from './src/Insurance';
+import MapRideTestScreen from './src/MapRideTest';
+import MapsScreen from './src/MapsScreen';
+import PaymentSheet from './src/PaymentSheet';
 import PaymentsScreen from './src/Payments';
 import ReferAndEarnScreen from './src/ReferAndEarn';
 import SettingsScreen from './src/Settings';
@@ -29,13 +33,32 @@ import * as COLORS from './src/config/colors';
 import * as IMAGES from './src/config/images';
 import DrawerComponent from './src/navigation/DrawerComponent';
 import TopTabNavigationScreen from './src/navigation/TopTabNavigation';
-import MapsScreen from './src/MapsScreen';
-import MapRideTestScreen from './src/MapRideTest';
-
 const Drawer = createDrawerNavigator();
 type iconProps = {
   image: number;
 };
+const Stack = createStackNavigator();
+
+function RideBookedNavigator() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="BottomSheet"
+        component={BottomSheet}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="PaymentSheet"
+        component={PaymentSheet}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
 
 export default function App() {
   // const [fontsLoaded] = useFonts({
@@ -121,7 +144,11 @@ export default function App() {
         <Drawer.Screen name="My Components" component={HomeScreen} />
         <Drawer.Screen name="Top Tab" component={TopTabNavigationScreen} />
         <Drawer.Screen name="SuggaaComponents" component={SuggaaComponents} />
-        <Drawer.Screen name="BottomSheet" component={BottomSheet} />
+        <Drawer.Screen
+          name="Ride Booked"
+          component={RideBookedNavigator}
+          options={{ header: () => null }}
+        />
         <Drawer.Screen name="MapsScreen" component={MapsScreen} />
         <Drawer.Screen name="RideScreen Test" component={MapRideTestScreen} />
       </Drawer.Navigator>

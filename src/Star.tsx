@@ -9,7 +9,7 @@ interface Props {
   isEnabled: boolean;
 }
 
-export default function SuggaaStarRating({ rating, isEnabled, setRating }: Props) {
+export default function SuggaaStarRating({ rating, setRating }: Props) {
   const [dimension, setdimension] = React.useState({ x: 0, y: 0, width: 0, height: 0 });
   const starWidth = dimension.width / 5;
   console.log('starWidth', starWidth);

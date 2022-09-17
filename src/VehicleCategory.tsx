@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Text, Image } from 'react-native';
 import tw from 'twrnc';
 
-import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
 type Option = 'Bike' | 'Auto' | 'Car';
 
