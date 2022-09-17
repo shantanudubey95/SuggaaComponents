@@ -13,17 +13,14 @@ type props = {
 
 export default function SuggaCheckBox({ title, isActive, onPress }: props) {
   return (
-    <View style={tw`flex-row items-center mr-9.75`}>
+    <Pressable style={tw`flex-row items-center mr-9.75`} onPress={() => onPress(title)}>
       <Pressable
-        onPress={() => onPress(title)}
-        style={tw`mr-3.5 border border-[${
-          COLORS.SPANIS_VIRIDIAN
-        }] h-5 w-5 items-center justify-center rounded-1.25 bg-[${
-          isActive ? COLORS.SPANIS_VIRIDIAN : COLORS.WHITE
-        }]`}>
+        style={tw`mr-3.5 border border-[${COLORS.SPANIS_VIRIDIAN
+          }] h-5 w-5 items-center justify-center rounded-1.25 bg-[${isActive ? COLORS.SPANIS_VIRIDIAN : COLORS.WHITE
+          }]`}>
         {isActive && <Image source={IMAGES.CHECKBOX_TICK} />}
       </Pressable>
       <Text style={tw`text-3 text-[${COLORS.PHTHALO_GREEN}]`}>{title}</Text>
-    </View>
+    </Pressable>
   );
 }

@@ -70,3 +70,6 @@ export const UPLOADED_TICK = require('../../assets/uploadedTick.png');
 export const ARROW = require('../../assets/arrow.png');
 export const UPLOAD = require('../../assets/upload.png');
 export const RICKSHAW_INACTIVE = require('../../assets/rickshawInactive.png');
+
+export const COUPON = require('../../assets/coupon.png');
+export const CASH = require('../../assets/cash.png');
