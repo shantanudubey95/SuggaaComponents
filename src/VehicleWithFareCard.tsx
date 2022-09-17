@@ -25,16 +25,16 @@ export default function VehicleWithFareCard({ vehicleType, duration, fare, onPre
     }
 
     return (
-        <Pressable style={tw`bg-[${COLORS.WHITE}] rounded-1.25 flex-row items-center px-5 py-0`}>
+        <Pressable style={tw`bg-[${COLORS.WHITE}] rounded-1.25 flex-row items-center py-0`}>
             <Image resizeMode='contain' source={getVehicleType()} />
-            <View style={tw`flex-row items-end flex-1 justify-start my-5.25 self-stretch`}>
-                <View style={tw`w-12 ml-5`}>
-                    <Text numberOfLines={1} style={tw`text-[${COLORS.BLACK}] text-3.75 text-[${COLORS.BLACK}]`}>{vehicleType}</Text>
+            <View style={tw`flex-row items-center flex-1 justify-start self-stretch`}>
+                <View style={tw`ml-5`}>
+                    <Text numberOfLines={1} style={tw`text-[${COLORS.BLACK}] text-3.75 text-[${COLORS.BLACK}] font-medium`}>{vehicleType}</Text>
                 </View>
                 <View style={tw`w-3`} />
-                <Text numberOfLines={1} style={tw`text-[${COLORS.BLACK}] text-3.37 text-[${COLORS.LIGHT_GRAY_BORDER}]`}>{duration} min</Text>
+                {/* <Text numberOfLines={1} style={tw`text-[${COLORS.BLACK}] text-3.37 text-[${COLORS.LIGHT_GRAY_BORDER}]`}>{duration} min</Text> */}
                 <View style={tw`flex-1`} />
-                <Text numberOfLines={1} style={tw`text-[${COLORS.BLACK}] text-3.75 text-[${COLORS.BLACK}]`}>₹{fare}</Text>
+                <Text numberOfLines={1} style={tw`text-[${COLORS.BLACK}] text-3.75 text-[${COLORS.BLACK}] font-medium`}>₹{fare}</Text>
                 <Pressable onPress={onPress} style={tw`ml-2.5`}>
                     <Image resizeMode='contain' source={IMAGES.INFO_GREY} />
                 </Pressable>

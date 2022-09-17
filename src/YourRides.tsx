@@ -11,9 +11,8 @@ export default function Rides() {
       <View style={tw`flex-row items-center mb-3.75`}>
         <View style={tw`flex-1`}>
           <Text
-            style={tw`text-[${color ? color : COLORS.BLACK}] ${
-              bolder ? 'font-bold text-3.75' : ''
-            }`}>
+            style={tw`text-[${color ? color : COLORS.BLACK}] ${bolder ? 'font-bold text-3.75' : ''
+              }`}>
             {name}
           </Text>
         </View>
@@ -65,13 +64,17 @@ export default function Rides() {
       {payCards('Total Payable', '₹ 117', true)}
 
       <View style={tw`flex-row`}>
-        <SuggaButton onPress={() => alert('add function here')} text="Mail" buttonType="FILLED" />
+        <View style={tw`flex-1`}>
+          <SuggaButton onPress={() => alert('add function here')} text="Mail" buttonType="FILLED" />
+        </View>
         <View style={tw`w-5`} />
-        <SuggaButton
-          onPress={() => alert('add function here')}
-          text="Suppport"
-          buttonType="BORDER"
-        />
+        <View style={tw`flex-1`}>
+          <SuggaButton
+            onPress={() => alert('add function here')}
+            text="Support"
+            buttonType="BORDER"
+          />
+        </View>
       </View>
     </ScrollView>
   );

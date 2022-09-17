@@ -17,7 +17,9 @@ import { Image } from 'react-native';
 import tw from 'twrnc';
 
 import AboutScreen from './src/About';
+import BookingScreen from './src/BookingScreen';
 import BottomSheet from './src/BottomSheet';
+import CouponList from './src/CouponsList';
 import HomeScreen from './src/Home';
 import InsuranceScreen from './src/Insurance';
 import MapRideTestScreen from './src/MapRideTest';
@@ -33,6 +35,7 @@ import * as COLORS from './src/config/colors';
 import * as IMAGES from './src/config/images';
 import DrawerComponent from './src/navigation/DrawerComponent';
 import TopTabNavigationScreen from './src/navigation/TopTabNavigation';
+
 const Drawer = createDrawerNavigator();
 type iconProps = {
   image: number;
@@ -151,6 +154,8 @@ export default function App() {
         />
         <Drawer.Screen name="MapsScreen" component={MapsScreen} />
         <Drawer.Screen name="RideScreen Test" component={MapRideTestScreen} />
+        <Drawer.Screen name="BookingScreen" component={BookingScreen} />
+        <Drawer.Screen name="Coupons List" component={CouponList} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

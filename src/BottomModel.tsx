@@ -1,5 +1,7 @@
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Pressable, Modal, LayoutChangeEvent, ViewProps } from 'react-native';
+import { View, Text, Image, Pressable, Modal, LayoutChangeEvent, ViewProps } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import Animated, {
   Easing,
   useAnimatedStyle,
@@ -9,13 +11,15 @@ import Animated, {
 import tw from 'twrnc';
 
 import * as COLORS from './config/colors';
+import * as IMAGES from './config/images';
 
 type props = ViewProps & {
+  showModal: boolean;
   onClose: () => void;
-  height: number;
+  height: string;
 };
-export default function BottomModal({ onClose, children, height }: props) {
-  const sharedValue = useSharedValue(0);
+export default function BottomModal({ onClose, children, height, showModal }: props) {
+  const sharedValue = useSharedValue('0%');
 
   function onLayout(layout: LayoutChangeEvent) {
     sharedValue.value = height;
@@ -23,17 +27,19 @@ export default function BottomModal({ onClose, children, height }: props) {
 
   const viewStyle = useAnimatedStyle(() => {
     return {
-      height: withTiming(sharedValue.value, { duration: 300, easing: Easing.linear }),
+      maxHeight: withTiming(sharedValue.value, { duration: 500, easing: Easing.linear }),
     };
   });
 
   return (
-    <Modal visible transparent style={tw`h-full`} statusBarTranslucent>
+    <Modal visible={showModal} transparent style={tw`h-full`} statusBarTranslucent>
       <Pressable style={tw`flex-1 bg-[${COLORS.BLACK}] opacity-50`} onPress={onClose} />
       <Animated.View
         onLayout={onLayout}
         style={[viewStyle, tw`bg-[${COLORS.WHITE}] rounded-tl-1.25 rounded-tr-1.25`]}>
-        {children}
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={tw`p-5`}>
+          {children}
+        </ScrollView>
       </Animated.View>
     </Modal>
   );

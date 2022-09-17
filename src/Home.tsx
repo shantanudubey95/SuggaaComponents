@@ -25,6 +25,8 @@ import UploadCard from './UploadCard';
 import BottomModal from './BottomModel';
 import PickupPointer from './PickupPointer';
 import DropPointer from './DropPointer';
+import SuggaaImageButton from './SuggaaImageButton';
+import CouponCard from './CouponCard';
 
 export default function HomeScreen() {
   const [, setLocationName] = React.useState('');
@@ -207,6 +209,12 @@ export default function HomeScreen() {
             <Text>Place your view here</Text>
           </View>
         </BottomModal>}
+
+      <View style={tw`my-4`} />
+      <SuggaaImageButton imageId={IMAGES.COUPON} onPress={() => alert('add  here')} text="Image Button" buttonType="BORDER" />
+
+      <View style={tw`my-4`} />
+      <CouponCard title="Suggaa" description="Get 30% OFF up to ₹25" validity="Valid of trips worth ₹100 or more." applyAction={() => alert("add here")} />
 
       <View style={tw`my-10`} />
 
