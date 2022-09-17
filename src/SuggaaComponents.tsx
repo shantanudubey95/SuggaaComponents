@@ -21,6 +21,7 @@ import DateInput from './MaskedText/DateInput';
 import OTPInputs from './OTPInputs';
 import OnOffDutySwitch from './OnOffDutySwitch';
 import Payment from './PaymentMethod';
+import PhoneNumberTextInput from './PhoneNumberTextInput';
 import PressableButton from './PressableButton';
 import ProfilePicture from './ProfilePicture';
 import ProgressAnimation from './ProgressAnimation';
@@ -57,6 +58,8 @@ export default function App() {
   const [toggleState, setToggleState] = React.useState(false);
   const handleToggle = (value: boolean | ((prevState: boolean) => boolean)) =>
     setToggleState(value);
+  const [phoneNumber, setPhoneNumber] = React.useState('');
+  const COUNTRY_CODE = '+91';
   //   if (!fontsLoaded) {
   //     return <AppLoading />;
   //   } else {
@@ -137,9 +140,19 @@ export default function App() {
         isActive={selectedCheckBox === 'I perfer not to say'}
       />
       <View style={tw`my-4`} />
-      <SelectRide ride_type="City" />
+      <SelectRide
+        ride_type="City"
+        onpress={function (): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
       <View style={tw`my-4`} />
-      <SelectRide ride_type="Outstation" />
+      <SelectRide
+        ride_type="Outstation"
+        onpress={function (): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
       <ProfilePicture
         defaultImage={require('../assets/picture.jpg')}
         setPickedImage={(img: string) => {}}
@@ -186,7 +199,7 @@ export default function App() {
           { title: 'Trip', value: 8 },
         ]}
       />
-      <UploadButton title="Fitness Certicate" />
+      <UploadButton title="Fitness Certificate" />
       <VehicleCategory vehicleType="Bike" />
       <Payment price={121} onPress={() => {}} />
       <View style={tw`w-full`}>
@@ -203,6 +216,13 @@ export default function App() {
       <RideDetails
         drop_location="Manas Enclave Phase 2 Indra Nagar Lucknow"
         pickup_location="Manas Enclave Phase 2 Indra Nagar Lucknow"
+      />
+      <PhoneNumberTextInput
+        COUNTRY_CODE={COUNTRY_CODE}
+        selectionColor="#04825C"
+        value={phoneNumber}
+        onChangeText={(text) => setPhoneNumber(text)}
+        style={tw`w-full items-center flex-row border-2 border-[#04825C] rounded-md py-3.5 px-4`}
       />
       <StatusBar style="auto" />
     </ScrollView>
