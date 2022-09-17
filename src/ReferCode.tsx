@@ -25,7 +25,7 @@ export default function ReferCode({ code, background }: props) {
       <Pressable style={[tw`absolute right-1 top-1`]} onPress={() => copyToClipboard()}>
         <Image resizeMode="contain" source={IMAGES.COPY_ICON} />
       </Pressable>
-      <SuggaaText type='semibold' numberOfLines={1} style={[tw`text-6.25 uppercase text-[${COLORS.SPANIS_VIRIDIAN}]`]} text={code} />
+      <SuggaaText type='bold' numberOfLines={1} style={[tw`text-6.25 uppercase text-[${COLORS.SPANIS_VIRIDIAN}]`]} text={code} />
     </Pressable>
   );
 }
