@@ -14,7 +14,7 @@ type props = {
 
 export default function CouponCard({ title, description, validity, applyAction }: props) {
   return (
-    <View style={tw`bg-[${COLORS.ANTI_FLASH_WHITE}] py-1.75`}>
+    <View style={tw`bg-[${COLORS.ANTI_FLASH_WHITE}] py-1.75 rounded-1.25`}>
 
       <View style={tw`mx-5.75 mb-4.25`}>
 
@@ -28,9 +28,9 @@ export default function CouponCard({ title, description, validity, applyAction }
         <View style={tw`h-1.25`} />
         <Text style={tw`text-[${COLORS.LUST_RED}] text-3.75`} onPress={applyAction}>{validity}</Text>
       </View>
-
-      <ReferCode code="SUGGAREF25" background={COLORS.WHITE} />
-
+      <View style={tw`mx-1`}>
+        <ReferCode code="SUGGAREF25" background={COLORS.WHITE} />
+      </View>
     </View>
   );
 }

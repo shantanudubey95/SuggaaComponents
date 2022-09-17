@@ -32,6 +32,7 @@ import TopTabNavigationScreen from './src/navigation/TopTabNavigation';
 import MapsScreen from './src/MapsScreen';
 import MapRideTestScreen from './src/MapRideTest';
 import { BookingScreen } from './src/BookingScreen';
+import { CouponList } from './src/CouponsList';
 
 const Drawer = createDrawerNavigator();
 type iconProps = {
@@ -126,6 +127,7 @@ export default function App() {
         <Drawer.Screen name="MapsScreen" component={MapsScreen} />
         <Drawer.Screen name="RideScreen Test" component={MapRideTestScreen} />
         <Drawer.Screen name="BookingScreen" component={BookingScreen} />
+        <Drawer.Screen name="Coupons List" component={CouponList} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
