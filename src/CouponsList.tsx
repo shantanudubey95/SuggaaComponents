@@ -50,8 +50,8 @@ export function CouponList() {
                 onChangeText={(text) => dispatch({ type: 'couponCode', payload: text })}
                 selectionColor={COLORS.SPANIS_VIRIDIAN}
             />
-            <View style={tw`mt-7.5 mb-3.75`}>
-                <Text style={tw`text-5.5`}>Available Coupons</Text>
+            <View style={tw`my-3.75`}>
+                <Text style={tw`text-5.5 font-bold`}>Available Coupons</Text>
             </View>
             <FlatList
                 ItemSeparatorComponent={() => <View style={tw`h-5.5`} />}

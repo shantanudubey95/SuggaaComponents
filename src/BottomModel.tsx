@@ -23,7 +23,7 @@ export default function BottomModal({ onClose, children, height, showModal }: pr
 
     const viewStyle = useAnimatedStyle(() => {
         return ({
-            maxHeight: withTiming(sharedValue.value, { duration: 1000, easing: Easing.linear })
+            maxHeight: withTiming(sharedValue.value, { duration: 500, easing: Easing.linear })
         })
     })
 

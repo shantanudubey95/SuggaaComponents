@@ -19,7 +19,7 @@ export default function CouponCard({ title, description, validity, applyAction }
       <View style={tw`mx-5.75 mb-4.25`}>
 
         <View style={tw`flex-row items-center`}>
-          <Text style={tw`text-[${COLORS.BLACK}] flex-1 text-6.25`}>{title}</Text>
+          <Text style={tw`text-[${COLORS.BLACK}] flex-1 text-6.25 font-bold`}>{title}</Text>
           <View style={tw`h-1.25`} />
           <Text style={tw`text-[${COLORS.BLUE}]`} onPress={applyAction}>Apply</Text>
         </View>
