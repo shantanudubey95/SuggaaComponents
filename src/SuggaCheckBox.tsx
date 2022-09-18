@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, Image } from 'react-native';
+import { Text, Pressable, Image } from 'react-native';
 import tw from 'twrnc';
 
 import * as COLORS from './config/colors';
@@ -15,9 +15,11 @@ export default function SuggaCheckBox({ title, isActive, onPress }: props) {
   return (
     <Pressable style={tw`flex-row items-center mr-9.75`} onPress={() => onPress(title)}>
       <Pressable
-        style={tw`mr-3.5 border border-[${COLORS.SPANIS_VIRIDIAN
-          }] h-5 w-5 items-center justify-center rounded-1.25 bg-[${isActive ? COLORS.SPANIS_VIRIDIAN : COLORS.WHITE
-          }]`}>
+        style={tw`mr-3.5 border border-[${
+          COLORS.SPANIS_VIRIDIAN
+        }] h-5 w-5 items-center justify-center rounded-1.25 bg-[${
+          isActive ? COLORS.SPANIS_VIRIDIAN : COLORS.WHITE
+        }]`}>
         {isActive && <Image source={IMAGES.CHECKBOX_TICK} />}
       </Pressable>
       <Text style={tw`text-3 text-[${COLORS.PHTHALO_GREEN}]`}>{title}</Text>

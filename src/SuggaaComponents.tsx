@@ -160,7 +160,7 @@ export default function App() {
       <SuggaaStarRating rating={3} />
       <Star rating={rating} setRating={setRating} />
       <SuggaaSlidingButton
-        text="Cancle Ride"
+        text="Cancel Ride"
         lightColor="#F58E8E"
         darkColor="#EA1D1D"
         onToggle={handleToggle}

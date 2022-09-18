@@ -1,4 +1,8 @@
-import { DrawerContentScrollView, DrawerItemList, DrawerContentComponentProps } from '@react-navigation/drawer';
+import {
+  DrawerContentScrollView,
+  DrawerItemList,
+  DrawerContentComponentProps,
+} from '@react-navigation/drawer';
 import React from 'react';
 import { View, Image, Text } from 'react-native';
 import tw from 'twrnc';

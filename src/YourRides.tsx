@@ -11,8 +11,9 @@ export default function Rides() {
       <View style={tw`flex-row items-center mb-3.75`}>
         <View style={tw`flex-1`}>
           <Text
-            style={tw`text-[${color ? color : COLORS.BLACK}] ${bolder ? 'font-bold text-3.75' : ''
-              }`}>
+            style={tw`text-[${color ? color : COLORS.BLACK}] ${
+              bolder ? 'font-bold text-3.75' : ''
+            }`}>
             {name}
           </Text>
         </View>

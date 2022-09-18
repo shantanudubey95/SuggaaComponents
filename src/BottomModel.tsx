@@ -1,6 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { View, Text, Image, Pressable, Modal, LayoutChangeEvent, ViewProps } from 'react-native';
+import { Pressable, Modal, LayoutChangeEvent, ViewProps } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import Animated, {
   Easing,
@@ -11,7 +10,6 @@ import Animated, {
 import tw from 'twrnc';
 
 import * as COLORS from './config/colors';
-import * as IMAGES from './config/images';
 
 type props = ViewProps & {
   showModal: boolean;

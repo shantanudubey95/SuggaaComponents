@@ -9,10 +9,16 @@ type props = {
   AddressTitle: string;
   AddressFull: string;
   distance: number;
-  onPress?: () => void
+  onPress?: () => void;
 };
 
-export default function LocationNamesCard({ imageId, AddressTitle, AddressFull, distance, onPress }: props) {
+export default function LocationNamesCard({
+  imageId,
+  AddressTitle,
+  AddressFull,
+  distance,
+  onPress,
+}: props) {
   return (
     <Pressable style={tw`flex-row bg-[${COLORS.WHITE}] py-1.875`} onPress={onPress}>
       <View style={tw`mr-2 items-center`}>

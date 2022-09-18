@@ -3,30 +3,30 @@ import { View, ScrollView, Text } from 'react-native';
 import tw from 'twrnc';
 
 import AddStopInput from './AddStopInput';
+import BottomModal from './BottomModel';
+import CouponCard from './CouponCard';
+import CurrentLocation from './CurrentLocation';
 import CurrentLocationButton from './CurrentLocationButton';
 import DocumentsRequired from './DocumentsRequired';
+import DropPointer from './DropPointer';
 import DriverCateogoryCard from './DrvierCategoryCard';
 import HamburgerIcon from './HamburgerIcon';
 import SearchLocation from './InputSearchLocation';
 import LocationNamesCard from './LocationNamesCard';
+import MapRoute from './MapRoute';
 import PickAndDropInput from './PickAndDropInput';
+import PickupPointer from './PickupPointer';
 import RidesCard from './RidesCard';
+import RippleAnimation from './RippleAnimation';
 import SuggaButton from './SuggaButton';
 import SuggaCheckBox from './SuggaCheckBox';
 import SuggaaDropDown from './SuggaaDropDown';
+import SuggaaImageButton from './SuggaaImageButton';
+import ToolTip from './ToolTip';
+import UploadCard from './UploadCard';
+import VehicleWithFareCard from './VehicleWithFareCard';
 import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
-import RippleAnimation from './RippleAnimation';
-import MapRoute from './MapRoute';
-import CurrentLocation from './CurrentLocation';
-import ToolTip from './ToolTip';
-import VehicleWithFareCard from './VehicleWithFareCard';
-import UploadCard from './UploadCard';
-import BottomModal from './BottomModel';
-import PickupPointer from './PickupPointer';
-import DropPointer from './DropPointer';
-import SuggaaImageButton from './SuggaaImageButton';
-import CouponCard from './CouponCard';
 
 export default function HomeScreen() {
   const [, setLocationName] = React.useState('');
@@ -34,7 +34,7 @@ export default function HomeScreen() {
   const [selectedCheckBox, setSelectedCheckBox] = React.useState('');
   const [selectedDropDownValue, setSelectedDropDownValue] = React.useState('');
   const [driverType, setDriverType] = React.useState('NoVehicle');
-  const [showBottoModal, setShowBottoModal] = React.useState(false)
+  const [showBottoModal, setShowBottoModal] = React.useState(false);
 
   return (
     <ScrollView style={tw`w-full`} contentContainerStyle={tw`p-4`}>
@@ -179,7 +179,12 @@ export default function HomeScreen() {
       />
 
       <View style={tw`my-4`} />
-      <MapRoute mapStyle={`self-stretch h-50  rounded-1.25`} style={`w-full h-50 items-center justify-center shadow-md w-full bg-[${COLORS.WHITE}] rounded-1.25`} pickUp={{ latitude: 12.9162028, longitude: 77.5210518 }} drop={{ latitude: 12.929481, longitude: 77.544475 }} />
+      <MapRoute
+        mapStyle="self-stretch h-50  rounded-1.25"
+        style={`w-full h-50 items-center justify-center shadow-md w-full bg-[${COLORS.WHITE}] rounded-1.25`}
+        pickUp={{ latitude: 12.9162028, longitude: 77.5210518 }}
+        drop={{ latitude: 12.929481, longitude: 77.544475 }}
+      />
 
       <View style={tw`my-4`} />
       <CurrentLocation />
@@ -191,33 +196,61 @@ export default function HomeScreen() {
       <DropPointer />
 
       <View style={tw`my-4`} />
-      <ToolTip address='Some Address goes here' onPress={() => alert('your action here')} />
+      <ToolTip address="Some Address goes here" onPress={() => alert('your action here')} />
 
       <View style={tw`my-4`} />
-      <VehicleWithFareCard duration='10' fare={120} vehicleType='SEDAN' onPress={() => alert('Add here')} />
+      <VehicleWithFareCard
+        duration="10"
+        fare={120}
+        vehicleType="SEDAN"
+        onPress={() => alert('Add here')}
+      />
       <View style={tw`my-4`} />
-      <VehicleWithFareCard duration='7' fare={80} vehicleType='BIKE' onPress={() => alert('Add here')} />
+      <VehicleWithFareCard
+        duration="7"
+        fare={80}
+        vehicleType="BIKE"
+        onPress={() => alert('Add here')}
+      />
 
       <View style={tw`my-4`} />
-      <UploadCard message='First page' action1={() => alert('action1')} action2={() => alert('action2')} />
+      <UploadCard
+        message="First page"
+        action1={() => alert('action1')}
+        action2={() => alert('action2')}
+      />
 
       <View style={tw`my-4`} />
-      <SuggaButton buttonType='FILLED' text='Show Bottom Modal' onPress={() => setShowBottoModal(true)} />
-      {showBottoModal &&
+      <SuggaButton
+        buttonType="FILLED"
+        text="Show Bottom Modal"
+        onPress={() => setShowBottoModal(true)}
+      />
+      {showBottoModal && (
         <BottomModal onClose={() => setShowBottoModal(false)} height={300}>
           <View style={tw`justify-center items-center h-full`}>
             <Text>Place your view here</Text>
           </View>
-        </BottomModal>}
+        </BottomModal>
+      )}
 
       <View style={tw`my-4`} />
-      <SuggaaImageButton imageId={IMAGES.COUPON} onPress={() => alert('add  here')} text="Image Button" buttonType="BORDER" />
+      <SuggaaImageButton
+        imageId={IMAGES.COUPON}
+        onPress={() => alert('add  here')}
+        text="Image Button"
+        buttonType="BORDER"
+      />
 
       <View style={tw`my-4`} />
-      <CouponCard title="Suggaa" description="Get 30% OFF up to ₹25" validity="Valid of trips worth ₹100 or more." applyAction={() => alert("add here")} />
+      <CouponCard
+        title="Suggaa"
+        description="Get 30% OFF up to ₹25"
+        validity="Valid of trips worth ₹100 or more."
+        applyAction={() => alert('add here')}
+      />
 
       <View style={tw`my-10`} />
-
     </ScrollView>
   );
 }

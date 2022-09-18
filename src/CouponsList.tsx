@@ -5,9 +5,9 @@ import tw from 'twrnc';
 
 import CouponCard from './CouponCard';
 import SuggaButton from './SuggaButton';
+import SuggaaText from './SuggaaText';
 import SuggaaTextInput from './SuggaaTextInput';
 import * as COLORS from './config/colors';
-import SuggaaText from './SuggaaText';
 
 export default function CouponList() {
   const initialState = {
@@ -40,7 +40,7 @@ export default function CouponList() {
         selectionColor={COLORS.SPANIS_VIRIDIAN}
       />
       <View style={tw`my-3.75`}>
-        <SuggaaText type='semibold' text='Available Coupons' style={tw`text-5.5`} />
+        <SuggaaText type="semibold" text="Available Coupons" style={tw`text-5.5`} />
       </View>
       <FlatList
         ItemSeparatorComponent={() => <View style={tw`h-5.5`} />}
