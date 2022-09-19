@@ -38,6 +38,7 @@ import * as COLORS from './src/config/colors';
 import * as IMAGES from './src/config/images';
 import DrawerComponent from './src/navigation/DrawerComponent';
 import TopTabNavigationScreen from './src/navigation/TopTabNavigation';
+import LottiesList from './src/LottiesList';
 SplashScreen.preventAutoHideAsync();
 const Drawer = createDrawerNavigator();
 type iconProps = {
@@ -161,6 +162,7 @@ export default function App() {
           <Drawer.Screen name="RideScreen Test" component={MapRideTestScreen} />
           <Drawer.Screen name="BookingScreen" component={BookingScreen} />
           <Drawer.Screen name="Coupons List" component={CouponList} />
+          <Drawer.Screen name="Lotties" component={LottiesList} />
         </Drawer.Navigator>
       </NavigationContainer>
     );
