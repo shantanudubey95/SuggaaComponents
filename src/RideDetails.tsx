@@ -2,6 +2,8 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import tw from 'twrnc';
 
+import TextRegular12 from './Typography/TextRegular12';
+import TextRegular15 from './Typography/TextRegular15';
 import * as COLORS from './config/colors';
 type Props = {
   pickup_location: string;
@@ -14,16 +16,16 @@ const RideDetails = (props: Props) => {
       <View style={tw`flex-row justify-between w-full`}>
         <View style={tw`flex-row items-center`}>
           <View style={tw`h-4 w-4 rounded-2xl bg-[${COLORS.SPANIS_VIRIDIAN}] mr-2.5`} />
-          <Text style={tw`font-normal text-base`}>{props.pickup_location}</Text>
+          <TextRegular12>{props.pickup_location}</TextRegular12>
         </View>
-        <Text style={tw`text-[${COLORS.BLUE}] font-normal text-base`}>Edit</Text>
+        <TextRegular15 style={tw`text-[${COLORS.BLUE}]`}>Edit</TextRegular15>
       </View>
       <View style={tw`flex-row justify-between w-full`}>
         <View style={tw`flex-row items-center`}>
           <View style={tw`h-4 w-4 rounded-2xl bg-[${COLORS.LUST_RED}] mr-2.5`} />
-          <Text style={tw`font-normal text-base`}>{props.drop_location}</Text>
+          <TextRegular12>{props.drop_location}</TextRegular12>
         </View>
-        <Text style={tw`text-[${COLORS.BLUE}] font-normal text-base`}>Edit</Text>
+        <TextRegular15 style={tw`text-[${COLORS.BLUE}]`}>Edit</TextRegular15>
       </View>
     </View>
   );

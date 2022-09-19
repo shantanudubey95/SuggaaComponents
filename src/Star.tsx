@@ -11,9 +11,8 @@ interface Props {
 
 export default function SuggaaStarRating({ rating, setRating }: Props) {
   const [dimension, setdimension] = React.useState({ x: 0, y: 0, width: 0, height: 0 });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const starWidth = dimension.width / 5;
-  console.log('starWidth', starWidth);
-  console.log('Width', dimension.width);
   const onLayout = (event: LayoutChangeEvent) => {
     setdimension(event.nativeEvent.layout);
   };
