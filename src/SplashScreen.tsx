@@ -15,21 +15,21 @@ export default function Splash() {
         <View style={tw`flex-1 p-9.5 items-center justify-center bg-[${COLORS.WHITE}]`}>
             <View style={tw`flex-1  items-center justify-end`}>
                 {animationFinished ?
-                    <Image source={IMAGES.SPLASH_SCREEN_LOGO} style={{ height: 132, left: 0.5, }} resizeMode='contain' />
+                    <Image source={IMAGES.SPLASH_SCREEN_LOGO} style={{ height: 134, }} resizeMode='contain' />
                     :
                     <LottieView
                         onAnimationFinish={() => setAnimationFinished(true)}
                         autoPlay
                         source={ANIMATION}
                         loop={false}
-                        style={{ width: "100%", alignSelf: 'center', position: 'absolute', bottom: -54 }}
+                        style={{ width: 300, alignSelf: 'center', position: 'absolute', bottom: -52 }}
                     />
                 }
             </View>
 
             <View style={tw`flex-1 flex-row items-end justify-center`}>
                 <View style={tw`flex-1 flex-row items-center justify-center`}>
-                    <TextRegular12 text='Made In' />
+                    <TextRegular12>Made In</TextRegular12>
                     <View style={tw`w-1`} />
                     <Image source={IMAGES.INDIAN_FLAG} resizeMode='contain' />
                 </View>

@@ -40,6 +40,8 @@ import DrawerComponent from './src/navigation/DrawerComponent';
 import TopTabNavigationScreen from './src/navigation/TopTabNavigation';
 import LottiesList from './src/LottiesList';
 import Splash from './src/SplashScreen';
+import SplashScreenDriver from './src/SplashScreenDriver';
+import SplashScreenFleet from './src/SplashScreenFleet';
 SplashScreen.preventAutoHideAsync();
 const Drawer = createDrawerNavigator();
 type iconProps = {
@@ -164,7 +166,9 @@ export default function App() {
           <Drawer.Screen name="BookingScreen" component={BookingScreen} />
           <Drawer.Screen name="Coupons List" component={CouponList} />
           <Drawer.Screen name="Lotties" component={LottiesList} />
-          <Drawer.Screen name="Splash" component={Splash} options={{ headerShown: false }} />
+          <Drawer.Screen name="Splash screen Rider" component={Splash} options={{ headerShown: false }} />
+          <Drawer.Screen name="Splash screen Driver" component={SplashScreenDriver} options={{ headerShown: false }} />
+          <Drawer.Screen name="Splash screen Fleet" component={SplashScreenFleet} options={{ headerShown: false }} />
         </Drawer.Navigator>
       </NavigationContainer>
     );
