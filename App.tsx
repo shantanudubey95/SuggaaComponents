@@ -12,8 +12,9 @@ import {
 } from '@expo-google-fonts/poppins';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-// import AppLoading from 'expo-app-loading';
 import { createStackNavigator } from '@react-navigation/stack';
+import AppLoading from 'expo-app-loading';
+import * as SplashScreen from 'expo-splash-screen';
 import React from 'react';
 import { Image } from 'react-native';
 import tw from 'twrnc';
@@ -37,7 +38,7 @@ import * as COLORS from './src/config/colors';
 import * as IMAGES from './src/config/images';
 import DrawerComponent from './src/navigation/DrawerComponent';
 import TopTabNavigationScreen from './src/navigation/TopTabNavigation';
-
+SplashScreen.preventAutoHideAsync();
 const Drawer = createDrawerNavigator();
 type iconProps = {
   image: number;
@@ -81,87 +82,87 @@ export default function App() {
   // const [value, setValue] = React.useState('');
   // const [error, setError] = React.useState<string | null>(null);
   // const [selectedCheckBox] = React.useState('');
-  // if (!fontsLoaded) {
-  //   return <AppLoading />;
-  // } else {
-  const Icon = ({ image }: iconProps) => {
-    return <Image resizeMode="contain" source={image} />;
-  };
-  return (
-    <NavigationContainer>
-      <Drawer.Navigator
-        drawerContent={(props) => <DrawerComponent {...props} />}
-        initialRouteName="Home">
-        <Drawer.Screen
-          name="Your Rides"
-          component={YourRidesScreen}
-          options={{
-            drawerIcon: () => <Icon image={IMAGES.RIDES} />,
-            drawerLabelStyle: LABEL_STYLE,
-          }}
-        />
-        <Drawer.Screen
-          name="Payments"
-          component={PaymentsScreen}
-          options={{
-            drawerIcon: () => <Icon image={IMAGES.PAYEMNT} />,
-            drawerLabelStyle: LABEL_STYLE,
-          }}
-        />
-        <Drawer.Screen
-          name="Insurance"
-          component={InsuranceScreen}
-          options={{
-            drawerIcon: () => <Icon image={IMAGES.INCURANCE} />,
-            drawerLabelStyle: LABEL_STYLE,
-          }}
-        />
-        <Drawer.Screen
-          name="Refer & Earn"
-          component={ReferAndEarnScreen}
-          options={{
-            drawerIcon: () => <Icon image={IMAGES.REFER_AND_EARN} />,
-            drawerLabelStyle: LABEL_STYLE,
-          }}
-        />
-        <Drawer.Screen
-          name="Support"
-          component={SupportScreen}
-          options={{
-            drawerIcon: () => <Icon image={IMAGES.SUPPORT} />,
-            drawerLabelStyle: LABEL_STYLE,
-          }}
-        />
-        <Drawer.Screen
-          name="Settings"
-          component={SettingsScreen}
-          options={{
-            drawerIcon: () => <Icon image={IMAGES.SETTINGS} />,
-            drawerLabelStyle: LABEL_STYLE,
-          }}
-        />
-        <Drawer.Screen
-          name="About"
-          component={AboutScreen}
-          options={{
-            drawerIcon: () => <Icon image={IMAGES.ABOUT} />,
-            drawerLabelStyle: LABEL_STYLE,
-          }}
-        />
-        <Drawer.Screen name="My Components" component={HomeScreen} />
-        <Drawer.Screen name="Top Tab" component={TopTabNavigationScreen} />
-        <Drawer.Screen name="SuggaaComponents" component={SuggaaComponents} />
-        <Drawer.Screen
-          name="Ride Booked"
-          component={RideBookedNavigator}
-          options={{ header: () => null }}
-        />
-        <Drawer.Screen name="MapsScreen" component={MapsScreen} />
-        <Drawer.Screen name="RideScreen Test" component={MapRideTestScreen} />
-        <Drawer.Screen name="BookingScreen" component={BookingScreen} />
-        <Drawer.Screen name="Coupons List" component={CouponList} />
-      </Drawer.Navigator>
-    </NavigationContainer>
-  );
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
+    const Icon = ({ image }: iconProps) => {
+      return <Image resizeMode="contain" source={image} />;
+    };
+    return (
+      <NavigationContainer>
+        <Drawer.Navigator
+          drawerContent={(props) => <DrawerComponent {...props} />}
+          initialRouteName="Home">
+          <Drawer.Screen
+            name="Your Rides"
+            component={YourRidesScreen}
+            options={{
+              drawerIcon: () => <Icon image={IMAGES.RIDES} />,
+              drawerLabelStyle: LABEL_STYLE,
+            }}
+          />
+          <Drawer.Screen
+            name="Payments"
+            component={PaymentsScreen}
+            options={{
+              drawerIcon: () => <Icon image={IMAGES.PAYEMNT} />,
+              drawerLabelStyle: LABEL_STYLE,
+            }}
+          />
+          <Drawer.Screen
+            name="Insurance"
+            component={InsuranceScreen}
+            options={{
+              drawerIcon: () => <Icon image={IMAGES.INCURANCE} />,
+              drawerLabelStyle: LABEL_STYLE,
+            }}
+          />
+          <Drawer.Screen
+            name="Refer & Earn"
+            component={ReferAndEarnScreen}
+            options={{
+              drawerIcon: () => <Icon image={IMAGES.REFER_AND_EARN} />,
+              drawerLabelStyle: LABEL_STYLE,
+            }}
+          />
+          <Drawer.Screen
+            name="Support"
+            component={SupportScreen}
+            options={{
+              drawerIcon: () => <Icon image={IMAGES.SUPPORT} />,
+              drawerLabelStyle: LABEL_STYLE,
+            }}
+          />
+          <Drawer.Screen
+            name="Settings"
+            component={SettingsScreen}
+            options={{
+              drawerIcon: () => <Icon image={IMAGES.SETTINGS} />,
+              drawerLabelStyle: LABEL_STYLE,
+            }}
+          />
+          <Drawer.Screen
+            name="About"
+            component={AboutScreen}
+            options={{
+              drawerIcon: () => <Icon image={IMAGES.ABOUT} />,
+              drawerLabelStyle: LABEL_STYLE,
+            }}
+          />
+          <Drawer.Screen name="My Components" component={HomeScreen} />
+          <Drawer.Screen name="Top Tab" component={TopTabNavigationScreen} />
+          <Drawer.Screen name="SuggaaComponents" component={SuggaaComponents} />
+          <Drawer.Screen
+            name="Ride Booked"
+            component={RideBookedNavigator}
+            options={{ header: () => null }}
+          />
+          <Drawer.Screen name="MapsScreen" component={MapsScreen} />
+          <Drawer.Screen name="RideScreen Test" component={MapRideTestScreen} />
+          <Drawer.Screen name="BookingScreen" component={BookingScreen} />
+          <Drawer.Screen name="Coupons List" component={CouponList} />
+        </Drawer.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
-// }
