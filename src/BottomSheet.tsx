@@ -8,8 +8,11 @@ import DriverDetails from './DriverDetails';
 import Payment from './PaymentMethod';
 import PressableButton from './PressableButton';
 import RideDetails from './RideDetails';
+import TextMedium15 from './Typography/TextMedium15';
+import TextSemiBold22 from './Typography/TextSemiBold22';
 import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
+import TextMedium25 from './Typography/TextMedium25';
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 const MAX_TRANSLATE_Y = -SCREEN_HEIGHT + 50;
@@ -60,11 +63,11 @@ const BottomSheet = ({ navigation }: { navigation: any }) => {
           style={tw`w-15 h-1.25 bg-[${COLORS.LIGHT_GRAY_BORDER}] self-center my-2.25 rounded-md`}
         />
         <View style={tw`flex-1 mx-4.75`}>
-          <Text style={tw`text-2xl font-semibold`}>Meet at the pickup point</Text>
+          <TextSemiBold22>Meet at the pickup point</TextSemiBold22>
           <View style={tw`flex-row justify-between items-center my-2`}>
-            <Text style={tw`font-medium text-sm`}>7 min to pickup</Text>
+            <TextMedium15>7 min to pickup</TextMedium15>
             <Pressable style={tw`py-1.75 px-8.75 bg-[${COLORS.SPANIS_VIRIDIAN}] rounded-md`}>
-              <Text style={[tw`font-medium text-sm`, { color: 'white' }]}>OTP:6520</Text>
+              <TextMedium15 style={{ color: 'white' }}>OTP:6520</TextMedium15>
             </Pressable>
           </View>
           <View style={[tw`my-2.5`, { borderWidth: 0.5, borderColor: '#00000040' }]} />
@@ -95,9 +98,9 @@ const BottomSheet = ({ navigation }: { navigation: any }) => {
           />
           <Pressable
             style={tw`w-full h-12 justify-center items-center border-2 border-[${COLORS.LUST_RED}] rounded-md my-5`}>
-            <Text style={tw`font-medium text-2xl text-[${COLORS.LUST_RED}]`}>Cancel</Text>
+            <TextMedium25 style={tw` text-[${COLORS.LUST_RED}]`}>Cancel</TextMedium25>
           </Pressable>
-          <Text style={tw`font-semibold text-2xl`}>Trip</Text>
+          <TextSemiBold22>Trip</TextSemiBold22>
           <RideDetails
             pickup_location="Birsa Munda Airport, Ranchi, Hurlung, ..."
             drop_location="Birsa Munda Airport, Ranchi, Hurlung, ..."

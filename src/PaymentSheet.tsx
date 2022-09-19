@@ -4,12 +4,13 @@ import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 import tw from 'twrnc';
 
-// import DriverDetails from './DriverDetails';
-// import Payment from './PaymentMethod';
-// import PressableButton from './PressableButton';
-// import RideDetails from './RideDetails';
 import Star from './Star';
 import SuggaaImageButton from './SuggaaImageButton';
+import TextRegular15 from './Typography/TextRegular15';
+import TextSemiBold12 from './Typography/TextSemiBold12';
+import TextSemiBold15 from './Typography/TextSemiBold15';
+import TextSemiBold18 from './Typography/TextSemiBold18';
+import TextSemiBold22 from './Typography/TextSemiBold22';
 import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
 
@@ -54,17 +55,18 @@ const PaymentSheet = ({ navigation }: { navigation: any }) => {
     return (
       <View style={tw`flex-row items-center mt-3.75`}>
         <View style={tw`flex-1`}>
-          <Text
-            style={tw`text-[${color ? color : COLORS.BLACK}] ${
-              bolder ? 'font-semibold text-3.75' : ''
-            }`}>
-            {name}
-          </Text>
+          {bolder ? (
+            <TextSemiBold15 style={tw`text-[${color ? color : COLORS.BLACK}]`}>
+              {name}
+            </TextSemiBold15>
+          ) : (
+            <TextRegular15 style={tw`text-[${color ? color : COLORS.BLACK}] `}>
+              {name}
+            </TextRegular15>
+          )}
+          {/* <TextSemiBold15 style={tw`text-[${color ? color : COLORS.BLACK}]`}>{name}</TextSemiBold15> */}
         </View>
-        <Text
-          style={tw`text-[${color ? color : COLORS.BLACK}] ${bolder ? 'font-bold text-3.75' : ''}`}>
-          {value}
-        </Text>
+        <TextRegular15 style={tw`text-[${color ? color : COLORS.BLACK}] `}>{value}</TextRegular15>
       </View>
     );
   };
@@ -83,49 +85,40 @@ const PaymentSheet = ({ navigation }: { navigation: any }) => {
           <View style={tw`flex-row justify-between items-center my-2`}>
             <View style={tw``}>
               <View style={tw`flex-row`}>
-                <Text style={tw`font-semibold text-2xl text-[${COLORS.SPANIS_VIRIDIAN}]`}>
-                  Total
-                </Text>
-                <Text style={tw`font-semibold text-2xl `}> ₹37.0</Text>
+                <TextSemiBold22 style={tw`text-[${COLORS.SPANIS_VIRIDIAN}]`}>Total</TextSemiBold22>
+                <TextSemiBold22> ₹37.0</TextSemiBold22>
               </View>
               <View style={tw`flex-row`}>
-                <Text style={tw`font-semibold text-sm`}>Paid via</Text>
-                <Text style={tw`font-semibold text-sm text-[${COLORS.SPANIS_VIRIDIAN}]`}>
-                  {' '}
-                  Gpay
-                </Text>
+                <TextSemiBold12>Paid via</TextSemiBold12>
+                <TextSemiBold12 style={tw`text-[${COLORS.SPANIS_VIRIDIAN}]`}> Gpay</TextSemiBold12>
               </View>
             </View>
             <View>
               <SuggaaImageButton text="Ride Details" buttonType="BORDER" imageId={IMAGES.ABOUT} />
             </View>
           </View>
-          <Text style={tw`font-semibold text-lg `}>Tue, Aug 02, 12:15 AM</Text>
+          <TextSemiBold18>Tue, Aug 02, 12:15 AM</TextSemiBold18>
           <View style={[tw`mt-2.5`, { borderWidth: 0.5, borderColor: '#00000040' }]} />
           <View style={tw`w-full mt-6 justify-start items-center`}>
             <Image
               source={require('../assets/profileDummy.png')}
               style={{ height: 50, width: 50 }}
             />
-            <Text style={tw`text-base font-normal mt-2.5 mb-4`}>
+            <TextRegular15 style={tw`mt-2.5 mb-4`}>
               How was your ride with Jon Romero?
-            </Text>
+            </TextRegular15>
             <Star rating={rating} setRating={setRating} />
           </View>
           <View style={tw`mt-7.5`}>
             <View style={tw`flex-row items-center`}>
               <View style={tw`w-4 h-4 bg-[${COLORS.SPANIS_VIRIDIAN}] rounded-full mr-2.5`} />
-              <Text style={tw`text-3.75 text-[${COLORS.BLACK}]`}>
-                Birsa Munda Airport, Ranchi, Hurlung, ...
-              </Text>
+              <TextRegular15>Birsa Munda Airport, Ranchi, Hurlung, ...</TextRegular15>
             </View>
             <View style={tw`h-4.5 w-0.25 ml-1.75 bg-[${COLORS.LIGHT_GRAY_BORDER}] self-start`} />
 
             <View style={tw`flex-row items-center`}>
               <View style={tw`w-4 h-4 bg-[${COLORS.LUST_RED}] rounded-full mr-2.5`} />
-              <Text style={tw`text-3.75 text-[${COLORS.BLACK}]`}>
-                Birsa Munda Airport, Ranchi, Hurlung, ...
-              </Text>
+              <TextRegular15>Birsa Munda Airport, Ranchi, Hurlung, ...</TextRegular15>
             </View>
           </View>
           <View style={tw`mt-5`}>
@@ -139,13 +132,13 @@ const PaymentSheet = ({ navigation }: { navigation: any }) => {
           </View>
           <View style={tw`flex-row w-full shadow-md bg-white rounded-md mt-8.25`}>
             <View style={tw`flex-1 items-center justify-center py-5`}>
-              <Text style={tw`font-semibold text-lg`}>2.34 KM</Text>
+              <TextSemiBold18>2.34 KM</TextSemiBold18>
               <Text style={tw`font-normal text-base`}>Distance</Text>
             </View>
             <View style={tw`h-full w-.25 bg-[${COLORS.LIGHT_GRAY_BORDER}]`} />
             <View style={tw`flex-1 items-center justify-center py-5`}>
-              <Text style={tw`font-semibold text-lg`}>5.14</Text>
-              <Text style={tw`font-normal text-base`}>Duration</Text>
+              <TextSemiBold18>5.14</TextSemiBold18>
+              <TextRegular15>Duration</TextRegular15>
             </View>
           </View>
         </View>
