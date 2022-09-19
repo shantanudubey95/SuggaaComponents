@@ -73,3 +73,5 @@ export const RICKSHAW_INACTIVE = require('../../assets/rickshawInactive.png');
 
 export const COUPON = require('../../assets/coupon.png');
 export const CASH = require('../../assets/cash.png');
+export const INDIAN_FLAG = require('../../assets/indianFlag.png');
+export const SPLASH_SCREEN_LOGO = require('../../assets/splashScreenLogo.png');

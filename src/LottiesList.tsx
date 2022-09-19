@@ -23,7 +23,7 @@ export default function LottiesList() {
             <Lottie source={require('../assets/Autosearching.json')} style={{ width: 200, height: 200 }} />
             <Lottie source={require('../assets/Carsearching.json')} style={{ width: 200, height: 200 }} />
             <Lottie source={require('../assets/Bicksearching.json')} style={{ width: 200, height: 200 }} />
-            <Lottie source={require('../assets/logoIntro.json')} style={{ width: 200, height: 200 }} />
+            <Lottie source={require('../assets/logoIntro.json')} style={{ width: 500, height: 500 }} />
             <Lottie source={require('../assets/tick.json')} loop={false} style={{ width: 200, height: 200 }} />
             <Lottie source={require('../assets/illution.json')} style={{ width: 200, height: 200 }} />
             <Lottie source={require('../assets/Like.json')} loop={false} style={{ width: 200, height: 200 }} />
