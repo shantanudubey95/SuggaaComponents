@@ -26,6 +26,7 @@ export default function SuggaButton({ onPress, text, buttonType }: props) {
       onPress={onPress}>
       <SuggaaText
         type="semibold"
+        numberOfLines={1}
         text={text}
         style={tw`text-5  ${
           buttonType === 'BORDER' ? `text-[${COLORS.SPANIS_VIRIDIAN}]` : `text-[${COLORS.WHITE}]`

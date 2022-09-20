@@ -31,7 +31,7 @@ export default function VehicleWithFareCard({ vehicleType, duration, fare, onPre
   }
 
   return (
-    <Pressable style={tw`bg-[${COLORS.WHITE}] rounded-1.25 flex-row items-center py-0`}>
+    <Pressable style={tw`bg-[${COLORS.WHITE}] rounded-1.25 flex-row items-center py-0 pr-4.5`}>
       <Image resizeMode="contain" source={getVehicleType()} />
       <View style={tw`flex-row items-center flex-1 justify-start self-stretch`}>
         <View style={tw`ml-5`}>
