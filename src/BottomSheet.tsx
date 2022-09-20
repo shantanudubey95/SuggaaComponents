@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, View, Text, Pressable } from 'react-native';
+import { Dimensions, View, Pressable } from 'react-native';
 import { Gesture, GestureDetector, TextInput } from 'react-native-gesture-handler';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 import tw from 'twrnc';
@@ -9,13 +9,13 @@ import Payment from './PaymentMethod';
 import PressableButton from './PressableButton';
 import RideDetails from './RideDetails';
 import TextMedium15 from './Typography/TextMedium15';
+import TextMedium25 from './Typography/TextMedium25';
 import TextSemiBold22 from './Typography/TextSemiBold22';
 import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
-import TextMedium25 from './Typography/TextMedium25';
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
-const MAX_TRANSLATE_Y = -SCREEN_HEIGHT + 50;
+const MAX_TRANSLATE_Y = -SCREEN_HEIGHT;
 const BottomSheet = ({ navigation }: { navigation: any }) => {
   const translateY = useSharedValue(0);
   const scrollTo = React.useCallback((destination: number) => {

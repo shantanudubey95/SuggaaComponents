@@ -15,7 +15,7 @@ import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
-const MAX_TRANSLATE_Y = -SCREEN_HEIGHT + 50;
+const MAX_TRANSLATE_Y = -SCREEN_HEIGHT;
 const PaymentSheet = ({ navigation }: { navigation: any }) => {
   const translateY = useSharedValue(0);
   const scrollTo = React.useCallback((destination: number) => {
