@@ -15,6 +15,7 @@ export default function SuggaCheckBox({ title, isActive, onPress }: props) {
   return (
     <Pressable style={tw`flex-row items-center mr-9.75`} onPress={() => onPress(title)}>
       <Pressable
+        onPress={() => onPress(title)}
         style={tw`mr-3.5 border border-[${
           COLORS.SPANIS_VIRIDIAN
         }] h-5 w-5 items-center justify-center rounded-1.25 bg-[${

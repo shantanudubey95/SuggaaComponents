@@ -47,7 +47,9 @@ export default function (props: Props) {
           props.numberOfCharacters === 2 ? 8.5 : 11
         }] self-center items-center mx-0.25 justify-center`,
       ]}>
-      <Text style={[tw`self-center font-bold  text-lg text-center tabular-nums ${props.color}`]}>
+      <Text
+        numberOfLines={1}
+        style={[tw`self-center font-bold  text-lg text-center tabular-nums ${props.color}`]}>
         {inputText.padEnd(props.numberOfCharacters, props.placeholder)}
       </Text>
       <TextInput

@@ -24,6 +24,7 @@ export default function SuggaaImageButton({ onPress, text, buttonType, imageId }
       onPress={onPress}>
       <Image style={tw`mr-1.75`} source={imageId} />
       <Text
+        numberOfLines={1}
         style={tw`text-sm  ${
           buttonType === 'BORDER' ? `text-[${COLORS.SPANIS_VIRIDIAN}]` : `text-[${COLORS.WHITE}]`
         } font-bold`}>
