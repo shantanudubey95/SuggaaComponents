@@ -68,7 +68,7 @@ export default function App() {
       <OTPInputs numberOfInputs={4} />
       <AnimatedText />
       <ProgressAnimation
-        activeColor={COLORS.SPANIS_VIRIDIAN}
+        activeColor={COLORS.SPANISH_VIRIDIAN}
         trackColor="#04825C40"
         progress={100}
         steps={[
@@ -98,7 +98,7 @@ export default function App() {
             alignContent: 'center',
             width: '100%',
             borderWidth: 2,
-            borderColor: COLORS.SPANIS_VIRIDIAN,
+            borderColor: COLORS.SPANISH_VIRIDIAN,
             borderRadius: 5,
             fontSize: 20,
             fontWeight: '400',
@@ -109,7 +109,7 @@ export default function App() {
           label="Full name"
           errorText={error}
           onChangeText={(text) => setValue(text)}
-          selectionColor={COLORS.SPANIS_VIRIDIAN}
+          selectionColor={COLORS.SPANISH_VIRIDIAN}
         />
       </View>
       <View style={{ height: 16 }} />

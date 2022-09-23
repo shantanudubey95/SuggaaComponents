@@ -15,7 +15,7 @@ const RideDetails = (props: Props) => {
     <View style={tw`w-full h-16  mt-3 justify-between items-center`}>
       <View style={tw`flex-row justify-between w-full`}>
         <View style={tw`flex-row items-center`}>
-          <View style={tw`h-4 w-4 rounded-2xl bg-[${COLORS.SPANIS_VIRIDIAN}] mr-2.5`} />
+          <View style={tw`h-4 w-4 rounded-2xl bg-[${COLORS.SPANISH_VIRIDIAN}] mr-2.5`} />
           <TextRegular12>{props.pickup_location}</TextRegular12>
         </View>
         <TextRegular15 style={tw`text-[${COLORS.BLUE}]`}>Edit</TextRegular15>

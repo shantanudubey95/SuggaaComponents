@@ -71,8 +71,8 @@ export default function SuggaaDropDown(props: Props) {
   const onLayout = (event: LayoutChangeEvent) => {
     setdimension({ ...event.nativeEvent.layout });
   };
-  const color = value ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER;
-  const text_Color = value ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER;
+  const color = value ? COLORS.SPANISH_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER;
+  const text_Color = value ? COLORS.SPANISH_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER;
 
   return (
     <Pressable onPress={() => setShowModal(true)} onLayout={onLayout} style={tw`flex-row`}>
@@ -97,7 +97,7 @@ export default function SuggaaDropDown(props: Props) {
       {showModal && (
         <View style={tw`absolute bg-black w-full rounded-1.25`}>
           <View style={tw`bg-[${COLORS.WHITE}] rounded-1.25`}>
-            <Pressable style={tw` px-4 py-2 bg-[${COLORS.SPANIS_VIRIDIAN}] rounded-1.25`}>
+            <Pressable style={tw` px-4 py-2 bg-[${COLORS.SPANISH_VIRIDIAN}] rounded-1.25`}>
               <Text style={tw`text-[${COLORS.WHITE}] text-5`}>GENDER</Text>
             </Pressable>
             {list.map((item, index) => {

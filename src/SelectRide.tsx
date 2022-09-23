@@ -13,8 +13,8 @@ const SelectRide = ({ ride_type, onpress }: Props) => {
   return (
     <Pressable
       onPress={onpress}
-      style={tw`w-35.25 h-12.5 flex-row rounded-md bg-[${COLORS.SPANIS_VIRIDIAN}]`}>
-      <View style={tw` w-12.5 border-2 rounded-l-md border-[${COLORS.SPANIS_VIRIDIAN}] bg-white`}>
+      style={tw`w-35.25 h-12.5 flex-row rounded-md bg-[${COLORS.SPANISH_VIRIDIAN}]`}>
+      <View style={tw` w-12.5 border-2 rounded-l-md border-[${COLORS.SPANISH_VIRIDIAN}] bg-white`}>
         {ride_type === 'City' ? (
           <Image source={IMAGES.ASSEST2} />
         ) : (

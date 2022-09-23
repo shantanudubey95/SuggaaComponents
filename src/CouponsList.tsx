@@ -26,7 +26,7 @@ export default function CouponList() {
           alignContent: 'center',
           width: '100%',
           borderWidth: 2,
-          borderColor: COLORS.SPANIS_VIRIDIAN,
+          borderColor: COLORS.SPANISH_VIRIDIAN,
           borderRadius: 5,
           fontSize: 20,
           fontWeight: '400',
@@ -37,7 +37,7 @@ export default function CouponList() {
         label="Enter Coupon Code"
         //   errorText={error}
         onChangeText={(text) => dispatch({ type: 'couponCode', payload: text })}
-        selectionColor={COLORS.SPANIS_VIRIDIAN}
+        selectionColor={COLORS.SPANISH_VIRIDIAN}
       />
       <View style={tw`my-3.75`}>
         <SuggaaText type="semibold" text="Available Coupons" style={tw`text-5.5`} />

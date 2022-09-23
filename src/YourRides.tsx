@@ -27,7 +27,7 @@ export default function Rides() {
   return (
     <ScrollView contentContainerStyle={tw`p-5`}>
       <View style={tw`h-42 shadow-md w-full bg-[${COLORS.WHITE}] rounded-1.25`}>
-        <Text style={tw`text-3 text-[${COLORS.SPANIS_VIRIDIAN}] absolute left-5 bottom-2.5`}>
+        <Text style={tw`text-3 text-[${COLORS.SPANISH_VIRIDIAN}] absolute left-5 bottom-2.5`}>
           Completed
         </Text>
       </View>
@@ -36,7 +36,7 @@ export default function Rides() {
 
       <View>
         <View style={tw`flex-row items-center`}>
-          <View style={tw`w-4 h-4 bg-[${COLORS.SPANIS_VIRIDIAN}] rounded-full mr-2.5`} />
+          <View style={tw`w-4 h-4 bg-[${COLORS.SPANISH_VIRIDIAN}] rounded-full mr-2.5`} />
           <Text style={tw`text-3.75 text-[${COLORS.BLACK}]`}>
             Birsa Munda Airport, Ranchi, Hurlung, ...
           </Text>
@@ -53,7 +53,7 @@ export default function Rides() {
 
       <View style={tw`h-.25 w-full bg-[${COLORS.LIGHT_GRAY_BORDER}] my-5`} />
 
-      {payCards('Pay Mode', 'Cash', true, COLORS.SPANIS_VIRIDIAN)}
+      {payCards('Pay Mode', 'Cash', true, COLORS.SPANISH_VIRIDIAN)}
       {payCards('Bill Detail')}
       {payCards('Ride Fare', '₹ 94.5')}
       {payCards('Total Platform Charges', '₹ 94.5')}

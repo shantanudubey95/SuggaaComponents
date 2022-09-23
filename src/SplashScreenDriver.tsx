@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Image } from 'react-native';
 import tw from 'twrnc';
 
-import TextBold22 from './Typography/TextBold22';
+import TextSemiBold22 from './Typography/TextSemiBold22';
 import TextRegular12 from './Typography/TextRegular12';
 import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
@@ -14,8 +14,8 @@ export default function SplashScreenDriver() {
         <Image source={IMAGES.SPLASH_SCREEN_LOGO} resizeMode="contain" />
 
         <View
-          style={tw`bg-[${COLORS.SPANIS_VIRIDIAN}] items-center justify-center w-32.75 h-8.75 rounded-md mt-2.75 absolute bottom--11.5 right-0`}>
-          <TextBold22 style={tw`text-[${COLORS.WHITE}]`}>Sathi</TextBold22>
+          style={tw`bg-[${COLORS.SPANISH_VIRIDIAN}] items-center justify-center w-32.75 h-8.75 rounded-md mt-2.75 absolute bottom--11.5 right-0`}>
+          <TextSemiBold22 style={tw`text-[${COLORS.WHITE}]`}>Sathi</TextSemiBold22>
         </View>
       </View>
 

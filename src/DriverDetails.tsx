@@ -21,7 +21,7 @@ const DriverDetails = (props: Props) => {
     <>
       <View style={tw`justify-center items-end`}>
         <View
-          style={tw`w-9/10 h-9.25 bg-[${COLORS.SPANIS_VIRIDIAN}] flex-row-reverse rounded-md items-center`}>
+          style={tw`w-9/10 h-9.25 bg-[${COLORS.SPANISH_VIRIDIAN}] flex-row-reverse rounded-md items-center`}>
           <TextSemiBold20 style={tw`text-white mr-1.75`}>{props.driver_name}</TextSemiBold20>
         </View>
         <View style={tw`w-7/10 items-end justify-between flex-row`}>

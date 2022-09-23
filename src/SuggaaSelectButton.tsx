@@ -16,9 +16,9 @@ export default function SuggaCheckBox({ title, isActive, onPress }: props) {
       <Pressable
         onPress={() => onPress(title)}
         style={tw`py-2.25 px-7.75 bg-[${
-          isActive ? COLORS.SPANIS_VIRIDIAN : COLORS.WHITE
+          isActive ? COLORS.SPANISH_VIRIDIAN : COLORS.WHITE
         }] border-2 items-center justify-center flex-row rounded-md border-[${
-          !isActive ? COLORS.SILVER_FOIL : COLORS.SPANIS_VIRIDIAN
+          !isActive ? COLORS.SILVER_FOIL : COLORS.SPANISH_VIRIDIAN
         }]`}>
         <Text
           style={tw`text-xl text-[${

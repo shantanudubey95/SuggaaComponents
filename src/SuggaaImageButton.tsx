@@ -14,7 +14,7 @@ export default function SuggaaImageButton({ onPress, text, buttonType, imageId }
     <Pressable
       style={tw`${
         buttonType === 'FILLED'
-          ? `bg-[${COLORS.SPANIS_VIRIDIAN}]`
+          ? `bg-[${COLORS.SPANISH_VIRIDIAN}]`
           : buttonType === 'BORDER'
           ? ` bg-[${COLORS.WHITE}]`
           : buttonType === 'DISABLED'
@@ -26,7 +26,7 @@ export default function SuggaaImageButton({ onPress, text, buttonType, imageId }
       <Text
         numberOfLines={1}
         style={tw`text-sm  ${
-          buttonType === 'BORDER' ? `text-[${COLORS.SPANIS_VIRIDIAN}]` : `text-[${COLORS.WHITE}]`
+          buttonType === 'BORDER' ? `text-[${COLORS.SPANISH_VIRIDIAN}]` : `text-[${COLORS.WHITE}]`
         } font-bold`}>
         {text}
       </Text>

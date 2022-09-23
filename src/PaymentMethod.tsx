@@ -24,7 +24,7 @@ const Payment = (props: Props) => {
         <Image source={IMAGES.MASTERCARD} />
       </View>
       <Pressable
-        style={tw`px-11.25 py-1.25 bg-[${COLORS.SPANIS_VIRIDIAN}] rounded-md`}
+        style={tw`px-11.25 py-1.25 bg-[${COLORS.SPANISH_VIRIDIAN}] rounded-md`}
         onPress={props.onPress}>
         <TextMedium25 style={tw`text-white`}>Pay ₹{props.price} now</TextMedium25>
       </Pressable>

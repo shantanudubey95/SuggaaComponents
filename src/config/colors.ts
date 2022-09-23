@@ -1,4 +1,4 @@
-export const SPANIS_VIRIDIAN = '#04825C';
+export const SPANISH_VIRIDIAN = '#04825C';
 export const LIGHT_GRAY = '#D4D2D5';
 export const SILVER = '#ABA7AF';
 export const ENGLISH_VIOLET = '#4B3A5A';
@@ -16,7 +16,6 @@ export const YELLOW_ORANGE = '#FF8F07';
 export const CARIBBEAN_GREEN = '#00B998';
 export const NEON_BLUE = '#0F0BAB';
 export const SPANISH_GREY = '#979797';
-export const CULTERED = '#F5F5F5';
+export const CULTURED = '#F5F5F5';
 export const GRANITE_GRAY = '#66666';
-export const LUST_RED_LIGHT = '#EA1D1D33'
-
+export const LUST_RED_LIGHT = '#EA1D1D33';

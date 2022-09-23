@@ -16,9 +16,9 @@ export default function SuggaButton({ onPress, text, buttonType }: props) {
     <Pressable
       style={tw`${
         buttonType === 'FILLED'
-          ? `bg-[${COLORS.SPANIS_VIRIDIAN}]`
+          ? `bg-[${COLORS.SPANISH_VIRIDIAN}]`
           : buttonType === 'BORDER'
-          ? `border-2 border-[${COLORS.SPANIS_VIRIDIAN}]`
+          ? `border-2 border-[${COLORS.SPANISH_VIRIDIAN}]`
           : buttonType === 'DISABLED'
           ? `bg-[${COLORS.LIGHT_GRAY_BORDER}]`
           : ''
@@ -29,7 +29,7 @@ export default function SuggaButton({ onPress, text, buttonType }: props) {
         numberOfLines={1}
         text={text}
         style={tw`text-5  ${
-          buttonType === 'BORDER' ? `text-[${COLORS.SPANIS_VIRIDIAN}]` : `text-[${COLORS.WHITE}]`
+          buttonType === 'BORDER' ? `text-[${COLORS.SPANISH_VIRIDIAN}]` : `text-[${COLORS.WHITE}]`
         }`}
       />
     </Pressable>

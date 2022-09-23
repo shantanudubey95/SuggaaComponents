@@ -17,9 +17,9 @@ export default function SuggaCheckBox({ title, isActive, onPress }: props) {
       <Pressable
         onPress={() => onPress(title)}
         style={tw`mr-3.5 border border-[${
-          COLORS.SPANIS_VIRIDIAN
+          COLORS.SPANISH_VIRIDIAN
         }] h-5 w-5 items-center justify-center rounded-1.25 bg-[${
-          isActive ? COLORS.SPANIS_VIRIDIAN : COLORS.WHITE
+          isActive ? COLORS.SPANISH_VIRIDIAN : COLORS.WHITE
         }]`}>
         {isActive && <Image source={IMAGES.CHECKBOX_TICK} />}
       </Pressable>

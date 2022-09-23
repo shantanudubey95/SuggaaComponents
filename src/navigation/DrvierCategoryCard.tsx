@@ -23,7 +23,7 @@ export default function DriverCateogoryCard({
   return isActive ? (
     <Pressable
       onPress={onPress}
-      style={tw`flex-row pr-2.25 pl-3.41 pb-3.25 pt-4.7 border-2 shadow-lg bg-[${COLORS.WHITE}] rounded-1.25 border-[${COLORS.SPANIS_VIRIDIAN}] my-5`}>
+      style={tw`flex-row pr-2.25 pl-3.41 pb-3.25 pt-4.7 border-2 shadow-lg bg-[${COLORS.WHITE}] rounded-1.25 border-[${COLORS.SPANISH_VIRIDIAN}] my-5`}>
       <Image
         style={tw`self-center`}
         source={
@@ -35,9 +35,9 @@ export default function DriverCateogoryCard({
         }
       />
       <View style={tw`self-center mt-4 flex-1 ml-5.5`}>
-        <Text style={tw`text-4.5 text-[${COLORS.SPANIS_VIRIDIAN}]`}>{title}</Text>
+        <Text style={tw`text-4.5 text-[${COLORS.SPANISH_VIRIDIAN}]`}>{title}</Text>
         <View style={tw`mt-1`} />
-        <Text style={tw`text-3 text-[${COLORS.SPANIS_VIRIDIAN}]`}>{description}</Text>
+        <Text style={tw`text-3 text-[${COLORS.SPANISH_VIRIDIAN}]`}>{description}</Text>
       </View>
       <Image style={tw`absolute right-3.5 top-3.5`} source={IMAGES.TICK_SMALL} />
     </Pressable>

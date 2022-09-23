@@ -71,9 +71,9 @@ export default function SuggaaTextInput(props: Props) {
   const color = errorText
     ? COLORS.LUST_RED
     : isFocused || value
-    ? COLORS.SPANIS_VIRIDIAN
+    ? COLORS.SPANISH_VIRIDIAN
     : COLORS.LIGHT_GRAY_BORDER;
-  const text_Color = isFocused || value ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER;
+  const text_Color = isFocused || value ? COLORS.SPANISH_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER;
   const error_Text_Color = COLORS.LUST_RED;
 
   return (

@@ -73,10 +73,10 @@ export default function OTPInputs({ numberOfInputs }: Props) {
       {textInputRefs.map((value, index) => (
         <TextInput
           key={`textinput-${index}`}
-          style={tw`mx-2.5 h-12 w-12 border-2 rounded-md border-[${COLORS.SPANIS_VIRIDIAN}] font-bold text-xl`}
+          style={tw`mx-2.5 h-12 w-12 border-2 rounded-md border-[${COLORS.SPANISH_VIRIDIAN}] font-bold text-xl`}
           keyboardType="numeric"
           textAlign="center"
-          selectionColor={COLORS.SPANIS_VIRIDIAN}
+          selectionColor={COLORS.SPANISH_VIRIDIAN}
           ref={value}
           autoFocus={index === 0}
           onKeyPress={onKeyPress(index)}

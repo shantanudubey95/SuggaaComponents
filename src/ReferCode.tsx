@@ -23,7 +23,7 @@ export default function ReferCode({ code, background }: props) {
       onPress={() => copyToClipboard()}
       style={[
         tw`border-2 rounded-sm border-dashed border-[${
-          COLORS.SPANIS_VIRIDIAN
+          COLORS.SPANISH_VIRIDIAN
         }] p-1.25  w-full items-center ${background ? `bg-[${background}]` : ``}`,
       ]}>
       <Pressable style={[tw`absolute right-1 top-1`]} onPress={() => copyToClipboard()}>
@@ -32,7 +32,7 @@ export default function ReferCode({ code, background }: props) {
       <SuggaaText
         type="bold"
         numberOfLines={1}
-        style={[tw`text-6.25 uppercase text-[${COLORS.SPANIS_VIRIDIAN}]`]}
+        style={[tw`text-6.25 uppercase text-[${COLORS.SPANISH_VIRIDIAN}]`]}
         text={code}
       />
     </Pressable>

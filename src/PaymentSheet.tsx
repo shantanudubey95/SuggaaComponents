@@ -85,12 +85,12 @@ const PaymentSheet = ({ navigation }: { navigation: any }) => {
           <View style={tw`flex-row justify-between items-center my-2`}>
             <View style={tw``}>
               <View style={tw`flex-row`}>
-                <TextSemiBold22 style={tw`text-[${COLORS.SPANIS_VIRIDIAN}]`}>Total</TextSemiBold22>
+                <TextSemiBold22 style={tw`text-[${COLORS.SPANISH_VIRIDIAN}]`}>Total</TextSemiBold22>
                 <TextSemiBold22> ₹37.0</TextSemiBold22>
               </View>
               <View style={tw`flex-row`}>
                 <TextSemiBold12>Paid via</TextSemiBold12>
-                <TextSemiBold12 style={tw`text-[${COLORS.SPANIS_VIRIDIAN}]`}> Gpay</TextSemiBold12>
+                <TextSemiBold12 style={tw`text-[${COLORS.SPANISH_VIRIDIAN}]`}> Gpay</TextSemiBold12>
               </View>
             </View>
             <View>
@@ -111,7 +111,7 @@ const PaymentSheet = ({ navigation }: { navigation: any }) => {
           </View>
           <View style={tw`mt-7.5`}>
             <View style={tw`flex-row items-center`}>
-              <View style={tw`w-4 h-4 bg-[${COLORS.SPANIS_VIRIDIAN}] rounded-full mr-2.5`} />
+              <View style={tw`w-4 h-4 bg-[${COLORS.SPANISH_VIRIDIAN}] rounded-full mr-2.5`} />
               <TextRegular15>Birsa Munda Airport, Ranchi, Hurlung, ...</TextRegular15>
             </View>
             <View style={tw`h-4.5 w-0.25 ml-1.75 bg-[${COLORS.LIGHT_GRAY_BORDER}] self-start`} />
@@ -122,7 +122,7 @@ const PaymentSheet = ({ navigation }: { navigation: any }) => {
             </View>
           </View>
           <View style={tw`mt-5`}>
-            {payCards('Payment Mode', 'Cash', true, COLORS.SPANIS_VIRIDIAN)}
+            {payCards('Payment Mode', 'Cash', true, COLORS.SPANISH_VIRIDIAN)}
             {payCards('Bill Detail')}
             {payCards('Ride Fare', '₹ 94.5')}
             {payCards('Total Platform Charges', '₹ 94.5')}

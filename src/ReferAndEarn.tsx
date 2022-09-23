@@ -50,7 +50,7 @@ export default function ReferAndEarn() {
         </View>
 
         <Pressable style={tw`px-3.5 pt-4 pb-3.25 flex-row items-center`}>
-          <Text style={tw`text-3.75 text-[${COLORS.SPANIS_VIRIDIAN}]`}>See all</Text>
+          <Text style={tw`text-3.75 text-[${COLORS.SPANISH_VIRIDIAN}]`}>See all</Text>
           <View style={tw`flex-1`} />
           <Image source={IMAGES.ARROW_RIGHT_GREEN} />
         </Pressable>

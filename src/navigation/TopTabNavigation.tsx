@@ -87,11 +87,11 @@ function MyTabBar({ state, descriptors, navigation, position }: MaterialTopTabBa
             onPress={onPress}
             onLongPress={onLongPress}
             style={tw`mx-3.75 ${
-              isFocused ? `border-b-2 border-[${COLORS.SPANIS_VIRIDIAN}]` : ''
+              isFocused ? `border-b-2 border-[${COLORS.SPANISH_VIRIDIAN}]` : ''
             } h-11.25`}>
             <Text
               style={tw`text-5 text-[${
-                isFocused ? COLORS.SPANIS_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER
+                isFocused ? COLORS.SPANISH_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER
               }]`}>
               {label.toString()}
             </Text>

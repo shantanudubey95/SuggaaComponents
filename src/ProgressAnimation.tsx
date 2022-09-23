@@ -19,8 +19,8 @@ type StepStatusColor = {
 };
 
 const stepStatusColor: StepStatusColor = {
-  active: COLORS.SPANIS_VIRIDIAN,
-  done: COLORS.SPANIS_VIRIDIAN,
+  active: COLORS.SPANISH_VIRIDIAN,
+  done: COLORS.SPANISH_VIRIDIAN,
   untouched: COLORS.WHITE,
 };
 
@@ -90,7 +90,7 @@ export default function ProgressAnimation({
               ) : null}
             </View>
             {'label' in step ? (
-              <Text style={tw`text-[${COLORS.SPANIS_VIRIDIAN}] font-bold mt-3.5 text-xs`}>
+              <Text style={tw`text-[${COLORS.SPANISH_VIRIDIAN}] font-bold mt-3.5 text-xs`}>
                 {step.label}
               </Text>
             ) : null}

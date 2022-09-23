@@ -24,7 +24,7 @@ export default function PickAndDropInput({
       <View style={tw`pl-3.25`}>
         <Text
           style={tw`text-[${
-            inputTitle === 'Pickup' ? COLORS.SPANIS_VIRIDIAN : COLORS.LUST_RED
+            inputTitle === 'Pickup' ? COLORS.SPANISH_VIRIDIAN : COLORS.LUST_RED
           }] text-3`}>
           {inputTitle}
         </Text>
@@ -32,7 +32,7 @@ export default function PickAndDropInput({
       <View style={tw`flex-row items-center`}>
         <View
           style={tw`h-1.5 w-1.5 rounded-full mr-2 bg-[${
-            inputTitle === 'Pickup' ? COLORS.SPANIS_VIRIDIAN : COLORS.LUST_RED
+            inputTitle === 'Pickup' ? COLORS.SPANISH_VIRIDIAN : COLORS.LUST_RED
           }]`}
         />
         <TextInput

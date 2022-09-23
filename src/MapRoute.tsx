@@ -54,7 +54,7 @@ export default function MapRoute({
           strokeWidth={2}
         />
       </MapView>
-      <Text style={tw`text-3 text-[${COLORS.SPANIS_VIRIDIAN}] absolute left-5 bottom-2.5`}>
+      <Text style={tw`text-3 text-[${COLORS.SPANISH_VIRIDIAN}] absolute left-5 bottom-2.5`}>
         Completed
       </Text>
     </View>

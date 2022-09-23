@@ -66,7 +66,7 @@ const BottomSheet = ({ navigation }: { navigation: any }) => {
           <TextSemiBold22>Meet at the pickup point</TextSemiBold22>
           <View style={tw`flex-row justify-between items-center my-2`}>
             <TextMedium15>7 min to pickup</TextMedium15>
-            <Pressable style={tw`py-1.75 px-8.75 bg-[${COLORS.SPANIS_VIRIDIAN}] rounded-md`}>
+            <Pressable style={tw`py-1.75 px-8.75 bg-[${COLORS.SPANISH_VIRIDIAN}] rounded-md`}>
               <TextMedium15 style={{ color: 'white' }}>OTP:6520</TextMedium15>
             </Pressable>
           </View>

@@ -32,12 +32,12 @@ const SuggaaSwitch = () => {
     const backgroundColor = interpolateColor(
       progress.value,
       [0, 44],
-      [COLORS.LIGHT_GRAY_BORDER, COLORS.SPANIS_VIRIDIAN]
+      [COLORS.LIGHT_GRAY_BORDER, COLORS.SPANISH_VIRIDIAN]
     );
     const borderColor = interpolateColor(
       progress.value,
       [0, 44],
-      [COLORS.LIGHT_GRAY_BORDER, COLORS.SPANIS_VIRIDIAN]
+      [COLORS.LIGHT_GRAY_BORDER, COLORS.SPANISH_VIRIDIAN]
     );
     return {
       backgroundColor,

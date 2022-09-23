@@ -24,13 +24,13 @@ export default function RidesCard({ style, imageUrl, imageStyle, viewStyle, valu
     let textColor = COLORS.BLACK;
     switch (color) {
       case 'COMPLETED':
-        textColor = COLORS.SPANIS_VIRIDIAN;
+        textColor = COLORS.SPANISH_VIRIDIAN;
         break;
       case 'SCHEDULED':
         textColor = COLORS.YELLOW_ORANGE;
         break;
       case 'ONGOING':
-        textColor = COLORS.SPANIS_VIRIDIAN;
+        textColor = COLORS.SPANISH_VIRIDIAN;
         break;
       case 'CANCELLED':
         textColor = COLORS.LUST_RED;

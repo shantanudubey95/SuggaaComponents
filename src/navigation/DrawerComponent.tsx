@@ -14,7 +14,7 @@ export default function DrawerComponent(props: DrawerContentComponentProps) {
   return (
     <View style={tw`flex-1`}>
       <DrawerContentScrollView {...props} contentContainerStyle={tw`bg-[${COLORS.WHITE}]`}>
-        <View style={tw`p-5 bg-[${COLORS.SPANIS_VIRIDIAN}]`}>
+        <View style={tw`p-5 bg-[${COLORS.SPANISH_VIRIDIAN}]`}>
           <Image source={IMAGES.PROFILE_ICON} />
           <View style={tw`flex-row items-center mt-2.75`}>
             <Text style={tw`text-5 text-[${COLORS.WHITE}]`}>Anurag Gautam</Text>
