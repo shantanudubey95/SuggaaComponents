@@ -3,10 +3,10 @@ import { View, Image, Pressable } from 'react-native';
 import type { PressableProps } from 'react-native';
 import tw from 'twrnc';
 
+import SuggaaSwitch from './SuggaaSwitch';
 import TextSemiBold18 from './Typography/TextSemiBold18';
 import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
-import SuggaaSwitch from './SuggaaSwitch';
 
 type props = PressableProps & {
   onPress: () => void;
