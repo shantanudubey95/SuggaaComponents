@@ -17,7 +17,7 @@ import tw from 'twrnc';
 import AnimatedText from './AnimatedText';
 import DriverDetails from './DriverDetails';
 import ExpoSvg from './ExpoSvg';
-import DateInput from './MaskedText/DateInput';
+import DateInput from './DateInput';
 import OTPInputs from './OTPInputs';
 import OnOffDutySwitch from './OnOffDutySwitch';
 import Payment from './PaymentMethod';
@@ -79,14 +79,7 @@ export default function App() {
       />
       <View style={tw`my-4`} />
 
-      <DateInput
-        onValue={alert}
-        color="text-green-600"
-        textStyle={[tw`font-bold text-green-600 text-lg text-center tabular-nums`]}
-        viewStyle={[
-          tw`flex-row py-4 px-8 rounded-2 items-center border-2 border-green-600 self-start`,
-        ]}
-      />
+      <DateInput setDate={() => {}} />
       <View style={tw`my-4`} />
 
       <ReferCode code="SUGGAREF25" />
