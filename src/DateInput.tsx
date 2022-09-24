@@ -14,12 +14,14 @@ export default function DateInput({ numberOfInputs = 8, setDate }: Props) {
   const textInputRefs = Array.from({ length: numberOfInputs }).map(() =>
     React.createRef<TextInput>()
   );
-  const [pin, setPin] = useState<string[]>(Array.from({ length: numberOfInputs }).map(() => ''));
+  const [dateText, setDateText] = useState<string[]>(
+    Array.from({ length: numberOfInputs }).map(() => '')
+  );
 
   useEffect(() => {
-    if (pin && pin.join('').length === numberOfInputs) setDate(pin.join(''));
+    if (dateText && dateText.join('').length === numberOfInputs) setDate(dateText.join(''));
     else setDate('');
-  }, [pin]);
+  }, [dateText]);
 
   const onKeyPress = useCallback(
     (index: number | undefined) =>
@@ -29,10 +31,10 @@ export default function DateInput({ numberOfInputs = 8, setDate }: Props) {
             .map((_, index) => index.toString())
             .includes(keyValue)
         ) {
-          setPin((value) => [...value.slice(0, index), keyValue, ...value.slice(index + 1)]);
+          setDateText((value) => [...value.slice(0, index), keyValue, ...value.slice(index + 1)]);
           setDirection('forward');
         } else if (keyValue === 'Backspace') {
-          setPin((value) => [
+          setDateText((value) => [
             ...value.slice(0, index),
             ...Array.from({ length: numberOfInputs - index }).map(() => ''),
           ]);
@@ -48,8 +50,8 @@ export default function DateInput({ numberOfInputs = 8, setDate }: Props) {
   }
   useEffect(() => {
     let activeIndex = -1;
-    for (let index = 0; index < pin.length; index++) {
-      const value = pin[index];
+    for (let index = 0; index < dateText.length; index++) {
+      const value = dateText[index];
       if (value !== '') {
         activeIndex = index;
       } else {
@@ -61,7 +63,7 @@ export default function DateInput({ numberOfInputs = 8, setDate }: Props) {
     } else if (activeIndex + 1 >= 0 && activeIndex + 1 <= numberOfInputs - 1) {
       textInputRefs[activeIndex + 1].current?.focus();
     }
-  }, [direction, numberOfInputs, pin, textInputRefs]);
+  }, [direction, numberOfInputs, dateText, textInputRefs]);
 
   const onChangeText = useCallback(
     (index: number) => (text: string) => {
@@ -72,7 +74,7 @@ export default function DateInput({ numberOfInputs = 8, setDate }: Props) {
           text === textInClipboard &&
           index === 0
         ) {
-          setPin(textInClipboard.split(''));
+          setDateText(textInClipboard.split(''));
         }
       });
     },
@@ -98,7 +100,7 @@ export default function DateInput({ numberOfInputs = 8, setDate }: Props) {
             onKeyPress={onKeyPress(index)}
             onChangeText={onChangeText(index)}
             returnKeyType={index === numberOfInputs - 1 ? 'done' : 'next'}
-            value={pin[index].toString()}
+            value={dateText[index].toString()}
             placeholder={getPlaceholder(index)}
           />
           {[1, 3].includes(index) && (
