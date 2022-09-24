@@ -1,14 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  TextInput,
-  LayoutChangeEvent,
-  TextInputProps,
-  View,
-  Text,
-  TouchableWithoutFeedback,
-  Image,
-  Pressable,
-} from 'react-native';
+import { TextInput, LayoutChangeEvent, TextInputProps, View, Image, Pressable } from 'react-native';
 import Animated, {
   Easing,
   useSharedValue,
@@ -18,8 +9,10 @@ import Animated, {
 } from 'react-native-reanimated';
 import tw from 'twrnc';
 
-import * as COLORS from './config/colors';
-import * as IMAGES from './config/images';
+import TextSemiBold15 from '../Typography/TextSemiBold15';
+import TextSemiBold20 from '../Typography/TextSemiBold20';
+import * as COLORS from '../config/colors';
+import * as IMAGES from '../config/images';
 
 type Dimension = {
   width: number;
@@ -35,8 +28,9 @@ type Props = TextInputProps & {
 
 export default function SuggaaDropDown(props: Props) {
   const { label, value, style, onBlur, onFocus, list, ...restOfProps } = props;
-  const [dimension, setdimension] = useState<Dimension>({ x: 0, y: 0, width: 0, height: 0 });
+  const [dimension, setDimension] = useState<Dimension>({ x: 0, y: 0, width: 0, height: 0 });
   const [showModal, setShowModal] = useState(false);
+  const [modalHeight, setModalHeight] = useState({ height: 0 });
 
   const sharedVal = useSharedValue(0);
   useEffect(() => {
@@ -69,47 +63,61 @@ export default function SuggaaDropDown(props: Props) {
   }, [sharedVal.value]);
 
   const onLayout = (event: LayoutChangeEvent) => {
-    setdimension({ ...event.nativeEvent.layout });
+    setDimension({ ...event.nativeEvent.layout });
   };
   const color = value ? COLORS.SPANISH_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER;
   const text_Color = value ? COLORS.SPANISH_VIRIDIAN : COLORS.LIGHT_GRAY_BORDER;
 
   return (
-    <Pressable onPress={() => setShowModal(true)} onLayout={onLayout} style={tw`flex-row`}>
+    <Pressable
+      onPress={() => setShowModal(true)}
+      onLayout={onLayout}
+      style={tw`h-[${showModal ? modalHeight.height / 4 : '13'}] flex-row`}>
       <TextInput
         {...props}
         editable={false}
-        value={value}
-        style={[style, tw`border-[${color}]`]}
+        style={[
+          style,
+          {
+            fontFamily: 'Poppins_400Regular',
+            fontSize: 20,
+            color: COLORS.BLACK,
+            textAlignVertical: 'center',
+          },
+        ]}
         {...restOfProps}
+        placeholder={label}
       />
-      <TouchableWithoutFeedback onPress={() => setShowModal(true)}>
-        <Animated.View
-          style={[tw`flex-row items-center px-1.5  absolute bg-[${COLORS.WHITE}]`, inputStyle]}>
-          <Text style={tw`text-[${text_Color}] text-5`}>{props.label} </Text>
-        </Animated.View>
-      </TouchableWithoutFeedback>
-      <Pressable
-        onPress={() => setShowModal(true)}
-        style={tw` mx-2 right-10 top-[${dimension.height / 8}]`}>
+      <Animated.View
+        style={[tw`flex-row items-center px-1.5  absolute bg-[${COLORS.WHITE}]`, inputStyle]}>
+        <TextSemiBold20 onPress={() => setShowModal(true)} style={tw`text-[${text_Color}] text-5`}>
+          {label}
+        </TextSemiBold20>
+      </Animated.View>
+      <Pressable onPress={() => setShowModal(true)} style={tw` mx-2 right-10 self-center`}>
         <Image source={IMAGES.DROPDOWN_ARROW} />
       </Pressable>
       {showModal && (
-        <View style={tw`absolute bg-black w-full rounded-1.25`}>
-          <View style={tw`bg-[${COLORS.WHITE}] rounded-1.25`}>
+        <View
+          onLayout={(event) => setModalHeight(event.nativeEvent.layout)}
+          style={tw`absolute bg-[${COLORS.WHITE}] w-full rounded-1.25 `}>
+          <View
+            style={tw`bg-[${COLORS.WHITE}] rounded-1.25 border-2 border-[${COLORS.LIGHT_GRAY_BORDER}]`}>
             <Pressable style={tw` px-4 py-2 bg-[${COLORS.SPANISH_VIRIDIAN}] rounded-1.25`}>
-              <Text style={tw`text-[${COLORS.WHITE}] text-5`}>GENDER</Text>
+              <TextSemiBold20 onPress={() => setShowModal(true)} style={tw`text-[${COLORS.WHITE}]`}>
+                {label}
+              </TextSemiBold20>
             </Pressable>
             {list.map((item, index) => {
               return (
                 <Pressable
-                  style={tw`px-4 py-1.25`}
+                  style={tw`px-4 py-1.25 `}
                   key={index}
                   onPress={() => {
                     setShowModal(false);
                     props.onChangeText?.(item);
                   }}>
-                  <Text style={tw`text-[${COLORS.BLACK}] text-3.75`}>{item}</Text>
+                  <TextSemiBold15 style={tw`text-[${COLORS.BLACK}]`}>{item}</TextSemiBold15>
                 </Pressable>
               );
             })}
