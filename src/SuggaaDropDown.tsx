@@ -9,10 +9,10 @@ import Animated, {
 } from 'react-native-reanimated';
 import tw from 'twrnc';
 
-import TextSemiBold15 from '../Typography/TextSemiBold15';
-import TextSemiBold20 from '../Typography/TextSemiBold20';
-import * as COLORS from '../config/colors';
-import * as IMAGES from '../config/images';
+import TextSemiBold15 from './Typography/TextSemiBold15';
+import TextSemiBold20 from './Typography/TextSemiBold20';
+import * as COLORS from './config/colors';
+import * as IMAGES from './config/images';
 
 type Dimension = {
   width: number;
