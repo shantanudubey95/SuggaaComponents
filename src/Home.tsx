@@ -227,7 +227,10 @@ export default function HomeScreen() {
         onPress={() => setShowBottoModal(true)}
       />
       {showBottoModal && (
-        <BottomModal onClose={() => setShowBottoModal(false)} height={300}>
+        <BottomModal
+          showModal={showBottoModal}
+          onClose={() => setShowBottoModal(false)}
+          height={'50%'}>
           <View style={tw`justify-center items-center h-full`}>
             <Text>Place your view here</Text>
           </View>
