@@ -25,12 +25,16 @@ import BottomSheet from './src/BottomSheet';
 import CouponList from './src/CouponsList';
 import HomeScreen from './src/Home';
 import InsuranceScreen from './src/Insurance';
+import LottiesList from './src/LottiesList';
 import MapRideTestScreen from './src/MapRideTest';
 import MapsScreen from './src/MapsScreen';
 import PaymentSheet from './src/PaymentSheet';
 import PaymentsScreen from './src/Payments';
 import ReferAndEarnScreen from './src/ReferAndEarn';
 import SettingsScreen from './src/Settings';
+import Splash from './src/SplashScreen';
+import SplashScreenDriver from './src/SplashScreenDriver';
+import SplashScreenFleet from './src/SplashScreenFleet';
 import SuggaaComponents from './src/SuggaaComponents';
 import SupportScreen from './src/Support';
 import YourRidesScreen from './src/YourRides';
@@ -38,10 +42,6 @@ import * as COLORS from './src/config/colors';
 import * as IMAGES from './src/config/images';
 import DrawerComponent from './src/navigation/DrawerComponent';
 import TopTabNavigationScreen from './src/navigation/TopTabNavigation';
-import LottiesList from './src/LottiesList';
-import Splash from './src/SplashScreen';
-import SplashScreenDriver from './src/SplashScreenDriver';
-import SplashScreenFleet from './src/SplashScreenFleet';
 SplashScreen.preventAutoHideAsync();
 const Drawer = createDrawerNavigator();
 type iconProps = {
@@ -166,9 +166,21 @@ export default function App() {
           <Drawer.Screen name="BookingScreen" component={BookingScreen} />
           <Drawer.Screen name="Coupons List" component={CouponList} />
           <Drawer.Screen name="Lotties" component={LottiesList} />
-          <Drawer.Screen name="Splash screen Rider" component={Splash} options={{ headerShown: false }} />
-          <Drawer.Screen name="Splash screen Driver" component={SplashScreenDriver} options={{ headerShown: false }} />
-          <Drawer.Screen name="Splash screen Fleet" component={SplashScreenFleet} options={{ headerShown: false }} />
+          <Drawer.Screen
+            name="Splash screen Rider"
+            component={Splash}
+            options={{ headerShown: false }}
+          />
+          <Drawer.Screen
+            name="Splash screen Driver"
+            component={SplashScreenDriver}
+            options={{ headerShown: false }}
+          />
+          <Drawer.Screen
+            name="Splash screen Fleet"
+            component={SplashScreenFleet}
+            options={{ headerShown: false }}
+          />
         </Drawer.Navigator>
       </NavigationContainer>
     );
