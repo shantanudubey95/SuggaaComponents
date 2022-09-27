@@ -72,12 +72,9 @@ export default function HomeScreen() {
           fare: '177',
           vehicleType: 'AUTO',
           location: 'Birsa Munda Airport, Ranchi',
-          status: 'COMPLETED',
+          status: 'Completed',
         }}
-        style={tw`flex-row bg-[${COLORS.WHITE}] pl-7 pt-7`}
-        viewStyle={`border-b flex-1 ml-7  pb-3.75 pr-5 border-[${COLORS.LIGHT_GRAY_BORDER}] `}
         imageUrl="https://picsum.photos/200/300"
-        imageStyle="w-11.65 h-11.65 rounded-11.25"
       />
 
       <View style={tw`my-4`} />
@@ -230,7 +227,7 @@ export default function HomeScreen() {
         <BottomModal
           showModal={showBottoModal}
           onClose={() => setShowBottoModal(false)}
-          height={'50%'}>
+          height="50%">
           <View style={tw`justify-center items-center h-full`}>
             <Text>Place your view here</Text>
           </View>

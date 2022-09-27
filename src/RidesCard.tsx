@@ -1,38 +1,39 @@
 import moment from 'moment';
 import React from 'react';
-import { Pressable, View, Image, Text } from 'react-native';
+import { Pressable, View, Image } from 'react-native';
 import type { PressableProps } from 'react-native';
 import tw from 'twrnc';
 
+import TextMedium15 from './Typography/TextMedium15';
+import TextRegular12 from './Typography/TextRegular12';
+import TextRegular15 from './Typography/TextRegular15';
 import * as COLORS from './config/colors';
 
 type props = PressableProps & {
   imageUrl: string;
-  imageStyle: string;
-  viewStyle: string;
   values: {
     date: Date;
     fare: string;
     vehicleType: 'BIKE' | 'CAR' | 'AUTO';
     location: string;
-    status: 'COMPLETED' | 'ONGOING' | 'CANCELLED' | 'SCHEDULED';
+    status: 'Completed' | 'Ongoing' | 'Cancelled' | 'Scheduled';
   };
 };
 
-export default function RidesCard({ style, imageUrl, imageStyle, viewStyle, values }: props) {
+export default function RidesCard({ imageUrl, values }: props) {
   const getColor = (color: typeof values.status): string => {
     let textColor = COLORS.BLACK;
     switch (color) {
-      case 'COMPLETED':
+      case 'Completed':
         textColor = COLORS.SPANISH_VIRIDIAN;
         break;
-      case 'SCHEDULED':
+      case 'Scheduled':
         textColor = COLORS.YELLOW_ORANGE;
         break;
-      case 'ONGOING':
+      case 'Ongoing':
         textColor = COLORS.SPANISH_VIRIDIAN;
         break;
-      case 'CANCELLED':
+      case 'Cancelled':
         textColor = COLORS.LUST_RED;
         break;
     }
@@ -40,24 +41,20 @@ export default function RidesCard({ style, imageUrl, imageStyle, viewStyle, valu
   };
 
   return (
-    <Pressable style={style}>
-      <Image style={tw`${imageStyle}`} source={{ uri: imageUrl }} />
-      <View style={tw`${viewStyle}`}>
-        <View style={tw`flex-row items-center`}>
-          <Text style={tw`font-bold text-3.75 text-[${COLORS.BLACK}]`}>
+    <Pressable style={tw`w-full p-2 flex-row`}>
+      <Image style={tw`w-11.65 h-11.65 mt-2 rounded-full`} source={{ uri: imageUrl }} />
+      <View style={tw`ml-4 flex-1`}>
+        <View style={tw`flex-row items-center justify-between `}>
+          <TextMedium15 style={tw`text-[${COLORS.BLACK}]`}>
             {moment(values.date).format('ddd, MMM DD, hh:mm A')}
-          </Text>
-          <Text style={tw`font-medium text-3 ml-2 lowercase text-[${getColor(values.status)}]`}>
+          </TextMedium15>
+          <TextRegular12 style={tw`text-[${getColor(values.status)}]`}>
             {values.status}
-          </Text>
+          </TextRegular12>
         </View>
-        <Text style={tw`font-bold text-3.75 text-[${COLORS.BLACK}]`}>₹{values.fare}</Text>
-        <Text style={tw`font-normal text-3.75 mt-1.25 text-[${COLORS.BLACK}]`}>
-          {values.vehicleType}
-        </Text>
-        <Text style={tw`font-normal text-3.75 mt-1.25 text-[${COLORS.BLACK}]`}>
-          {values.location}
-        </Text>
+        <TextMedium15 style={tw`text-[${COLORS.BLACK}]`}>₹{values.fare}</TextMedium15>
+        <TextRegular15 style={tw` text-[${COLORS.BLACK}]`}>{values.vehicleType}</TextRegular15>
+        <TextRegular15 style={tw`text-[${COLORS.BLACK}]`}>{values.location}</TextRegular15>
       </View>
     </Pressable>
   );
