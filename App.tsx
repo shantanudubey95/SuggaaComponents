@@ -109,7 +109,7 @@ export default function App() {
             name="Payments"
             component={PaymentsScreen}
             options={{
-              drawerIcon: () => <Icon image={IMAGES.PAYEMNT} />,
+              drawerIcon: () => <Icon image={IMAGES.PAYMENT} />,
               drawerLabelStyle: LABEL_STYLE,
             }}
           />
@@ -117,7 +117,7 @@ export default function App() {
             name="Insurance"
             component={InsuranceScreen}
             options={{
-              drawerIcon: () => <Icon image={IMAGES.INCURANCE} />,
+              drawerIcon: () => <Icon image={IMAGES.INSURANCE} />,
               drawerLabelStyle: LABEL_STYLE,
             }}
           />

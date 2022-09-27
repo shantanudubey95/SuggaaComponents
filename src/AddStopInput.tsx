@@ -32,7 +32,7 @@ export default function AddStopInput({ closeAction, onValueChange, inputText }: 
       <Pressable
         onPress={closeAction}
         style={tw`h-12 bg-[${COLORS.WHITE}] rounded-1.25 justify-center ml-1.5 shadow-md px-2`}>
-        <Image source={IMAGES.DLETE_ICON} />
+        <Image source={IMAGES.DELETE_ICON} />
       </Pressable>
     </View>
   );
