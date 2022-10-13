@@ -42,7 +42,7 @@ export default function SuggaaDropDown(props: Props) {
       transform: [
         {
           scale: withTiming(interpolate(sharedVal.value, [0, 1], [1, 0.6]), {
-            duration: 150,
+            duration: 500,
             easing: Easing.bezier(0.4, 0, 0.2, 1),
           }),
         },

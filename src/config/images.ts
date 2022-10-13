@@ -17,7 +17,7 @@ export const CLEAR_INPUT = require('../../assets/clearInput.png');
 export const DLETE_ICON = require('../../assets/deleteIcon.png');
 export const MARKER_ICON = require('../../assets/markerIcon.png');
 export const CHECKBOX_TICK = require('../../assets/checkBoxTick.png');
-export const DROPDOWN_ARROW = require('../../assets/dropDownArrow.png');
+export const DROPDOWN_ARROW = require('../../assets/dropdownarrow.png');
 export const TICK_MARK = require('../../assets/tickMark.png');
 
 export const I_DRIVE_ACTIVE = require('../../assets/iDriveActive.png');
