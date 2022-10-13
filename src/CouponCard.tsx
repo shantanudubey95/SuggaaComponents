@@ -3,7 +3,9 @@ import { View } from 'react-native';
 import tw from 'twrnc';
 
 import ReferCode from './ReferCode';
-import SuggaaText from './SuggaaText';
+import TextRegular12 from './Typography/TextRegular12';
+import TextRegular15 from './Typography/TextRegular15';
+import TextSemiBold22 from './Typography/TextSemiBold22';
 import * as COLORS from './config/colors';
 
 type props = {
@@ -17,30 +19,17 @@ export default function CouponCard({ title, description, validity, applyAction }
   return (
     <View style={tw`bg-[${COLORS.ANTI_FLASH_WHITE}] py-1.75 rounded-1.25`}>
       <View style={tw`mx-5.75 mb-4.25`}>
-        <View style={tw`flex-row items-center`}>
-          <SuggaaText
-            type="semibold"
-            text={title}
-            style={tw`text-[${COLORS.BLACK}] flex-1 text-6.25`}
-          />
+        <View style={tw`flex-row items-center w-full justify-between`}>
+          <TextSemiBold22>{title}</TextSemiBold22>
           <View style={tw`h-1.25`} />
-          <SuggaaText
-            onPress={applyAction}
-            type="regular"
-            text="Apply"
-            style={tw`text-[${COLORS.BLUE}]`}
-          />
+          <TextRegular15 style={tw`text-[${COLORS.BLUE}] ml-`}>Apply</TextRegular15>
         </View>
-        <SuggaaText type="regular" text={description} style={tw`text-[${COLORS.BLACK}] text-3`} />
+        <TextRegular15>{description}</TextRegular15>
         <View style={tw`h-1.25`} />
-        <SuggaaText
-          type="regular"
-          text={validity}
-          style={tw`text-[${COLORS.LUST_RED}] text-3.75`}
-        />
+        <TextRegular12 style={tw`text-[${COLORS.LUST_RED}]`}>{validity}</TextRegular12>
       </View>
       <View style={tw`mx-1`}>
-        <ReferCode code="SUGGAREF25" background={COLORS.WHITE} />
+        <ReferCode code="SUGGAA REF25" background={COLORS.WHITE} />
       </View>
     </View>
   );

@@ -27,6 +27,8 @@ import UploadCard from './UploadCard';
 import VehicleWithFareCard from './VehicleWithFareCard';
 import * as COLORS from './config/colors';
 import * as IMAGES from './config/images';
+import Dropdown from './Dropdown';
+import SuggaaTextInput from './SuggaaTextInput';
 
 export default function HomeScreen() {
   const [, setLocationName] = React.useState('');
@@ -35,9 +37,10 @@ export default function HomeScreen() {
   const [selectedDropDownValue, setSelectedDropDownValue] = React.useState('');
   const [driverType, setDriverType] = React.useState('NoVehicle');
   const [showBottoModal, setShowBottoModal] = React.useState(false);
-
+  const [value, setValue] = React.useState('');
+  const [error, setError] = React.useState<string | null>(null);
   return (
-    <ScrollView style={tw`w-full`} contentContainerStyle={tw`p-4`}>
+    <ScrollView style={tw`w-full bg-white`} contentContainerStyle={tw`p-5`}>
       <SearchLocation
         imageId={IMAGES.SEARCH_ICON}
         isEditable={false}
@@ -47,6 +50,30 @@ export default function HomeScreen() {
         onPress={() => alert('Add your fuunction here')}
         onValue={(val) => setLocationName(val)}
       />
+      <View style={tw`my-4`} />
+
+      <SuggaaTextInput
+        style={{
+          alignContent: 'center',
+          width: '100%',
+          borderWidth: 2,
+          borderColor: COLORS.SPANISH_VIRIDIAN,
+          borderRadius: 5,
+          fontSize: 20,
+          fontWeight: '400',
+          paddingHorizontal: 13,
+          paddingVertical: 10,
+        }}
+        value={value}
+        label="Full name"
+        errorText={error}
+        onChangeText={(text) => setValue(text)}
+        selectionColor={COLORS.SPANISH_VIRIDIAN}
+      />
+
+      <View style={tw`my-4`} />
+
+      <Dropdown label="Gender" list={['Male', 'Female']} onSelectValue={setSelectedDropDownValue} />
 
       <View style={tw`my-4`} />
 
