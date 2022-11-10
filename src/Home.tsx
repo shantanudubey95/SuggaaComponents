@@ -1,0 +1,283 @@
+import * as React from 'react';
+import { View, ScrollView, Text } from 'react-native';
+import tw from 'twrnc';
+
+import AddStopInput from './AddStopInput';
+import BottomModal from './BottomModel';
+import CouponCard from './CouponCard';
+import CurrentLocation from './CurrentLocation';
+import CurrentLocationButton from './CurrentLocationButton';
+import DocumentsRequired from './DocumentsRequired';
+import DropPointer from './DropPointer';
+import DriverCateogoryCard from './DrvierCategoryCard';
+import HamburgerIcon from './HamburgerIcon';
+import SearchLocation from './InputSearchLocation';
+import LocationNamesCard from './LocationNamesCard';
+import MapRoute from './MapRoute';
+import PickAndDropInput from './PickAndDropInput';
+import PickupPointer from './PickupPointer';
+import RidesCard from './RidesCard';
+import RippleAnimation from './RippleAnimation';
+import SuggaButton from './SuggaButton';
+import SuggaCheckBox from './SuggaCheckBox';
+import SuggaaDropDown from './SuggaaDropDown';
+import SuggaaImageButton from './SuggaaImageButton';
+import ToolTip from './ToolTip';
+import UploadCard from './UploadCard';
+import VehicleWithFareCard from './VehicleWithFareCard';
+import * as COLORS from './config/colors';
+import * as IMAGES from './config/images';
+import Dropdown from './Dropdown';
+import SuggaaTextInput from './SuggaaTextInput';
+
+export default function HomeScreen() {
+  const [, setLocationName] = React.useState('');
+  const [stopAddress, setStopAddress] = React.useState('');
+  const [selectedCheckBox, setSelectedCheckBox] = React.useState('');
+  const [selectedDropDownValue, setSelectedDropDownValue] = React.useState('');
+  const [driverType, setDriverType] = React.useState('NoVehicle');
+  const [showBottoModal, setShowBottoModal] = React.useState(false);
+  const [value, setValue] = React.useState('');
+  const [error, setError] = React.useState<string | null>(null);
+  return (
+    <ScrollView style={tw`w-full bg-white`} contentContainerStyle={tw`p-5`}>
+      <SearchLocation
+        imageId={IMAGES.SEARCH_ICON}
+        isEditable={false}
+        textStyle={tw`flex-1 mx-4 text-[${COLORS.LIGHT_GRAY_BORDER}] text-3.78`}
+        style={tw`h-12 py-3 px-4.5 flex-row  rounded-1.25 items-center self-stretch shadow-md bg-[${COLORS.WHITE}]`}
+        placeholder="Search Drop Location"
+        onPress={() => alert('Add your fuunction here')}
+        onValue={(val) => setLocationName(val)}
+      />
+      <View style={tw`my-4`} />
+
+      <SuggaaTextInput
+        style={{
+          alignContent: 'center',
+          width: '100%',
+          borderWidth: 2,
+          borderColor: COLORS.SPANISH_VIRIDIAN,
+          borderRadius: 5,
+          fontSize: 20,
+          fontWeight: '400',
+          paddingHorizontal: 13,
+          paddingVertical: 10,
+        }}
+        value={value}
+        label="Full name"
+        errorText={error}
+        onChangeText={(text) => setValue(text)}
+        selectionColor={COLORS.SPANISH_VIRIDIAN}
+      />
+
+      <View style={tw`my-4`} />
+
+      <Dropdown label="Gender" list={['Male', 'Female']} onSelectValue={setSelectedDropDownValue} />
+
+      <View style={tw`my-4`} />
+
+      <HamburgerIcon
+        ImageId={IMAGES.HAMBURGER_ICON}
+        style={tw`p-2 self-start rounded-1.25 bg-[${COLORS.WHITE}] shadow-md`}
+        onPress={() => alert('add function here')}
+      />
+
+      <View style={tw`my-4`} />
+
+      <CurrentLocationButton
+        ImageId={IMAGES.CURENT_LOCATION}
+        style={tw`p-2 self-start rounded-1.25 bg-[${COLORS.WHITE}] shadow-md`}
+        onPress={() => alert('add function here')}
+      />
+
+      <View style={tw`my-4`} />
+
+      <RidesCard
+        values={{
+          date: new Date(),
+          fare: '177',
+          vehicleType: 'AUTO',
+          location: 'Birsa Munda Airport, Ranchi',
+          status: 'Completed',
+        }}
+        imageUrl="https://picsum.photos/200/300"
+      />
+
+      <View style={tw`my-4`} />
+      <SuggaButton onPress={() => alert('add function here')} text="Button" buttonType="FILLED" />
+      <View style={tw`my-2`} />
+      <SuggaButton onPress={() => alert('add function here')} text="Button" buttonType="BORDER" />
+      <View style={tw`my-2`} />
+      <SuggaButton onPress={() => alert('add function here')} text="Button" buttonType="DISABLED" />
+
+      <View style={tw`my-2`} />
+      <AddStopInput
+        closeAction={() => alert('add your action here')}
+        inputText={stopAddress}
+        onValueChange={setStopAddress}
+      />
+      <View style={tw`my-2`} />
+      <PickAndDropInput
+        inputTitle="Pickup"
+        clearInput={() => setStopAddress('')}
+        inputText={stopAddress}
+        onValueChange={setStopAddress}
+      />
+      <View style={tw`my-2`} />
+      <PickAndDropInput
+        inputTitle="Drop"
+        clearInput={() => setStopAddress('')}
+        inputText={stopAddress}
+        onValueChange={setStopAddress}
+      />
+
+      <View style={tw`my-4`} />
+      <LocationNamesCard
+        distance={12}
+        AddressFull="Remco Bhel Layout Kenchenhalli RR Nagar Be..."
+        AddressTitle="RR Nagar Complex"
+        imageId={IMAGES.MARKER_ICON}
+      />
+
+      <View style={tw`my-4 flex-row`}>
+        <SuggaCheckBox
+          title="Yes"
+          onPress={(value) => setSelectedCheckBox(value)}
+          isActive={selectedCheckBox === 'Yes'}
+        />
+        <SuggaCheckBox
+          title="No"
+          onPress={(value) => setSelectedCheckBox(value)}
+          isActive={selectedCheckBox === 'No'}
+        />
+      </View>
+
+      <View style={tw`my-2`} />
+      <SuggaaDropDown
+        style={tw`text-[${COLORS.BLACK}] bg-[${COLORS.WHITE}] self-center items-center w-full border-2 border-[${COLORS.SPANISH_VIRIDIAN}] rounded-1.5 text-5 py-2.5 px-3.25`}
+        value={selectedDropDownValue}
+        label="Gender"
+        list={['Male', 'Female']}
+        onChangeText={(text) => setSelectedDropDownValue(text)}
+        selectionColor={COLORS.SPANISH_VIRIDIAN}
+      />
+
+      <View style={tw`my-10`} />
+      <DocumentsRequired
+        title="Personal Details"
+        description="Personal details, address proof, driving license, PAN card"
+      />
+      <View style={tw`my-4`} />
+      <DocumentsRequired
+        title="Bank Details"
+        description="Personal details, address proof, driving license, PAN card"
+      />
+      <View style={tw`my-4`} />
+      <DocumentsRequired
+        title="Vehicles Details"
+        description="Personal details, address proof, driving license, PAN card"
+      />
+
+      <View style={tw`my-4`} />
+      <DriverCateogoryCard
+        onPress={() => setDriverType('NoVehicle')}
+        title="I Drive"
+        description="If you have no vehicles and like to partner with Suggaa to find an Operator for you."
+        category="NoVehicle"
+        isActive={driverType === 'NoVehicle'}
+      />
+      <DriverCateogoryCard
+        onPress={() => setDriverType('SingleDriver')}
+        title="I have a car and I drive"
+        description="If you have a single vehicle and like to partner with Suggaa and ride your vehicle"
+        category="SingleDriver"
+        isActive={driverType === 'SingleDriver'}
+      />
+      <DriverCateogoryCard
+        onPress={() => setDriverType('FleetOwner')}
+        title="I have more than 1 car"
+        description="If you have many vehicles and drivers and like to manage them on Suggaa"
+        category="FleetOwner"
+        isActive={driverType === 'FleetOwner'}
+      />
+
+      <View style={tw`my-4`} />
+      <MapRoute
+        mapStyle="self-stretch h-50  rounded-1.25"
+        style={`w-full h-50 items-center justify-center shadow-md w-full bg-[${COLORS.WHITE}] rounded-1.25`}
+        pickUp={{ latitude: 12.9162028, longitude: 77.5210518 }}
+        drop={{ latitude: 12.929481, longitude: 77.544475 }}
+      />
+
+      <View style={tw`my-4`} />
+      <CurrentLocation />
+
+      <View style={tw`my-4`} />
+      <PickupPointer />
+
+      <View style={tw`my-4`} />
+      <DropPointer />
+
+      <View style={tw`my-4`} />
+      <ToolTip address="Some Address goes here" onPress={() => alert('your action here')} />
+
+      <View style={tw`my-4`} />
+      <VehicleWithFareCard
+        duration="10"
+        fare={120}
+        vehicleType="SEDAN"
+        onPress={() => alert('Add here')}
+      />
+      <View style={tw`my-4`} />
+      <VehicleWithFareCard
+        duration="7"
+        fare={80}
+        vehicleType="BIKE"
+        onPress={() => alert('Add here')}
+      />
+
+      <View style={tw`my-4`} />
+      <UploadCard
+        message="First page"
+        action1={() => alert('action1')}
+        action2={() => alert('action2')}
+      />
+
+      <View style={tw`my-4`} />
+      <SuggaButton
+        buttonType="FILLED"
+        text="Show Bottom Modal"
+        onPress={() => setShowBottoModal(true)}
+      />
+      {showBottoModal && (
+        <BottomModal
+          showModal={showBottoModal}
+          onClose={() => setShowBottoModal(false)}
+          height="50%">
+          <View style={tw`justify-center items-center h-full`}>
+            <Text>Place your view here</Text>
+          </View>
+        </BottomModal>
+      )}
+
+      <View style={tw`my-4`} />
+      <SuggaaImageButton
+        imageId={IMAGES.COUPON}
+        onPress={() => alert('add  here')}
+        text="Image Button"
+        buttonType="BORDER"
+      />
+
+      <View style={tw`my-4`} />
+      <CouponCard
+        title="Suggaa"
+        description="Get 30% OFF up to ₹25"
+        validity="Valid of trips worth ₹100 or more."
+        applyAction={() => alert('add here')}
+      />
+
+      <View style={tw`my-10`} />
+    </ScrollView>
+  );
+}
